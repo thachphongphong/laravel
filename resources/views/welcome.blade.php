@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
-
+        <title>Pearl Sea Hotel | Danang Hotel | Coastal Hotels| Danang Beach | My Khe Beach</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
         <style>
@@ -38,7 +38,13 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+				 <?php 
+				 $menus = DB::connection('mysql')-> select('select * from menu');
+				for ($i=0;$i<sizeof($menus);$i++) {
+					$menu_name= $menus[$i]->name;
+					echo $menu_name.'</br>';
+				}
+				 ?>
             </div>
         </div>
     </body>
