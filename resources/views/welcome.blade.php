@@ -42,7 +42,8 @@
 				 $menus = DB::connection('mysql')-> select('select * from menu');
 				for ($i=0;$i<sizeof($menus);$i++) {
 					$menu_name= $menus[$i]->name;
-					echo $menu_name.'</br>';
+                    $menu_url = $menus[$i]->url;
+					echo '<a href="'.$menu_url.'">'.$menu_name.'</a></br>';
 				}
 				 ?>
             </div>
