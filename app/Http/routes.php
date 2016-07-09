@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('home','HomeController@load');
+Route::get('/','HomeController@load');
 Route::get('introduction','IntroductionController@load');
 Route::get('room','Room_CategoriesController@load');
 Route::get('tour_guide','Tour_GuideController@load');
