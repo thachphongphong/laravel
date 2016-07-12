@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Introduce;
 use App\Menu;
+use App\Room;
 use App\Slider;
 use Illuminate\Http\Request;
 
@@ -17,9 +19,9 @@ class HomeController extends Controller
     {
         $language_id = 1;
         if ($language == 'vi') {
-            $language_id =1;
-        }else{
-            $language_id =2;
+            $language_id = 1;
+        } else {
+            $language_id = 2;
         }
         $menus = Menu::with('submenus')
             ->where('language_id', $language_id)
@@ -27,6 +29,8 @@ class HomeController extends Controller
             ->get();
         $slider = Slider::all();
 
-        return View::make('app', array('menus' => $menus, 'sliders' => $slider));
+        $room = Room::all()->where('language_id', $language_id);
+        $about = Introduce::all()->where('language_id', $language_id)->first();
+        return View::make('app', array('menus' => $menus, 'sliders' => $slider, 'abouts' => $about, 'rooms' => $room));
     }
 }

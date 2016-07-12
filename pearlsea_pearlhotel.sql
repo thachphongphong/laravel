@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2016 at 08:32 PM
+-- Generation Time: Jul 12, 2016 at 07:07 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -41,11 +41,6 @@ CREATE TABLE IF NOT EXISTS `booking_contact` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
---
--- Truncate table before insert `booking_contact`
---
-
-TRUNCATE TABLE `booking_contact`;
 --
 -- Dumping data for table `booking_contact`
 --
@@ -85,19 +80,14 @@ CREATE TABLE IF NOT EXISTS `booking_room` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Truncate table before insert `booking_room`
---
-
-TRUNCATE TABLE `booking_room`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_details`
+-- Table structure for table `contact_detail`
 --
 
-DROP TABLE IF EXISTS `contact_details`;
-CREATE TABLE IF NOT EXISTS `contact_details` (
+DROP TABLE IF EXISTS `contact_detail`;
+CREATE TABLE IF NOT EXISTS `contact_detail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
   `alias` varchar(255) DEFAULT NULL,
@@ -120,17 +110,12 @@ CREATE TABLE IF NOT EXISTS `contact_details` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Truncate table before insert `contact_details`
+-- Dumping data for table `contact_detail`
 --
 
-TRUNCATE TABLE `contact_details`;
---
--- Dumping data for table `contact_details`
---
-
-INSERT INTO `contact_details` (`id`, `name`, `alias`, `address`, `state`, `country`, `postcode`, `telephone`, `phone`, `fax`, `image`, `email_to`, `default_icon`, `ordering`, `webpage`, `hash_tag`, `language_id`, `enabled`) VALUES
+INSERT INTO `contact_detail` (`id`, `name`, `alias`, `address`, `state`, `country`, `postcode`, `telephone`, `phone`, `fax`, `image`, `email_to`, `default_icon`, `ordering`, `webpage`, `hash_tag`, `language_id`, `enabled`) VALUES
 (2, 'Pearl Sea Hotel Danang', 'pearl-sea-hotel-danang', 'My Khe Beach, Lot B2-09-10, Loseby St., Son Tra Distric, Danang City', '', '', '', '(+84 511) 3925999 - 3917555', '(+84) 0905875759 - 0935989845', '(+84 511) 33917555', '', 'sale.pearlseahoteldn@gmail.com', 0, 1, '', '', 2, 1),
-(3, 'Pearl Sea Hotel Danang - Khách sạn Biển Ngọc', 'pearl-sea-hotel-danang-khach-san-bien-ngoc', 'Biển Mỹ Khê, Số 55, Đường Loseby, An Cư 3, Quận Sơn Trà, TP Đà Nẵng', '', '', '', '(+84 511) 3925999 - 3917555', '(+84) 0905875759 - 0935989845', '(+84 511) 33917555', '', 'pearlseahotel@gmail.com', 0, 1, 'http://pearlseahotel.com', '', 1, 1);
+(1, 'Pearl Sea Hotel Danang - Khách sạn Biển Ngọc', 'pearl-sea-hotel-danang-khach-san-bien-ngoc', 'Biển Mỹ Khê, Số 55, Đường Loseby, An Cư 3, Quận Sơn Trà, TP Đà Nẵng', '', '', '', '(+84 511) 3925999 - 3917555', '(+84) 0905875759 - 0935989845', '(+84 511) 33917555', '', 'pearlseahotel@gmail.com', 0, 1, 'http://pearlseahotel.com', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -152,17 +137,12 @@ CREATE TABLE IF NOT EXISTS `introduce` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Truncate table before insert `introduce`
---
-
-TRUNCATE TABLE `introduce`;
---
 -- Dumping data for table `introduce`
 --
 
 INSERT INTO `introduce` (`id`, `title`, `short_content`, `content`, `image_url`, `language_id`, `enabled`, `created_date`) VALUES
-(1, 'Giới thiệu Pearl Sea Hotel - Khách sạn Biển Ngọc', 'Tọa lạc trên một vị trí lý tưởng,bên cạnh bãi biển Mỹ Khê xinh đẹp,nơi được tạp chí Forbes bình chọn là một trong sáu bãi biển đẹp nhất hành tinh. Khách sạn Pearl Sea luôn là sự lựa chọn tuyệt vời của Quý khách. Đến với khách sạn Pearl Sea, Quý khách có đầy đủ không gian tiện lợi để ngắm bán đảo Sơn Trà thơ mộng bên cạnh bãi biển trong xanh, rực ánh nắng vàng, ngắm cảnh toàn thành phố Đà Nẵng, ngắm cầu quay Sông Hàn xinh đẹp, cầu Thuận Phước lấp lánh dưới ánh đèn màn đêm huyền ảo.\r\n\r\nKhách sạn Pearl Sea là một trong những khách sạn mới bên cạnh biển Mỹ Khê, khai trương vào tháng 04 năm 2011, được thiết kế theo tiêu chuẩn tương đương 3 sao gồm 10 tầng - 45 phòng cùng những trang thiết bị hiện đại, sang trọng và ấm cúng. Với đội ngũ nhân viên trẻ trung , năng động và nhiệt tình, Khách sạn Pearl Sea tự tin sẽ mang lại cho Quý khách sự hài lòng cao nhất.', 'Khách sạn tại Đà Nẵng này Tọa lạc trên một vị trí lý tưởng, bên cạnh bãi biển Mỹ Khê xinh đẹp, nơi được tạp chí Forbes bình chọn là 01 trong 06 bãi biển đẹp nhất hành tinh. Khách sạn Pearl Sea luôn là sự lựa chọn tuyệt vời của Quý khách. Đến với khách sạn Pearl Sea, Quý khách có đầy đủ không gian tiện lợi để ngắm bán đảo Sơn Trà thơ mộng bên cạnh bãi biển trong xanh, rực ánh nắng vàng, ngắm cảnh toàn thành phố Đà Nẵng, ngắm cầu quay Sông Hàn xinh đẹp, cầu Thuận Phước lấp lánh dưới ánh đèn màn đêm huyền ảo.\r\nBiển Mỹ Khê \r\n\r\nKhách sạn Pearl Sea khai trương vào đầu tháng 04 năm 2011, với kiến trúc độc đáo, được thiết kế 10 tầng - 45 phòng cùng những trang thiết bị hiện đại, sang trọng và ấm cúng sẽ đáp ứng được mọi nhu cầu của Quý khách. Với đội ngũ nhân viên chuyên nghiệp,năng động và nhiệt tình, Khách sạn Pearl Sea tự tin sẽ mang đến cho Quý khách những dịch vụ tốt nhất, luôn đem dến sự hài lòng, cảm giác thư giãn thoải mái thật sự như ngôi nhà tiện nghi và hạnh phúc của Qúy khách.\r\n\r\nChỉ mất khoảng bảy phút ô tô để đi từ sân bay Quốc tế Đà Nẵng, Nhà ga hay Trung tâm thương mại, khách sạn Pearl Sea là điểm đến vô cùng thuận lợi dành cho Quý khách. Tại đây, chỉ vài phút bách bộ Quý khách sẽ được hòa mình vào vẻ đẹp của thiên nhiên sơn thủy hữu tình với bờ cát trắng mịn màng, những làn nước trong xanh như được ôm ấp bởi ngọn núi Sơn Trà.\r\n\r\n Pearl Sea Hotel	Pearl Sea Hotel\r\nTừ Pearl Sea Hotel, Quý khách cũng có thể dễ dàng viếng thăm các danh lam thắng cảnh tại Đà Nẵng và các vùng lân cận\r\n\r\nBà Nà Hill - Đường lên tiên cảnh với trải nghiệm 4 mùa trong ngày (đi 35km, 45 phút)\r\nPhố cổ Hội An - Di sản văn hóa thế giới - 01 trong 10 thành phố du lịch hàng đầu thế giới (đi 30km, 45 phút)\r\nCù lao Chàm - Khu dự trữ sinh quyển thế giới (đi 12 hải lý, 90 phút)\r\nThánh địa Mỹ Sơn - Di sản văn hóa thế giới (đi 70km, 90 phút)\r\nĐèo Hải Vân - Thiên hạ đệ nhất hùng quan (đi 40km, 45 phút)\r\nCố đô Huế - Di sản văn hóa thế giới (đi 110km, 120 phút)\r\nBán đảo Sơn Trà, Phật Bà Linh Ứng Tự (đi 5km, 7 phút)\r\nNgũ Hành Sơn, thăm quan làng đá mỹ nghệ Non Nước (đi 7 km, 10 phút)\r\nBãi biển Mỹ Khê - 01 trong 06 bãi biển đẹp nhất hành tinh (đi bộ 300m, 5 phút)\r\nBana Hill	Ngũ Hành Sơn\r\nBana Hill	Ngũ Hành Sơn\r\nPhố cổ Hội An	Thánh địa Mỹ Sơn\r\nPhố cổ Hội An	Thánh địa Mỹ Sơn', '/vi/images/stories/khachsanvenbien.jpg', 1, 1, '2016-07-11 00:00:00'),
-(2, 'Introduction Pearl Sea Hotel', 'Welcome to the Pearl Sea Hotel.\r\n\r\nThe Pearl Sea Hotel made it’s grand opening at the beginning of April 2011. It has a unique type of architecture and is considered a three star hotel. This ten story hotel has forty five rooms with all modern amenities making you feel comfortable like at home. The hotel staff are professional, friendly and caring and are ready to accommodate our guests.\r\n\r\nThe Pearl Sea Hotel is in an ideal location. We are a walking distance from My Khe beach considered by many as one of the most beautiful beaches in the world. At this beach the American soldiers first landed in 1965 to begin the Viet Nam War. From the hotel you have an exquisite view of the pristine Son Tra peninsula, along with the panorama of Da Nang. Also seen from the Pearl Sea Hotel is both famous folding Song Han and Thuan Phuoc bridges. We are 7 minutes away both from Da Nang International Airport and Da Nang Center of Business and Commerce. It’s a comfortable drive from our hotel to the most popular tourist places.', 'Welcome to the Pearl Sea Hotel.\r\n\r\nThe Pearl Sea Hotel made it’s grand opening at the beginning of April 2011. It has a unique type of architecture and is considered a three star hotel. This ten story hotel has forty five rooms with all modern amenities making you feel comfortable like at home. The hotel staff are professional, friendly and caring and are ready to accommodate our guests.\r\n\r\nBiển Mỹ Khê \r\n\r\nThe Pearl Sea Hotel is in an ideal location. We are a walking distance from My Khe beach considered by many as one of the most beautiful beaches in the world. At this beach the American soldiers first landed in 1965 to begin the Viet Nam War. From the hotel you have an exquisite view of the pristine Son Tra peninsula, along with the panorama of Da Nang. Also seen from the Pearl Sea Hotel is both famous folding Song Han and Thuan Phuoc bridges. We are 7 minutes away both from Da Nang International Airport and Da Nang Center of Business and Commerce. .\r\n\r\n Pearl Sea Hotel	Pearl Sea Hotel\r\nIt’s a comfortable drive from our hotel to the most popular tourist places:\r\n\r\nBa Na Hills – Cable cars (35 km, 45 min.)\r\nAncient town of Hoi An – an old trading center of the Chinese, Japanese and Portugees , one of ten popular tourist towns of the world (30 km, 45 min.)\r\nCù lao Chàm Island - a beautiful island with various wild animals and legendary landscapes (12 miles, 25min.)\r\nCham Island – Wild life preserve (12 nautical miles, 90 min.)\r\nAncient ruin of Cham towers (70 km, 90 min.)\r\nMountain pass Hai Van (40 km, 45 min.)\r\nHue city - Former imperial capital of Viet Nam (110 km, 120 min.)\r\nPeninsula Son Tra, Bodhisattva Linh Ung Tu’s memorial (5 km, 7 min.)\r\nNgu Hanh Son mountain peaks, village of fine handicrafts of Non Nuoc ( 7 km, 10 min.)\r\nMy Khe beach – one of the six most beautiful beaches of the world ( 300 m, 5 min.)', '/en/images/stories/khachsanvenbien.jpg', 2, 1, '2016-07-11 00:00:00');
+(1, 'Giới thiệu Pearl Sea Hotel - Khách sạn Biển Ngọc', 'Tọa lạc trên một vị trí lý tưởng,bên cạnh bãi biển Mỹ Khê xinh đẹp,nơi được tạp chí Forbes bình chọn là một trong sáu bãi biển đẹp nhất hành tinh. Khách sạn Pearl Sea luôn là sự lựa chọn tuyệt vời của Quý khách. Đến với khách sạn Pearl Sea, Quý khách có đầy đủ không gian tiện lợi để ngắm bán đảo Sơn Trà thơ mộng bên cạnh bãi biển trong xanh, rực ánh nắng vàng, ngắm cảnh toàn thành phố Đà Nẵng, ngắm cầu quay Sông Hàn xinh đẹp, cầu Thuận Phước lấp lánh dưới ánh đèn màn đêm huyền ảo.\r\n\r\nKhách sạn Pearl Sea là một trong những khách sạn mới bên cạnh biển Mỹ Khê, khai trương vào tháng 04 năm 2011, được thiết kế theo tiêu chuẩn tương đương 3 sao gồm 10 tầng - 45 phòng cùng những trang thiết bị hiện đại, sang trọng và ấm cúng. Với đội ngũ nhân viên trẻ trung , năng động và nhiệt tình, Khách sạn Pearl Sea tự tin sẽ mang lại cho Quý khách sự hài lòng cao nhất.', 'Khách sạn tại Đà Nẵng này Tọa lạc trên một vị trí lý tưởng, bên cạnh bãi biển Mỹ Khê xinh đẹp, nơi được tạp chí Forbes bình chọn là 01 trong 06 bãi biển đẹp nhất hành tinh. Khách sạn Pearl Sea luôn là sự lựa chọn tuyệt vời của Quý khách. Đến với khách sạn Pearl Sea, Quý khách có đầy đủ không gian tiện lợi để ngắm bán đảo Sơn Trà thơ mộng bên cạnh bãi biển trong xanh, rực ánh nắng vàng, ngắm cảnh toàn thành phố Đà Nẵng, ngắm cầu quay Sông Hàn xinh đẹp, cầu Thuận Phước lấp lánh dưới ánh đèn màn đêm huyền ảo.\r\nBiển Mỹ Khê \r\n\r\nKhách sạn Pearl Sea khai trương vào đầu tháng 04 năm 2011, với kiến trúc độc đáo, được thiết kế 10 tầng - 45 phòng cùng những trang thiết bị hiện đại, sang trọng và ấm cúng sẽ đáp ứng được mọi nhu cầu của Quý khách. Với đội ngũ nhân viên chuyên nghiệp,năng động và nhiệt tình, Khách sạn Pearl Sea tự tin sẽ mang đến cho Quý khách những dịch vụ tốt nhất, luôn đem dến sự hài lòng, cảm giác thư giãn thoải mái thật sự như ngôi nhà tiện nghi và hạnh phúc của Qúy khách.\r\n\r\nChỉ mất khoảng bảy phút ô tô để đi từ sân bay Quốc tế Đà Nẵng, Nhà ga hay Trung tâm thương mại, khách sạn Pearl Sea là điểm đến vô cùng thuận lợi dành cho Quý khách. Tại đây, chỉ vài phút bách bộ Quý khách sẽ được hòa mình vào vẻ đẹp của thiên nhiên sơn thủy hữu tình với bờ cát trắng mịn màng, những làn nước trong xanh như được ôm ấp bởi ngọn núi Sơn Trà.\r\n\r\n Pearl Sea Hotel	Pearl Sea Hotel\r\nTừ Pearl Sea Hotel, Quý khách cũng có thể dễ dàng viếng thăm các danh lam thắng cảnh tại Đà Nẵng và các vùng lân cận\r\n\r\nBà Nà Hill - Đường lên tiên cảnh với trải nghiệm 4 mùa trong ngày (đi 35km, 45 phút)\r\nPhố cổ Hội An - Di sản văn hóa thế giới - 01 trong 10 thành phố du lịch hàng đầu thế giới (đi 30km, 45 phút)\r\nCù lao Chàm - Khu dự trữ sinh quyển thế giới (đi 12 hải lý, 90 phút)\r\nThánh địa Mỹ Sơn - Di sản văn hóa thế giới (đi 70km, 90 phút)\r\nĐèo Hải Vân - Thiên hạ đệ nhất hùng quan (đi 40km, 45 phút)\r\nCố đô Huế - Di sản văn hóa thế giới (đi 110km, 120 phút)\r\nBán đảo Sơn Trà, Phật Bà Linh Ứng Tự (đi 5km, 7 phút)\r\nNgũ Hành Sơn, thăm quan làng đá mỹ nghệ Non Nước (đi 7 km, 10 phút)\r\nBãi biển Mỹ Khê - 01 trong 06 bãi biển đẹp nhất hành tinh (đi bộ 300m, 5 phút)\r\nBana Hill	Ngũ Hành Sơn\r\nBana Hill	Ngũ Hành Sơn\r\nPhố cổ Hội An	Thánh địa Mỹ Sơn\r\nPhố cổ Hội An	Thánh địa Mỹ Sơn', 'images/gallery-06.png', 1, 1, '2016-07-11 00:00:00'),
+(2, 'Introduction Pearl Sea Hotel', 'Welcome to the Pearl Sea Hotel.\r\n\r\nThe Pearl Sea Hotel made it’s grand opening at the beginning of April 2011. It has a unique type of architecture and is considered a three star hotel. This ten story hotel has forty five rooms with all modern amenities making you feel comfortable like at home. The hotel staff are professional, friendly and caring and are ready to accommodate our guests.\r\n\r\nThe Pearl Sea Hotel is in an ideal location. We are a walking distance from My Khe beach considered by many as one of the most beautiful beaches in the world. At this beach the American soldiers first landed in 1965 to begin the Viet Nam War. From the hotel you have an exquisite view of the pristine Son Tra peninsula, along with the panorama of Da Nang. Also seen from the Pearl Sea Hotel is both famous folding Song Han and Thuan Phuoc bridges. We are 7 minutes away both from Da Nang International Airport and Da Nang Center of Business and Commerce. It’s a comfortable drive from our hotel to the most popular tourist places.', 'Welcome to the Pearl Sea Hotel.\r\n\r\nThe Pearl Sea Hotel made it’s grand opening at the beginning of April 2011. It has a unique type of architecture and is considered a three star hotel. This ten story hotel has forty five rooms with all modern amenities making you feel comfortable like at home. The hotel staff are professional, friendly and caring and are ready to accommodate our guests.\r\n\r\nBiển Mỹ Khê \r\n\r\nThe Pearl Sea Hotel is in an ideal location. We are a walking distance from My Khe beach considered by many as one of the most beautiful beaches in the world. At this beach the American soldiers first landed in 1965 to begin the Viet Nam War. From the hotel you have an exquisite view of the pristine Son Tra peninsula, along with the panorama of Da Nang. Also seen from the Pearl Sea Hotel is both famous folding Song Han and Thuan Phuoc bridges. We are 7 minutes away both from Da Nang International Airport and Da Nang Center of Business and Commerce. .\r\n\r\n Pearl Sea Hotel	Pearl Sea Hotel\r\nIt’s a comfortable drive from our hotel to the most popular tourist places:\r\n\r\nBa Na Hills – Cable cars (35 km, 45 min.)\r\nAncient town of Hoi An – an old trading center of the Chinese, Japanese and Portugees , one of ten popular tourist towns of the world (30 km, 45 min.)\r\nCù lao Chàm Island - a beautiful island with various wild animals and legendary landscapes (12 miles, 25min.)\r\nCham Island – Wild life preserve (12 nautical miles, 90 min.)\r\nAncient ruin of Cham towers (70 km, 90 min.)\r\nMountain pass Hai Van (40 km, 45 min.)\r\nHue city - Former imperial capital of Viet Nam (110 km, 120 min.)\r\nPeninsula Son Tra, Bodhisattva Linh Ung Tu’s memorial (5 km, 7 min.)\r\nNgu Hanh Son mountain peaks, village of fine handicrafts of Non Nuoc ( 7 km, 10 min.)\r\nMy Khe beach – one of the six most beautiful beaches of the world ( 300 m, 5 min.)', 'images/gallery-06.png', 2, 1, '2016-07-11 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -184,32 +164,22 @@ CREATE TABLE IF NOT EXISTS `menu` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
--- Truncate table before insert `menu`
---
-
-TRUNCATE TABLE `menu`;
---
 -- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`id`, `name`, `url`, `menutype`, `is_home_page`, `order`, `language_id`, `enable`) VALUES
-(1, 'Trang Chủ', 'home', NULL, 1, 0, 1, 1),
-(2, 'Giới Thiệu', 'introduction', NULL, 0, 1, 1, 1),
-(3, 'Phòng Nghỉ', 'room', NULL, 0, 2, 1, 1),
-(4, 'Thông Tin Du Lịch', 'tour_guide', NULL, 0, 3, 1, 1),
-(5, 'Ẩm Thực', 'local_food', NULL, 0, 5, 1, 1),
-(6, 'Tin Tức', 'news', NULL, 0, 6, 1, 1),
-(9, 'Liên Hệ', 'contact', NULL, 0, 7, 1, 1),
-(10, 'Đăng Kí Phòng', 'reservation', NULL, 0, 8, 1, 1),
-(11, 'Bản Đồ', 'map', NULL, 0, 9, 1, 1),
-(12, 'Home', 'home', NULL, 1, 0, 2, 1),
-(13, 'Introduction', 'introduction', NULL, 0, 1, 2, 1),
-(14, 'Room Categories', 'room', NULL, 0, 2, 2, 1),
-(15, 'Tour Guide', 'tour_guide', NULL, 0, 3, 2, 1),
-(16, 'Local Food', 'local_food', NULL, 0, 5, 2, 1),
-(17, 'News', 'news', NULL, 0, 6, 2, 1),
-(18, 'Contact Us', 'contact', NULL, 0, 7, 2, 1),
-(19, 'Reservation', 'reservation', NULL, 0, 8, 2, 1);
+(1, 'Trang Chủ', 'vi/home', NULL, 1, 0, 1, 1),
+(2, 'Giới Thiệu', 'vi/introduction', NULL, 0, 1, 1, 1),
+(3, 'Phòng Nghỉ', 'vi/room', NULL, 0, 2, 1, 1),
+(4, 'Tin Tức', 'vi/news', NULL, 0, 3, 1, 1),
+(5, 'Liên Hệ', 'vi/contact', NULL, 0, 4, 1, 1),
+(6, 'Đăng Kí Phòng', 'vi/reservation', NULL, 0, 5, 1, 1),
+(7, 'Home', 'en/home', NULL, 1, 0, 2, 1),
+(8, 'Introduction', 'en/introduction', NULL, 0, 1, 2, 1),
+(9, 'Room Categories', 'en/room', NULL, 0, 2, 2, 1),
+(10, 'News', 'en/news', NULL, 0, 3, 2, 1),
+(11, 'Contact Us', 'en/contact', NULL, 0, 4, 2, 1),
+(12, 'Reservation', 'en/reservation', NULL, 0, 5, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -231,11 +201,6 @@ CREATE TABLE IF NOT EXISTS `message` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Truncate table before insert `message`
---
-
-TRUNCATE TABLE `message`;
 -- --------------------------------------------------------
 
 --
@@ -258,11 +223,6 @@ CREATE TABLE IF NOT EXISTS `news` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=202 ;
 
---
--- Truncate table before insert `news`
---
-
-TRUNCATE TABLE `news`;
 --
 -- Dumping data for table `news`
 --
@@ -514,11 +474,6 @@ CREATE TABLE IF NOT EXISTS `promotion` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Truncate table before insert `promotion`
---
-
-TRUNCATE TABLE `promotion`;
---
 -- Dumping data for table `promotion`
 --
 
@@ -551,18 +506,13 @@ CREATE TABLE IF NOT EXISTS `room` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
--- Truncate table before insert `room`
---
-
-TRUNCATE TABLE `room`;
---
 -- Dumping data for table `room`
 --
 
 INSERT INTO `room` (`id`, `name`, `thumbnail`, `image_url`, `description`, `room_type`, `total_room`, `total_person`, `price`, `f_price`, `language_id`, `enabled`, `created_date`) VALUES
-(1, 'STANDARD ROOM', 'images/stories/P4_L.jpg', 'images/stories/P4_S.jpg', '(Giường: 1,6m. Diện tích: 16-18m2)	1', 'Standard - double', 15, 2, 650000, 650000, 1, 1, '2016-07-09 00:00:00'),
-(2, '\nSUPERIOR ROOM', 'images/stories/P5_L.jpg', 'images/stories/P5_S.jpg', '(Giường: 1,8m. Diện tích:18-20m2)', 'Superior - double', 2, 2, 700000, 700000, 1, 1, '2016-07-09 00:00:00'),
-(3, 'SUPERIOR SEA VIEW ROOM', 'images/stories/P3_L.jpg', 'images/stories/P3_S.jpg', '(Giường: 1,8m. Diện tích: 20-22m2)', 'Superrior Sea View - double', 5, 2, 750000, 750000, 1, 1, '2016-07-09 00:00:00'),
+(1, 'STANDARD ROOM', 'images/stories/P4_L.jpg', 'images/room-1.png', '(Giường: 1,6m. Diện tích: 16-18m2)', 'Standard - double', 15, 2, 650000, 650000, 1, 1, '2016-07-09 00:00:00'),
+(2, '\nSUPERIOR ROOM', 'images/stories/P5_L.jpg', 'images/room-2.png', '(Giường: 1,8m. Diện tích:18-20m2)', 'Superior - double', 2, 2, 700000, 700000, 1, 1, '2016-07-09 00:00:00'),
+(3, 'SUPERIOR SEA VIEW ROOM', 'images/stories/P3_L.jpg', 'images/room-3.png', '(Giường: 1,8m. Diện tích: 20-22m2)', 'Superrior Sea View - double', 5, 2, 750000, 750000, 1, 1, '2016-07-09 00:00:00'),
 (4, '\nDELUXE SEA VIEW ROOM', 'images/stories/P1_L.jpg', 'images/stories/P1_S.jpg', '(Giường: 1,2 +1,6m. Diện tích: 20-22m2)	', 'Deluxe - tripble', 15, 3, 850000, 850000, 1, 1, '2016-07-09 00:00:00'),
 (5, 'DELUXE ROOM', 'images/stories/P2_L.jpg', 'images/stories/P2_S.jpg', '(Giường: 1,2 +1,6m. Diện tích: 20-22m2)', 'Deluxe Sea View - tripble', 8, 3, 1000000, 1000000, 1, 1, '2016-07-09 00:00:00'),
 (6, 'STANDARD ROOM', 'images/stories/P4_L.jpg', 'images/stories/P4_S.jpg', '(Bedroom: 1.6m. Area: 16-18m2)', 'Standard - double', 15, 2, 650000, 650000, 1, 1, '2016-07-09 00:00:00'),
@@ -587,11 +537,6 @@ CREATE TABLE IF NOT EXISTS `room_detail` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
 
---
--- Truncate table before insert `room_detail`
---
-
-TRUNCATE TABLE `room_detail`;
 --
 -- Dumping data for table `room_detail`
 --
@@ -638,11 +583,6 @@ CREATE TABLE IF NOT EXISTS `room_detail_link` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=89 ;
 
---
--- Truncate table before insert `room_detail_link`
---
-
-TRUNCATE TABLE `room_detail_link`;
 --
 -- Dumping data for table `room_detail_link`
 --
@@ -754,11 +694,6 @@ CREATE TABLE IF NOT EXISTS `room_service` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Truncate table before insert `room_service`
---
-
-TRUNCATE TABLE `room_service`;
---
 -- Dumping data for table `room_service`
 --
 
@@ -780,6 +715,7 @@ DROP TABLE IF EXISTS `room_service_detail`;
 CREATE TABLE IF NOT EXISTS `room_service_detail` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
+  `description` mediumtext,
   `language_id` int(11) NOT NULL,
   `enabled` tinyint(2) NOT NULL DEFAULT '1',
   `created_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -787,61 +723,56 @@ CREATE TABLE IF NOT EXISTS `room_service_detail` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
 
 --
--- Truncate table before insert `room_service_detail`
---
-
-TRUNCATE TABLE `room_service_detail`;
---
 -- Dumping data for table `room_service_detail`
 --
 
-INSERT INTO `room_service_detail` (`id`, `name`, `language_id`, `enabled`, `created_date`) VALUES
-(1, 'Dich vụ điện thoại quốc tế', 1, 1, '0000-00-00 00:00:00'),
-(2, 'Đón đưa sân bay', 1, 1, '0000-00-00 00:00:00'),
-(3, 'Dịch vụ du lịch theo tour', 1, 1, '0000-00-00 00:00:00'),
-(4, 'Đặt vé máy bay', 1, 1, '0000-00-00 00:00:00'),
-(5, 'Giặt ủi', 1, 1, '0000-00-00 00:00:00'),
-(6, 'Internet miễn phí', 1, 1, '0000-00-00 00:00:00'),
-(7, 'Cho thuê xe hơi,xe máy', 1, 1, '0000-00-00 00:00:00'),
-(8, 'Dịch vụ phòng', 1, 1, '0000-00-00 00:00:00'),
-(9, 'Dịch vụ nhà hàng', 1, 1, '0000-00-00 00:00:00'),
-(10, 'Phục vụ 24/24', 1, 1, '0000-00-00 00:00:00'),
-(11, 'Ăn sáng tự chọn', 1, 1, '0000-00-00 00:00:00'),
-(12, '5% phí phục vụ', 1, 1, '0000-00-00 00:00:00'),
-(13, 'Internet miễn phí', 1, 1, '0000-00-00 00:00:00'),
-(14, 'Chưa bao gồm VAT và các dịch vụ phát sinh', 1, 1, '0000-00-00 00:00:00'),
-(15, 'Miễn phí trẻ em dưới 6 tuổi ở chung phòng, trẻ em 6-10 tuổi phụ thu 50%,  trẻ em trên 10 tuổi phụ thu như người lớn.', 1, 1, '0000-00-00 00:00:00'),
-(16, 'Đặt thêm giường 150.000 VND', 1, 1, '0000-00-00 00:00:00'),
-(17, 'Thời gian trả phòng: 12h00', 1, 1, '0000-00-00 00:00:00'),
-(18, 'Thời gian nhận phòng: 14h00', 1, 1, '0000-00-00 00:00:00'),
-(19, 'Giá phòng có thể thay đổi', 1, 1, '0000-00-00 00:00:00'),
-(20, 'Phương thức thanh toán: Tiền mặt hoặc các loại thẻ: American Express, Diners Club, JCB, Master, Visa', 1, 1, '0000-00-00 00:00:00'),
-(21, 'Khách theo đoàn, khách ở dài hạn sẽ có chế độ đặc biệt', 1, 1, '0000-00-00 00:00:00'),
-(22, 'Trả phòng trễ: Đến 18h00: Tính nửa ngày, Sau 18h00: Tính một ngày', 1, 1, '0000-00-00 00:00:00'),
-(23, 'Đặt cọc tối thiểu 50% tổng tiền phòng đặt trước', 1, 1, '0000-00-00 00:00:00'),
-(24, 'Hủy phòng không hoàn trả đặt cọc.', 1, 1, '0000-00-00 00:00:00'),
-(25, 'International telephone service', 2, 1, '0000-00-00 00:00:00'),
-(26, 'Airport Transfer', 2, 1, '0000-00-00 00:00:00'),
-(27, 'Tour/Travel Information Service', 2, 1, '0000-00-00 00:00:00'),
-(28, 'Laundry Service', 2, 1, '0000-00-00 00:00:00'),
-(29, 'Free Internet', 2, 1, '0000-00-00 00:00:00'),
-(30, 'Cars, motorbikes Rental', 2, 1, '0000-00-00 00:00:00'),
-(31, 'Room Service', 2, 1, '0000-00-00 00:00:00'),
-(32, 'Restaurant service', 2, 1, '0000-00-00 00:00:00'),
-(33, 'Support 24/7', 2, 1, '0000-00-00 00:00:00'),
-(34, 'Breakfast', 2, 1, '0000-00-00 00:00:00'),
-(35, '5% sevice fee', 2, 1, '0000-00-00 00:00:00'),
-(36, 'Free Internet', 2, 1, '0000-00-00 00:00:00'),
-(37, 'Excluding VAT and other services', 2, 1, '0000-00-00 00:00:00'),
-(38, 'Free for children under 12 years old', 2, 1, '0000-00-00 00:00:00'),
-(39, 'Extra bed: 150.000 VND', 2, 1, '0000-00-00 00:00:00'),
-(40, 'Check-out time: 12h00', 2, 1, '0000-00-00 00:00:00'),
-(41, 'Check-in time: 14h00', 2, 1, '0000-00-00 00:00:00'),
-(42, 'Payment: American Express, Diners Club, JCB, MasterCard, Visa', 2, 1, '0000-00-00 00:00:00'),
-(43, 'Guests in groups, long term stay will be special prices', 2, 1, '0000-00-00 00:00:00'),
-(44, 'Late check-out: to 18:00: The half-day, after 18:00: The one day', 2, 1, '0000-00-00 00:00:00'),
-(45, '50% deposit', 2, 1, '0000-00-00 00:00:00'),
-(46, 'Cancellations are not refundable deposit.', 2, 1, '0000-00-00 00:00:00');
+INSERT INTO `room_service_detail` (`id`, `name`, `description`, `language_id`, `enabled`, `created_date`) VALUES
+(1, 'Dich vụ điện thoại quốc tế', NULL, 1, 1, '0000-00-00 00:00:00'),
+(2, 'Đón đưa sân bay', NULL, 1, 1, '0000-00-00 00:00:00'),
+(3, 'Dịch vụ du lịch theo tour', NULL, 1, 1, '0000-00-00 00:00:00'),
+(4, 'Đặt vé máy bay', NULL, 1, 1, '0000-00-00 00:00:00'),
+(5, 'Giặt ủi', NULL, 1, 1, '0000-00-00 00:00:00'),
+(6, 'Internet miễn phí', NULL, 1, 1, '0000-00-00 00:00:00'),
+(7, 'Cho thuê xe hơi,xe máy', NULL, 1, 1, '0000-00-00 00:00:00'),
+(8, 'Dịch vụ phòng', NULL, 1, 1, '0000-00-00 00:00:00'),
+(9, 'Dịch vụ nhà hàng', NULL, 1, 1, '0000-00-00 00:00:00'),
+(10, 'Phục vụ 24/24', NULL, 1, 1, '0000-00-00 00:00:00'),
+(11, 'Ăn sáng tự chọn', NULL, 1, 1, '0000-00-00 00:00:00'),
+(12, '5% phí phục vụ', NULL, 1, 1, '0000-00-00 00:00:00'),
+(13, 'Internet miễn phí', NULL, 1, 1, '0000-00-00 00:00:00'),
+(14, 'Chưa bao gồm VAT và các dịch vụ phát sinh', NULL, 1, 1, '0000-00-00 00:00:00'),
+(15, 'Miễn phí trẻ em dưới 6 tuổi ở chung phòng, trẻ em 6-10 tuổi phụ thu 50%,  trẻ em trên 10 tuổi phụ thu như người lớn.', NULL, 1, 1, '0000-00-00 00:00:00'),
+(16, 'Đặt thêm giường 150.000 VND', NULL, 1, 1, '0000-00-00 00:00:00'),
+(17, 'Thời gian trả phòng: 12h00', NULL, 1, 1, '0000-00-00 00:00:00'),
+(18, 'Thời gian nhận phòng: 14h00', NULL, 1, 1, '0000-00-00 00:00:00'),
+(19, 'Giá phòng có thể thay đổi', NULL, 1, 1, '0000-00-00 00:00:00'),
+(20, 'Phương thức thanh toán: Tiền mặt hoặc các loại thẻ: American Express, Diners Club, JCB, Master, Visa', NULL, 1, 1, '0000-00-00 00:00:00'),
+(21, 'Khách theo đoàn, khách ở dài hạn sẽ có chế độ đặc biệt', NULL, 1, 1, '0000-00-00 00:00:00'),
+(22, 'Trả phòng trễ: Đến 18h00: Tính nửa ngày, Sau 18h00: Tính một ngày', NULL, 1, 1, '0000-00-00 00:00:00'),
+(23, 'Đặt cọc tối thiểu 50% tổng tiền phòng đặt trước', NULL, 1, 1, '0000-00-00 00:00:00'),
+(24, 'Hủy phòng không hoàn trả đặt cọc.', NULL, 1, 1, '0000-00-00 00:00:00'),
+(25, 'International telephone service', NULL, 2, 1, '0000-00-00 00:00:00'),
+(26, 'Airport Transfer', NULL, 2, 1, '0000-00-00 00:00:00'),
+(27, 'Tour/Travel Information Service', NULL, 2, 1, '0000-00-00 00:00:00'),
+(28, 'Laundry Service', NULL, 2, 1, '0000-00-00 00:00:00'),
+(29, 'Free Internet', NULL, 2, 1, '0000-00-00 00:00:00'),
+(30, 'Cars, motorbikes Rental', NULL, 2, 1, '0000-00-00 00:00:00'),
+(31, 'Room Service', NULL, 2, 1, '0000-00-00 00:00:00'),
+(32, 'Restaurant service', NULL, 2, 1, '0000-00-00 00:00:00'),
+(33, 'Support 24/7', NULL, 2, 1, '0000-00-00 00:00:00'),
+(34, 'Breakfast', NULL, 2, 1, '0000-00-00 00:00:00'),
+(35, '5% sevice fee', NULL, 2, 1, '0000-00-00 00:00:00'),
+(36, 'Free Internet', NULL, 2, 1, '0000-00-00 00:00:00'),
+(37, 'Excluding VAT and other services', NULL, 2, 1, '0000-00-00 00:00:00'),
+(38, 'Free for children under 12 years old', NULL, 2, 1, '0000-00-00 00:00:00'),
+(39, 'Extra bed: 150.000 VND', NULL, 2, 1, '0000-00-00 00:00:00'),
+(40, 'Check-out time: 12h00', NULL, 2, 1, '0000-00-00 00:00:00'),
+(41, 'Check-in time: 14h00', NULL, 2, 1, '0000-00-00 00:00:00'),
+(42, 'Payment: American Express, Diners Club, JCB, MasterCard, Visa', NULL, 2, 1, '0000-00-00 00:00:00'),
+(43, 'Guests in groups, long term stay will be special prices', NULL, 2, 1, '0000-00-00 00:00:00'),
+(44, 'Late check-out: to 18:00: The half-day, after 18:00: The one day', NULL, 2, 1, '0000-00-00 00:00:00'),
+(45, '50% deposit', NULL, 2, 1, '0000-00-00 00:00:00'),
+(46, 'Cancellations are not refundable deposit.', NULL, 2, 1, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -859,11 +790,6 @@ CREATE TABLE IF NOT EXISTS `room_service_link` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
 
---
--- Truncate table before insert `room_service_link`
---
-
-TRUNCATE TABLE `room_service_link`;
 --
 -- Dumping data for table `room_service_link`
 --
@@ -915,6 +841,34 @@ INSERT INTO `room_service_link` (`id`, `room_service_id`, `room_service_detail_i
 (44, 6, 44, 1, '0000-00-00 00:00:00'),
 (45, 6, 45, 1, '0000-00-00 00:00:00'),
 (46, 6, 46, 1, '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slider`
+--
+
+DROP TABLE IF EXISTS `slider`;
+CREATE TABLE IF NOT EXISTS `slider` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `img_url` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `order` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sub_menu`
+--
+
+DROP TABLE IF EXISTS `sub_menu`;
+CREATE TABLE IF NOT EXISTS `sub_menu` (
+  `id` int(11) NOT NULL,
+  `menu_id` int(11) DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
