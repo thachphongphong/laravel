@@ -9,9 +9,15 @@ use App\Http\Controllers\Controller;
 
 class Local_FoodController extends Controller
 {
-    public function load()
+    public function load($language)
     {
-        $string = "Load Local_FoodController";
+        $language_id = 1;
+        if ($language == 'vi') {
+            $language_id =1;
+        }else{
+            $language_id =2;
+        }
+        $string = "Load Booking_RoomController";
         return $string;
     }
 }

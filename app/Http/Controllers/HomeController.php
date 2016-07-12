@@ -13,10 +13,17 @@ use DB;
 
 class HomeController extends Controller
 {
-    public function load()
+    public function load($language)
     {
+        $language_id = 1;
+        if ($language == 'vi') {
+            $language_id =1;
+        }else{
+            $language_id =2;
+        }
         $menus = Menu::with('submenus')
-            ->orderBy('order', 'desc')
+            ->where('language_id', $language_id)
+            ->orderBy('order', 'asc')
             ->get();
         $slider = Slider::all();
 

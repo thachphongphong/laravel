@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/','HomeController@load');
-Route::get('introduction','IntroductionController@load');
-Route::get('room','Room_CategoriesController@load');
-Route::get('tour_guide','Tour_GuideController@load');
-Route::get('local_food','Local_FoodController@load');
-Route::get('news','NewsController@load');
-Route::get('reservation','ReservationController@load');
-Route::get('location','LocationController@load');
-Route::get('booking','Booking_RoomController@load');
-Route::get('contact','Contact_UsController@load');
+Route::get('{language}/','HomeController@load');
+Route::get('{language}/introduction','IntroductionController@load');
+Route::get('{language}/room','Room_CategoriesController@load');
+Route::get('{language}/tour_guide','Tour_GuideController@load');
+Route::get('{language}/local_food','Local_FoodController@load');
+Route::get('{language}/news','NewsController@load');
+Route::get('{language}/reservation','ReservationController@load');
+Route::get('{language}/location','LocationController@load');
+Route::get('{language}/booking','Booking_RoomController@load');
+Route::get('{language}/contact','Contact_UsController@load');
