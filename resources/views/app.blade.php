@@ -41,6 +41,7 @@
 @extends('about_section')
 @extends('best_room_section')
 @extends('book_now_section')
+
 <div id="mega-slider" class="carousel slide " data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
