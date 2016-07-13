@@ -33,57 +33,17 @@
 </head>
 <body>
 <div class="preloader"></div>
+@include('header_section')
+@include('slider_section')
+@include('book_now_section')
+@include('best_room_section')
+@include('about_section')
+@include('hotel_facilities_section')
+@include('testimonial_section')
+@include('news_section')
+@include('footer_section')
 
-@extends('footer_section')
-@extends('news_section')
-@extends('testimonial_section')
-@extends('hotel_facilities_section')
-@extends('about_section')
-@extends('best_room_section')
-@extends('book_now_section')
-
-<div id="mega-slider" class="carousel slide " data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#mega-slider" data-slide-to="0" class="active"></li>
-        <li data-target="#mega-slider" data-slide-to="1"></li>
-        <li data-target="#mega-slider" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        @for ($i = 0; $i < count($sliders); $i++)
-        <div class="item @if($i == 0)active beactive @endif">
-            <img src="{{$sliders[$i]->image_url}}" alt="...">
-
-            <div class="carousel-caption">
-                <img src="images/stars.png" alt="">
-
-                <h2>{{$sliders[$i]->h_info}}</h2>
-
-                <p>{{$sliders[$i]->p_info}}</p>
-            </div>
-        </div>
-        @endfor
-
-    </div>
-
-    <!-- Controls -->
-    <a class="left carousel-control" href="#mega-slider" role="button" data-slide="prev">
-    </a>
-    <a class="right carousel-control" href="#mega-slider" role="button" data-slide="next">
-    </a>
-</div>
-@extends('header_section')
-        <!-- <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <hr>
-        </div>
-    </div>
-</div> -->
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
