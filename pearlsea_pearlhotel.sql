@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2016 at 07:07 PM
+-- Generation Time: Jul 13, 2016 at 04:12 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `language_id` tinyint(2) NOT NULL,
   `enable` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `menu`
@@ -173,13 +173,11 @@ INSERT INTO `menu` (`id`, `name`, `url`, `menutype`, `is_home_page`, `order`, `l
 (3, 'Phòng Nghỉ', 'vi/room', NULL, 0, 2, 1, 1),
 (4, 'Tin Tức', 'vi/news', NULL, 0, 3, 1, 1),
 (5, 'Liên Hệ', 'vi/contact', NULL, 0, 4, 1, 1),
-(6, 'Đăng Kí Phòng', 'vi/reservation', NULL, 0, 5, 1, 1),
 (7, 'Home', 'en/home', NULL, 1, 0, 2, 1),
 (8, 'Introduction', 'en/introduction', NULL, 0, 1, 2, 1),
 (9, 'Room Categories', 'en/room', NULL, 0, 2, 2, 1),
 (10, 'News', 'en/news', NULL, 0, 3, 2, 1),
-(11, 'Contact Us', 'en/contact', NULL, 0, 4, 2, 1),
-(12, 'Reservation', 'en/reservation', NULL, 0, 5, 2, 1);
+(11, 'Contact Us', 'en/contact', NULL, 0, 4, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -851,11 +849,21 @@ INSERT INTO `room_service_link` (`id`, `room_service_id`, `room_service_detail_i
 DROP TABLE IF EXISTS `slider`;
 CREATE TABLE IF NOT EXISTS `slider` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `img_url` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `order` int(11) NOT NULL,
+  `h_info` text,
+  `p_info` text,
+  `image_url` varchar(250) NOT NULL,
+  `language_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `slider`
+--
+
+INSERT INTO `slider` (`id`, `h_info`, `p_info`, `image_url`, `language_id`) VALUES
+(1, 'Welcome to Pearl Sea Hotel', 'Amazing pearl of Da Nang sea.', 'slider/pearlsear-5.jpg', 1),
+(2, 'Most beautiful beach in the world', 'One of the most attractive beaches on the planet (Forbes Magazine).', 'slider/pearlsear-3.jpg', 1),
+(3, 'Center of 4 UNESCO-listed World Heritage Sites', 'Hue Complex of Monuments(2 hours), Hoi An Ancient Town(30 minutes), My Son Sanctuary(90 minutes),  Phong Nha Ke Bang(7 hours).', 'slider/pearlsear-7.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -865,10 +873,33 @@ CREATE TABLE IF NOT EXISTS `slider` (
 
 DROP TABLE IF EXISTS `sub_menu`;
 CREATE TABLE IF NOT EXISTS `sub_menu` (
-  `id` int(11) NOT NULL,
-  `menu_id` int(11) DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `order` int(11) NOT NULL,
+  `url` text NOT NULL,
+  `menu_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `sub_menu`
+--
+
+INSERT INTO `sub_menu` (`id`, `name`, `order`, `url`, `menu_id`, `language_id`) VALUES
+(1, 'Tin Tức', 1, 'tintuc.php', 4, 1),
+(2, 'Thông Tin Du Lịch', 2, 'thongtindulich.php', 4, 1),
+(3, 'Ẩm Thực', 3, 'amthuc.php', 4, 1);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `sub_menu`
+--
+ALTER TABLE `sub_menu`
+  ADD CONSTRAINT `menu_fk` FOREIGN KEY (`id`) REFERENCES `menu` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
