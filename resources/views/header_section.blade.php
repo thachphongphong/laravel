@@ -11,7 +11,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="#"><img src="{{asset('images/logo.png')}}" alt="logo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -24,12 +24,12 @@
                                        aria-expanded="false">{{$menu->name}} <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         @foreach ($menu->submenus as $sub)
-                                            <li><a href="{{$sub ->url}}">{{$sub->name}} </a></li>
+                                            <li><a href="{{asset($sub ->url)}}">{{$sub->name}} </a></li>
                                         @endforeach
                                     </ul>
                                 </li>
                             @else
-                                <li><a href="{{$menu ->url}}">{{$menu ->name}}</a></li>
+                                <li><a href="{{asset($menu ->url)}}">{{$menu ->name}}</a></li>
                             @endif
                         @endforeach
                     </ul>

@@ -26,11 +26,11 @@
                 <div class="col-md-6">
                     <h2 class="mg-sec-left-title">Our Partners</h2>
                     <ul class="mg-part-logos" id="mg-part-logos">
-                        <li><img src="images/part-logo-1.png" alt="Partner Logo"></li>
-                        <li><img src="images/part-logo-2.png" alt="Partner Logo"></li>
-                        <li><img src="images/part-logo-3.png" alt="Partner Logo"></li>
-                        <li><img src="images/part-logo-1.png" alt="Partner Logo"></li>
-                        <li><img src="images/part-logo-3.png" alt="Partner Logo"></li>
+                        <li><img src="{{asset('images/gallery-thumb-01.png')}}" alt="Partner Logo"></li>
+                        <li><img src="{{asset('images/gallery-thumb-02.png')}}" alt="Partner Logo"></li>
+                        <li><img src="{{asset('images/gallery-thumb-01.png')}}" alt="Partner Logo"></li>
+                        <li><img src="{{asset('images/gallery-thumb-02.png')}}" alt="Partner Logo"></li>
+                        <li><img src="{{asset('images/gallery-thumb-01.png')}}" alt="Partner Logo"></li>
                     </ul>
                 </div>
             </div>

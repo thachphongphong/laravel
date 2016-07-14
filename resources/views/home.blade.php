@@ -1,0 +1,9 @@
+@extends('master')
+@section('content_section')
+    @include('book_now_section')
+    @include('best_room_section')
+    @include('about_section')
+    @include('hotel_facilities_section')
+    @include('testimonial_section')
+    @include('news_section')
+@endsection

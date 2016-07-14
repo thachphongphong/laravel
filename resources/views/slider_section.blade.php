@@ -11,10 +11,10 @@
         <div class="carousel-inner" role="listbox">
             @for ($i = 0; $i < count($sliders); $i++)
                 <div class="item @if($i == 0)active beactive @endif">
-                    <img src="{{$sliders[$i]->image_url}}" alt="...">
+                    <img src="{{asset($sliders[$i]->image_url)}}" alt="...">
 
                     <div class="carousel-caption">
-                        <img src="images/stars.png" alt="">
+                        <img src="{{asset('images/stars.png')}}" alt="">
 
                         <h2>{{$sliders[$i]->h_info}}</h2>
 

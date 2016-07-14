@@ -12,7 +12,7 @@
                         @foreach ($rooms as $room)
                             <div class="col-sm-4">
                                 <figure class="mg-room">
-                                    <img src="{{$room->image_url}}" alt="img11" class="img-responsive">
+                                    <img src="{{asset($room->image_url)}}" alt="img11" class="img-responsive">
                                     <figcaption>
                                         <h2>{{$room->name}}</h2>
 

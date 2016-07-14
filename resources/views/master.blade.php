@@ -35,15 +35,9 @@
 <div class="preloader"></div>
 @include('header_section')
 @include('slider_section')
-{{--@include('book_now_section')--}}
-{{--@include('best_room_section')--}}
-{{--@include('about_section')--}}
-{{--@include('hotel_facilities_section')--}}
-{{--@include('testimonial_section')--}}
-{{--@include('news_section')--}}
 @yield('content_section')
-
 @include('footer_section')
+
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{{ asset('/js/jquery.min.js') }}"></script>

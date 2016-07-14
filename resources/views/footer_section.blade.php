@@ -26,15 +26,15 @@
                         <div class="widget">
                             <h2 class="mg-widget-title">Instagram</h2>
                             <ul class="mg-instagram">
-                                <li><a href="#"><img src="images/ins-01.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/ins-02.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/ins-03.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/ins-04.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/ins-05.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/ins-06.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/ins-07.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/ins-08.png" alt=""></a></li>
-                                <li><a href="#"><img src="images/ins-09.png" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('images/ins-01.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('images/ins-02.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('images/ins-03.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('images/ins-04.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('images/ins-05.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('images/ins-06.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('images/ins-07.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('images/ins-08.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('images/ins-09.png')}}" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
@@ -82,9 +82,6 @@
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <p>&copy; 2015 <a href="http://www.cantothemes.com/">CantoThemes</a>. All rights reserved.</p>
                     </div>
                 </div>
             </div>

@@ -12,6 +12,7 @@
 */
 
 Route::get('{language}/','HomeController@load');
+Route::get('{language}/home','HomeController@load');
 Route::get('{language}/introduction','IntroductionController@load');
 Route::get('{language}/room','Room_CategoriesController@load');
 Route::get('{language}/tour_guide','Tour_GuideController@load');

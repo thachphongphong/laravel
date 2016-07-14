@@ -30,6 +30,6 @@ class HomeController extends Controller
         $slider = Slider::all();
         $room = Room::where('language_id', $language_id)->take(3)->get();
         $about = Introduce::where('language_id', $language_id)->first();
-        return View::make('app', array('menus' => $menus, 'sliders' => $slider, 'abouts' => $about, 'rooms' => $room));
+        return View::make('home', array('menus' => $menus, 'sliders' => $slider, 'abouts' => $about, 'rooms' => $room));
     }
 }

@@ -7,7 +7,7 @@
                     <p>{{$abouts ->short_content}}</p>
                 </div>
                 <div class="col-md-5">
-                    <img src="{{$abouts ->image_url}}" alt="hotel image">
+                    <img src="{{asset($abouts ->image_url)}}" alt="hotel image">
                 </div>
             </div>
         </div>

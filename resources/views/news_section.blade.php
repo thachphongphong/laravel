@@ -42,20 +42,20 @@
 
                     <div class="mg-gallery-container">
                         <ul class="mg-gallery" id="mg-gallery">
-                            <li><img src="images/gallery-01.png" alt="Partner Logo"></li>
-                            <li><img src="images/gallery-02.png" alt="Partner Logo"></li>
-                            <li><img src="images/gallery-05.png" alt="Partner Logo"></li>
-                            <li><img src="images/gallery-06.png" alt="Partner Logo"></li>
-                            <li><img src="images/gallery-07.png" alt="Partner Logo"></li>
-                            <li><img src="images/gallery-08.png" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-01.png')}}" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-02.png')}}" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-05.png')}}" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-07.png')}}" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-05.png')}}" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-06.png')}}" alt="Partner Logo"></li>
                         </ul>
                         <ul class="mg-gallery-thumb" id="mg-gallery-thumb">
-                            <li><img src="images/gallery-thumb-01.png" alt="Partner Logo"></li>
-                            <li><img src="images/gallery-thumb-02.png" alt="Partner Logo"></li>
-                            <li><img src="images/gallery-thumb-05.png" alt="Partner Logo"></li>
-                            <li><img src="images/gallery-thumb-06.png" alt="Partner Logo"></li>
-                            <li><img src="images/gallery-thumb-07.png" alt="Partner Logo"></li>
-                            <li><img src="images/gallery-thumb-08.png" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-thumb-01.png')}}" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-thumb-02.png')}}" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-thumb-05.png')}}" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-thumb-06.png')}}" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-thumb-07.png')}}" alt="Partner Logo"></li>
+                            <li><img src="{{asset('images/gallery-thumb-05.png')}}" alt="Partner Logo"></li>
                         </ul>
                     </div>
                 </div>
