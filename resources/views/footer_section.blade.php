@@ -5,48 +5,49 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="widget">
-                            <h2 class="mg-widget-title">Contact US</h2>
+                            <h2 class="mg-widget-title">Liên hệ</h2>
                             <address>
-                                <strong>Envato</strong><br>
-                                Level 13, 2 Elizabeth St, Melbourne<br>
-                                Victoria 3000 Australia
+                                <strong>Địa chỉ</strong><br>
+                                Biển Mỹ Khê, Lô B2-09-10, đường Loseby,<br>
+                                An Cư 3, Quận Sơn Trà, TP Đà Nẵng
                             </address>
 
                             <p>
-                                +000-123-456-789<br>
-                                +000-123-456-789
+                                (+84) 0905875759 - 0935989845<br>
+                                (+84 511) 3927999 - 3917555<br>
+                                (+84 511) 33917555<br>
                             </p>
 
                             <p>
-                                <a href="mailto:#">example@example.com</a>
+                                <a href="mailto:pearlseahotel@gmail.com">pearlseahotel@gmail.com</a>
                             </p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="widget">
-                            <h2 class="mg-widget-title">Instagram</h2>
+                            <h2 class="mg-widget-title">Facebook</h2>
                             <ul class="mg-instagram">
-                                <li><a href="#"><img src="{{asset('images/ins-01.png')}}" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('images/ins-02.png')}}" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('images/ins-03.png')}}" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('images/ins-04.png')}}" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('images/ins-05.png')}}" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('images/ins-06.png')}}" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('images/ins-07.png')}}" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('images/ins-08.png')}}" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('images/ins-09.png')}}" alt=""></a></li>
+                                <li><a href="#"><img height="70" src="{{asset('images/facebook/fb-01.jpg')}}" alt=""></a></li>
+                                <li><a href="#"><img height="70" src="{{asset('images/facebook/fb-02.jpg')}}" alt=""></a></li>
+                                <li><a href="#"><img height="70" src="{{asset('images/facebook/fb-03.jpg')}}" alt=""></a></li>
+                                <li><a href="#"><img height="70" src="{{asset('images/facebook/fb-04.jpg')}}" alt=""></a></li>
+                                <li><a href="#"><img height="70" src="{{asset('images/facebook/fb-05.jpg')}}" alt=""></a></li>
+                                <li><a href="#"><img height="70" src="{{asset('images/facebook/fb-06.jpg')}}" alt=""></a></li>
+                                <li><a href="#"><img height="70" src="{{asset('images/facebook/fb-07.jpg')}}" alt=""></a></li>
+                                <li><a href="#"><img height="70" src="{{asset('images/facebook/fb-08.jpg')}}" alt=""></a></li>
+                                <li><a href="#"><img height="70" src="{{asset('images/facebook/fb-09.jpg')}}" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="widget">
-                            <h2 class="mg-widget-title">Newsletter</h2>
+                            <h2 class="mg-widget-title">Nhận tin</h2>
 
-                            <p>Inbecilloque elegans errorem concedo coniuncta arare dicant etsi electram minimum.</p>
+                            <p>Để đăng ký nhận các bản tin mới nhất của Khách sạn Biển Ngọc, xin vui lòng điền email của bạn. Xin trân trọng cảm ơn.</p>
 
                             <form>
                                 <p>
-                                    <input type="email" class="form-control" placeholder="Your Email">
+                                    <input type="email" class="form-control" placeholder="Email">
                                 </p>
                                 <input type="submit" class="btn btn-main" value="Subscribe">
                             </form>
@@ -56,8 +57,7 @@
                         <div class="widget">
                             <h2 class="mg-widget-title">Social Media</h2>
 
-                            <p>Tibi alienus possimus nomini legendus pariatur, logikh assidua philosophis expectat occultarum accedit
-                                suscipit interrogari difficilius reddidisti.</p>
+                            <p>Các trang mạng xã hội của khách sạn Biển Ngọc.</p>
                             <ul class="mg-footer-social">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -76,11 +76,9 @@
 
                     <div class="col-md-6">
                         <ul class="mg-footer-nav">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Rooms</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
+                            @foreach ($menus as $menu)
+                                    <li><a href="{{asset($menu ->url)}}">{{$menu ->name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

@@ -27,7 +27,7 @@ class HomeController extends Controller
             ->where('language_id', $language_id)
             ->orderBy('order', 'asc')
             ->get();
-        $slider = Slider::all();
+        $slider = Slider::where('language_id', $language_id)->get();
         $room = Room::where('language_id', $language_id)->take(3)->get();
         $about = Introduce::where('language_id', $language_id)->first();
         return View::make('home', array('menus' => $menus, 'sliders' => $slider, 'abouts' => $about, 'rooms' => $room));

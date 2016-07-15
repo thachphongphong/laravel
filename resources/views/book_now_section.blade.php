@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h2 class="mg-bn-title">Search Rooms <span class="mg-bn-big">For rates & availability</span></h2>
+                    <h2 class="mg-bn-title">Tìm phòng</h2>
                 </div>
                 <div class="col-md-9">
                     <div class="mg-bn-forms">
@@ -21,11 +21,11 @@
                                         <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Check Out">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <div class="row">
                                         <div class="col-xs-6">
                                             <select class="cs-select cs-skin-elastic">
-                                                <option value="" disabled selected>Adult</option>
+                                                <option value="" disabled selected>Người lớn</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -34,7 +34,7 @@
                                         </div>
                                         <div class="col-xs-6">
                                             <select class="cs-select cs-skin-elastic">
-                                                <option value="" disabled selected>Child</option>
+                                                <option value="" disabled selected>Trẻ em</option>
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -43,8 +43,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <button type="submit" class="btn btn-main btn-block">Check Now</button>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-main btn-block">Tìm</button>
                                 </div>
                             </div>
                         </form>

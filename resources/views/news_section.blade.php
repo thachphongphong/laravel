@@ -3,16 +3,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <h2 class="mg-sec-left-title">Recent News</h2>
+                    <h2 class="mg-sec-left-title">Tin tức</h2>
                     <ul class="mg-recnt-posts">
                         <li>
                             <div class="mg-recnt-post">
                                 <div class="mg-rp-date">27
                                     <div class="mg-rp-month">may</div>
                                 </div>
-                                <h3><a href="#">A Standard Blog Post</a></h3>
+                                <h3><a href="#">Đà Nẵng sẽ tổ chức thi trình diễn ánh sáng nghệ thuật quốc tế.</a></h3>
 
-                                <p>Nostram virtutem poterimus quoddam praesertim legendos libero exhorrescere saluti...</p>
+                                <p>Nếu màn trình diễn thí điểm vào năm 2013 và cuộc thi đầu tiên năm ... </p>
                             </div>
                         </li>
                         <li>
@@ -20,9 +20,9 @@
                                 <div class="mg-rp-date">27
                                     <div class="mg-rp-month">may</div>
                                 </div>
-                                <h3><a href="#">A Standard Blog Post</a></h3>
+                                <h3><a href="#">Đà Nẵng đưa dù bay, khinh khí cầu vào phục vụ du lịch </a></h3>
 
-                                <p>Nostram virtutem poterimus quoddam praesertim legendos libero exhorrescere saluti...</p>
+                                <p>Năm 2013, du khách đến Đà Nẵng có thể được trải nghiệm cảm giá mạnh khi tham gia..</p>
                             </div>
                         </li>
                         <li>
@@ -30,9 +30,9 @@
                                 <div class="mg-rp-date">27
                                     <div class="mg-rp-month">may</div>
                                 </div>
-                                <h3><a href="#">A Standard Blog Post</a></h3>
+                                <h3><a href="#">Pháo hoa Đà Nẵng - DIFC 2013 mang chủ đề “Tình yêu sông Hàn”</a></h3>
 
-                                <p>Nostram virtutem poterimus quoddam praesertim legendos libero exhorrescere saluti...</p>
+                                <p>UBND thành phố vừa ban hành kế hoạch tổ chức Cuộc thi Trình diễn pháo hoa...</p>
                             </div>
                         </li>
                     </ul>

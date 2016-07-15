@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from demo.cantothemes.com/html/mega/v1.1/fullwidth/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jun 2016 09:32:17 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{asset('/images/favicon.ico') }}">
     <title>Pearl sea hotel</title>
-
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Playfair+Display:400,400italic,700,700italic,900,900italic'
           rel='stylesheet' type='text/css'>
     <!-- Bootstrap -->
@@ -34,7 +33,7 @@
 <body>
 <div class="preloader"></div>
 @include('header_section')
-@include('slider_section')
+{{--@include('slider_section')--}}
 {{--@include('book_now_section')--}}
 {{--@include('best_room_section')--}}
 {{--@include('about_section')--}}
@@ -63,5 +62,4 @@
 <script src="{{ asset('/js/script.js') }}"></script>
 </body>
 
-<!-- Mirrored from demo.cantothemes.com/html/mega/v1.1/fullwidth/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jun 2016 09:34:43 GMT -->
 </html>
