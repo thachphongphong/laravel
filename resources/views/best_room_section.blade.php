@@ -4,9 +4,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mg-sec-title">
-                        <h2>Những phòng tốt nhất</h2>
 
-                        <p>Được chọn bởi khách hàng</p>
+                        <h2>{{$constants['bestroom']['title']}}</h2>
+                        <p>{{$constants['bestroom']['desc']}}</p>
+
                     </div>
                     <div class="row">
                         @foreach ($rooms as $room)
@@ -19,8 +20,8 @@
                                         <div class="mg-room-rating"><i class="fa fa-star"></i> 5.00</div>
                                         <div class="mg-room-price">{{$room->price}}</div>
                                         <p>{{$room->description}}</p>
-                                        <a href="#" class="btn btn-link">Xem chi tiết <i class="fa fa-angle-double-right"></i></a>
-                                        <a href="#" class="btn btn-main">Book</a>
+                                        <a href="#" class="btn btn-link">{{$constants['bestroom']['view']}} <i class="fa fa-angle-double-right"></i></a>
+                                        <a href="#" class="btn btn-main">{{$constants['bestroom']['book']}}</a>
                                     </figcaption>
                                 </figure>
                             </div>
