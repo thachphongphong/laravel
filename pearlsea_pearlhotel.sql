@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2016 at 04:12 PM
+-- Generation Time: Jul 16, 2016 at 05:26 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `booking_contact`
 --
 
-DROP TABLE IF EXISTS `booking_contact`;
 CREATE TABLE IF NOT EXISTS `booking_contact` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -56,7 +55,6 @@ INSERT INTO `booking_contact` (`id`, `name`, `phone`, `yahoo`, `skype`, `email`,
 -- Table structure for table `booking_room`
 --
 
-DROP TABLE IF EXISTS `booking_room`;
 CREATE TABLE IF NOT EXISTS `booking_room` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `room_id` int(11) NOT NULL,
@@ -86,7 +84,6 @@ CREATE TABLE IF NOT EXISTS `booking_room` (
 -- Table structure for table `contact_detail`
 --
 
-DROP TABLE IF EXISTS `contact_detail`;
 CREATE TABLE IF NOT EXISTS `contact_detail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -123,7 +120,6 @@ INSERT INTO `contact_detail` (`id`, `name`, `alias`, `address`, `state`, `countr
 -- Table structure for table `introduce`
 --
 
-DROP TABLE IF EXISTS `introduce`;
 CREATE TABLE IF NOT EXISTS `introduce` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL DEFAULT '',
@@ -150,7 +146,6 @@ INSERT INTO `introduce` (`id`, `title`, `short_content`, `content`, `image_url`,
 -- Table structure for table `menu`
 --
 
-DROP TABLE IF EXISTS `menu`;
 CREATE TABLE IF NOT EXISTS `menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -161,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `language_id` tinyint(2) NOT NULL,
   `enable` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `menu`
@@ -185,7 +180,6 @@ INSERT INTO `menu` (`id`, `name`, `url`, `menutype`, `is_home_page`, `order`, `l
 -- Table structure for table `message`
 --
 
-DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -205,7 +199,6 @@ CREATE TABLE IF NOT EXISTS `message` (
 -- Table structure for table `news`
 --
 
-DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL DEFAULT '',
@@ -456,7 +449,6 @@ INSERT INTO `news` (`id`, `title`, `hash_tag`, `alias`, `image_url`, `introtext`
 -- Table structure for table `promotion`
 --
 
-DROP TABLE IF EXISTS `promotion`;
 CREATE TABLE IF NOT EXISTS `promotion` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL DEFAULT '',
@@ -485,7 +477,6 @@ INSERT INTO `promotion` (`id`, `title`, `hash_tag`, `description`, `apply_time_f
 -- Table structure for table `room`
 --
 
-DROP TABLE IF EXISTS `room`;
 CREATE TABLE IF NOT EXISTS `room` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -497,6 +488,7 @@ CREATE TABLE IF NOT EXISTS `room` (
   `total_person` int(11) NOT NULL DEFAULT '0',
   `price` double NOT NULL DEFAULT '0',
   `f_price` double NOT NULL DEFAULT '0',
+  `rate` double NOT NULL DEFAULT '1',
   `language_id` int(11) NOT NULL,
   `enabled` tinyint(2) NOT NULL DEFAULT '1',
   `created_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -507,17 +499,17 @@ CREATE TABLE IF NOT EXISTS `room` (
 -- Dumping data for table `room`
 --
 
-INSERT INTO `room` (`id`, `name`, `thumbnail`, `image_url`, `description`, `room_type`, `total_room`, `total_person`, `price`, `f_price`, `language_id`, `enabled`, `created_date`) VALUES
-(1, 'STANDARD ROOM', 'images/stories/P4_L.jpg', 'images/room-1.png', '(Giường: 1,6m. Diện tích: 16-18m2)', 'Standard - double', 15, 2, 650000, 650000, 1, 1, '2016-07-09 00:00:00'),
-(2, '\nSUPERIOR ROOM', 'images/stories/P5_L.jpg', 'images/room-2.png', '(Giường: 1,8m. Diện tích:18-20m2)', 'Superior - double', 2, 2, 700000, 700000, 1, 1, '2016-07-09 00:00:00'),
-(3, 'SUPERIOR SEA VIEW ROOM', 'images/stories/P3_L.jpg', 'images/room-3.png', '(Giường: 1,8m. Diện tích: 20-22m2)', 'Superrior Sea View - double', 5, 2, 750000, 750000, 1, 1, '2016-07-09 00:00:00'),
-(4, '\nDELUXE SEA VIEW ROOM', 'images/stories/P1_L.jpg', 'images/stories/P1_S.jpg', '(Giường: 1,2 +1,6m. Diện tích: 20-22m2)	', 'Deluxe - tripble', 15, 3, 850000, 850000, 1, 1, '2016-07-09 00:00:00'),
-(5, 'DELUXE ROOM', 'images/stories/P2_L.jpg', 'images/stories/P2_S.jpg', '(Giường: 1,2 +1,6m. Diện tích: 20-22m2)', 'Deluxe Sea View - tripble', 8, 3, 1000000, 1000000, 1, 1, '2016-07-09 00:00:00'),
-(6, 'STANDARD ROOM', 'images/stories/P4_L.jpg', 'images/stories/P4_S.jpg', '(Bedroom: 1.6m. Area: 16-18m2)', 'Standard - double', 15, 2, 650000, 650000, 1, 1, '2016-07-09 00:00:00'),
-(7, 'SUPERIOR ROOM', 'images/stories/P5_L.jpg', 'images/stories/P5_S.jpg', '(Bedroom: 1,8m. Area:18-20m2)', 'Superior - double', 2, 2, 700000, 700000, 1, 1, '2016-07-09 00:00:00'),
-(8, 'SUPERIOR SEA VIEW ROOM', 'images/stories/P3_L.jpg', 'images/stories/P3_S.jpg', '(Bedroom: 1,6m. Area: 20-22m2)', 'Superrior Sea View - double', 5, 2, 750000, 750000, 1, 1, '2016-07-09 00:00:00'),
-(9, 'DELUXE SEA VIEW ROOM', 'images/stories/P1_L.jpg', 'images/stories/P1_S.jpg', '(Bedroom: 1,2 +1,6m. Area: 20-22m2)', 'Deluxe - tripble', 15, 3, 850000, 850000, 1, 1, '2016-07-09 00:00:00'),
-(10, 'DELUXE ROOM', 'images/stories/P2_L.jpg', 'images/stories/P2_S.jpg', '(Bedroom: 1,2 +1,6m. Area: 20-22m2)', 'Deluxe Sea View - tripble', 8, 3, 1000000, 1000000, 1, 1, '2016-07-09 00:00:00');
+INSERT INTO `room` (`id`, `name`, `thumbnail`, `image_url`, `description`, `room_type`, `total_room`, `total_person`, `price`, `f_price`, `rate`, `language_id`, `enabled`, `created_date`) VALUES
+(1, 'STANDARD ROOM', 'images/stories/P4_L.jpg', 'images/room-1.png', '(Giường: 1,6m. Diện tích: 16-18m2)', 'Standard - double', 15, 2, 650000, 650000, 1, 1, 1, '2016-07-09 00:00:00'),
+(2, '\nSUPERIOR ROOM', 'images/stories/P5_L.jpg', 'images/room-2.png', '(Giường: 1,8m. Diện tích:18-20m2)', 'Superior - double', 2, 2, 700000, 700000, 1, 1, 1, '2016-07-09 00:00:00'),
+(3, 'SUPERIOR SEA VIEW ROOM', 'images/stories/P3_L.jpg', 'images/room-3.png', '(Giường: 1,8m. Diện tích: 20-22m2)', 'Superrior Sea View - double', 5, 2, 750000, 750000, 1, 1, 1, '2016-07-09 00:00:00'),
+(4, '\nDELUXE SEA VIEW ROOM', 'images/stories/P1_L.jpg', 'images/stories/P1_S.jpg', '(Giường: 1,2 +1,6m. Diện tích: 20-22m2)	', 'Deluxe - tripble', 15, 3, 850000, 850000, 1, 1, 1, '2016-07-09 00:00:00'),
+(5, 'DELUXE ROOM', 'images/stories/P2_L.jpg', 'images/stories/P2_S.jpg', '(Giường: 1,2 +1,6m. Diện tích: 20-22m2)', 'Deluxe Sea View - tripble', 8, 3, 1000000, 1000000, 1, 1, 1, '2016-07-09 00:00:00'),
+(6, 'STANDARD ROOM', 'images/stories/P4_L.jpg', 'images/room-1.png', '(Bedroom: 1.6m. Area: 16-18m2)', 'Standard - double', 15, 2, 650000, 650000, 1, 2, 1, '2016-07-09 00:00:00'),
+(7, 'SUPERIOR ROOM', 'images/stories/P5_L.jpg', 'images/room-2.png', '(Bedroom: 1,8m. Area:18-20m2)', 'Superior - double', 2, 2, 700000, 700000, 1, 2, 1, '2016-07-09 00:00:00'),
+(8, 'SUPERIOR SEA VIEW ROOM', 'images/stories/P3_L.jpg', 'images/room-3.png', '(Bedroom: 1,6m. Area: 20-22m2)', 'Superrior Sea View - double', 5, 2, 750000, 750000, 1, 2, 1, '2016-07-09 00:00:00'),
+(9, 'DELUXE SEA VIEW ROOM', 'images/stories/P1_L.jpg', 'images/stories/P1_S.jpg', '(Bedroom: 1,2 +1,6m. Area: 20-22m2)', 'Deluxe - tripble', 15, 3, 850000, 850000, 1, 2, 1, '2016-07-09 00:00:00'),
+(10, 'DELUXE ROOM', 'images/stories/P2_L.jpg', 'images/stories/P2_S.jpg', '(Bedroom: 1,2 +1,6m. Area: 20-22m2)', 'Deluxe Sea View - tripble', 8, 3, 1000000, 1000000, 1, 2, 1, '2016-07-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -525,7 +517,6 @@ INSERT INTO `room` (`id`, `name`, `thumbnail`, `image_url`, `description`, `room
 -- Table structure for table `room_detail`
 --
 
-DROP TABLE IF EXISTS `room_detail`;
 CREATE TABLE IF NOT EXISTS `room_detail` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -571,7 +562,6 @@ INSERT INTO `room_detail` (`id`, `name`, `language_id`, `enabled`, `created_date
 -- Table structure for table `room_detail_link`
 --
 
-DROP TABLE IF EXISTS `room_detail_link`;
 CREATE TABLE IF NOT EXISTS `room_detail_link` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `room_id` int(11) NOT NULL,
@@ -681,7 +671,6 @@ INSERT INTO `room_detail_link` (`id`, `room_id`, `room_detail_id`, `enabled`, `c
 -- Table structure for table `room_service`
 --
 
-DROP TABLE IF EXISTS `room_service`;
 CREATE TABLE IF NOT EXISTS `room_service` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` mediumtext NOT NULL,
@@ -709,7 +698,6 @@ INSERT INTO `room_service` (`id`, `name`, `language_id`, `enabled`, `created_dat
 -- Table structure for table `room_service_detail`
 --
 
-DROP TABLE IF EXISTS `room_service_detail`;
 CREATE TABLE IF NOT EXISTS `room_service_detail` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -778,7 +766,6 @@ INSERT INTO `room_service_detail` (`id`, `name`, `description`, `language_id`, `
 -- Table structure for table `room_service_link`
 --
 
-DROP TABLE IF EXISTS `room_service_link`;
 CREATE TABLE IF NOT EXISTS `room_service_link` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `room_service_id` int(11) NOT NULL,
@@ -846,24 +833,28 @@ INSERT INTO `room_service_link` (`id`, `room_service_id`, `room_service_detail_i
 -- Table structure for table `slider`
 --
 
-DROP TABLE IF EXISTS `slider`;
 CREATE TABLE IF NOT EXISTS `slider` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `h_info` text,
   `p_info` text,
   `image_url` varchar(250) NOT NULL,
+  `order` int(11) NOT NULL,
   `language_id` int(11) NOT NULL DEFAULT '1',
+  `enabled` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `slider`
 --
 
-INSERT INTO `slider` (`id`, `h_info`, `p_info`, `image_url`, `language_id`) VALUES
-(1, 'Welcome to Pearl Sea Hotel', 'Amazing pearl of Da Nang sea.', 'slider/pearlsear-5.jpg', 1),
-(2, 'Most beautiful beach in the world', 'One of the most attractive beaches on the planet (Forbes Magazine).', 'slider/pearlsear-3.jpg', 1),
-(3, 'Center of 4 UNESCO-listed World Heritage Sites', 'Hue Complex of Monuments(2 hours), Hoi An Ancient Town(30 minutes), My Son Sanctuary(90 minutes),  Phong Nha Ke Bang(7 hours).', 'slider/pearlsear-7.jpg', 1);
+INSERT INTO `slider` (`id`, `h_info`, `p_info`, `image_url`, `order`, `language_id`, `enabled`) VALUES
+(1, 'Chào mừng quí khách đến với khách sạn Pearl Sea', 'Amazing pearl of Da Nang sea.', 'slider/pearlsear-5.jpg', 1, 1, 1),
+(2, 'Một trong những bãi biển đẹp nhất thế giới', 'One of the most attractive beaches on the planet (Forbes Magazine).', 'slider/pearlsear-3.jpg', 2, 1, 1),
+(3, 'Center of 4 UNESCO-listed World Heritage Sites', 'Hue Complex of Monuments(2 hours), Hoi An Ancient Town(30 minutes), My Son Sanctuary(90 minutes),  Phong Nha Ke Bang(7 hours).', 'slider/pearlsear-7.jpg', 3, 1, 1),
+(4, 'Welcome to Pearl Sea Hotel', 'Amazing pearl of Da Nang sea.', 'slider/pearlsear-5.jpg', 1, 2, 1),
+(5, 'Most beautiful beach in the world', 'One of the most attractive beaches on the planet (Forbes Magazine).', 'slider/pearlsear-3.jpg', 2, 2, 1),
+(6, 'Center of 4 UNESCO-listed World Heritage Sites', 'Hue Complex of Monuments(2 hours), Hoi An Ancient Town(30 minutes), My Son Sanctuary(90 minutes),  Phong Nha Ke Bang(7 hours).', 'slider/pearlsear-7.jpg', 3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -871,7 +862,6 @@ INSERT INTO `slider` (`id`, `h_info`, `p_info`, `image_url`, `language_id`) VALU
 -- Table structure for table `sub_menu`
 --
 
-DROP TABLE IF EXISTS `sub_menu`;
 CREATE TABLE IF NOT EXISTS `sub_menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -879,17 +869,21 @@ CREATE TABLE IF NOT EXISTS `sub_menu` (
   `url` text NOT NULL,
   `menu_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL DEFAULT '1',
+  `enabled` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `sub_menu`
 --
 
-INSERT INTO `sub_menu` (`id`, `name`, `order`, `url`, `menu_id`, `language_id`) VALUES
-(1, 'Tin Tức', 1, 'tintuc.php', 4, 1),
-(2, 'Thông Tin Du Lịch', 2, 'thongtindulich.php', 4, 1),
-(3, 'Ẩm Thực', 3, 'amthuc.php', 4, 1);
+INSERT INTO `sub_menu` (`id`, `name`, `order`, `url`, `menu_id`, `language_id`, `enabled`) VALUES
+(1, 'Tin Tức', 1, 'vi/news', 4, 1, 1),
+(2, 'Thông Tin Du Lịch', 2, 'vi/news', 4, 1, 1),
+(3, 'Ẩm Thực', 3, 'vi/news', 4, 1, 1),
+(4, 'News', 1, 'en/news', 10, 2, 1),
+(5, 'Tour Guide', 2, 'vi/news', 10, 2, 1),
+(7, 'Local Food', 3, 'vi/news', 10, 2, 1);
 
 --
 -- Constraints for dumped tables
