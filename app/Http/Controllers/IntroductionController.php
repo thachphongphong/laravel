@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Introduce;
 use App\Menu;
 use App\ContactDetail;
+use App\PageTitle;
 use Config;
 use DB;
 use View;
@@ -26,12 +27,14 @@ class IntroductionController extends Controller
             ->where('language_id', $language_id)
             ->orderBy('order', 'asc')
             ->get();
-        $aboutheader = Introduce::where('language_id', $language_id)->orderByRaw("RAND()")->first();
+
+        $title = PageTitle::where('language_id', $language_id)->where('page_id', 1)
+            ->orderByRaw("RAND()")->first();
 
         $about = Introduce::where('language_id', $language_id)->orderBy('id', 'asc')->get();
 
         $contact = ContactDetail::where('language_id', $language_id)->first();
 
-        return View::make('about', array('constants' => $constants, 'menus' => $menus, 'contact' => $contact, 'abouts' => $about, 'aheaders' =>$aboutheader));
+        return View::make('about', array('constants' => $constants, 'menus' => $menus, 'contact' => $contact, 'abouts' => $about, 'title' =>$title));
     }
 }

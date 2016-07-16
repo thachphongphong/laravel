@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\ContactDetail;
 use App\Http\Requests;
 use App\Menu;
+use App\PageTitle;
 use App\Room;
 use Config;
 use DB;
@@ -25,7 +26,12 @@ class Room_CategoriesController extends Controller
             ->orderBy('order', 'asc')
             ->get();
         $contact = ContactDetail::where('language_id', $language_id)->first();
-        $room = Room::where('language_id', $language_id)->get();
-        return View::make('room', array('constants' => $constants,'menus' => $menus, 'contact' => $contact, 'rooms' => $room));
+
+        $room = Room::with('roomdetails')->where('language_id', $language_id)->get();
+
+        $title = PageTitle::where('language_id', $language_id)->where('page_id', 2)
+            ->orderByRaw("RAND()")->first();
+
+        return View::make('room', array('constants' => $constants,'menus' => $menus, 'contact' => $contact, 'rooms' => $room, 'title'=>$title));
     }
 }

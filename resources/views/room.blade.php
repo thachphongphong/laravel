@@ -1,5 +1,6 @@
 @extends('master')
 @section('content_section')
+    @include('title_section')
     <div class="mg-page mg-available-rooms">
         <div class="container">
             <div class="row">
@@ -8,7 +9,8 @@
                         <div class="mg-avl-room">
                             <div class="row">
                                 <div class="col-sm-5">
-                                    <a href="#"><img src="{{asset($room->image_url)}}" alt="" class="img-responsive"></a>
+                                    <a href="#"><img src="{{asset($room->image_url)}}" alt=""
+                                                     class="img-responsive"></a>
                                 </div>
                                 <div class="col-sm-7">
                                     <h3 class="mg-avl-room-title"><a href="#">{{$room->name}}</a>
@@ -19,20 +21,64 @@
                                     <div class="row mg-room-fecilities">
                                         <div class="col-sm-6">
                                             <ul>
-                                                <li><i class="fp-ht-bed"></i> 2 King Beds</li>
-                                                <li><i class="fp-ht-food"></i> Breakfast</li>
-                                                <li><i class="fa fa-sun-o"></i> Air conditioning</li>
+                                                @for ($i = 0; $i < count($room->roomdetails)/2; $i++)
+                                                    <li>@if($room->roomdetails[$i]->id <= 3|| ($room->roomdetails[$i]->id >12 && $room->roomdetails[$i]->id <16))
+                                                            <i class="fp-ht-bed"></i>
+                                                        @elseif($room->roomdetails[$i]->id == 4 || $room->roomdetails[$i]->id == 16)
+                                                            <i class="fa fa-sun-o"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==5 || $room->roomdetails[$i]->id == 17)
+                                                            <i class="fp-ht-tv"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==6 || $room->roomdetails[$i]->id == 18)
+                                                            <i class="fp-ht-telephone"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==7 || $room->roomdetails[$i]->id == 19)
+                                                            <i class="fp-ht-computer"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==8 || $room->roomdetails[$i]->id == 20)
+                                                            <i class="fp-ht-bathtub"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==9 || $room->roomdetails[$i]->id == 21)
+                                                            <i class="fp-ht-icecream"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==10 || $room->roomdetails[$i]->id == 22)
+                                                            <i class="fp-ht-hairdryer"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==11 || $room->roomdetails[$i]->id == 23)
+                                                            <i class="fp-ht-semicircle"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==12 || $room->roomdetails[$i]->id == 24)
+                                                            <i class="fp-ht-pool"></i>
+                                                        @endif
+                                                        {{$room->roomdetails[$i]->name}}</li>
+                                                @endfor
                                             </ul>
                                         </div>
                                         <div class="col-sm-6">
                                             <ul>
-                                                <li><i class="fp-ht-dumbbell"></i> GYM fecility</li>
-                                                <li><i class="fp-ht-tv"></i> TV LCD</li>
-                                                <li><i class="fp-ht-computer"></i> Wi-fi service</li>
+                                                @for ($i = count($room->roomdetails)/2; $i < count($room->roomdetails); $i++)
+                                                    <li>@if($room->roomdetails[$i]->id <= 3|| ($room->roomdetails[$i]->id >12 && $room->roomdetails[$i]->id <16))
+                                                            <i class="fp-ht-bed"></i>
+                                                        @elseif($room->roomdetails[$i]->id == 4 || $room->roomdetails[$i]->id == 16)
+                                                            <i class="fa fa-sun-o"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==5 || $room->roomdetails[$i]->id == 17)
+                                                            <i class="fp-ht-tv"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==6 || $room->roomdetails[$i]->id == 18)
+                                                            <i class="fp-ht-telephone"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==7 || $room->roomdetails[$i]->id == 19)
+                                                            <i class="fp-ht-computer"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==8 || $room->roomdetails[$i]->id == 20)
+                                                            <i class="fp-ht-bathtub"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==9 || $room->roomdetails[$i]->id == 21)
+                                                            <i class="fp-ht-icecream"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==10 || $room->roomdetails[$i]->id == 22)
+                                                            <i class="fp-ht-hairdryer"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==11 || $room->roomdetails[$i]->id == 23)
+                                                            <i class="fp-ht-semicircle"></i>
+                                                        @elseif($room->roomdetails[$i]->id ==12 || $room->roomdetails[$i]->id == 24)
+                                                            <i class="fp-ht-pool"></i>
+                                                        @endif
+                                                    {{$room->roomdetails[$i]->name}}</li>
+                                                @endfor
                                             </ul>
                                         </div>
                                     </div>
-                                    <a href="#" class="btn btn-dark ">View Details <i class="fa fa-angle-double-right"></i></a>
+
+                                    <a href="#" class="btn btn-dark ">View Details <i
+                                                class="fa fa-angle-double-right"></i></a>
                                     <a href="#" class="btn btn-main pull-right">Book Now</a>
 
                                 </div>
