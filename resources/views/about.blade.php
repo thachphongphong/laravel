@@ -23,16 +23,32 @@
                         </div>
                     </div>
                     <div class="row">
-                        @if ($ab ->image_url != "")
-                            @if (is_array(explode(',', $ab ->image_url)) && count(explode(',', $ab ->image_url)) > 1)
+                        @if ($ab ->image_url != "" && is_array(explode(',', $ab ->image_url)))
+                            @if (count(explode(',', $ab ->image_url)) == 2)
                                 @foreach( explode(',', $ab ->image_url) as $url)
                                     <div class="col-sm-6">
                                         <figure class="mg-room mg-room-col-2">
-                                            <img src=" {{asset($url)}}" alt="pearl sea hotel" class="img-responsive">
+                                            <img src=" {{asset($url)}}" alt="pearl sea hotel" class="img-responsive center-block">
                                         </figure>
                                     </div>
                                 @endforeach
-                            @elseif(is_array(explode(',', $ab ->image_url)))
+                            @elseif (count(explode(',', $ab ->image_url)) == 3)
+                                @foreach( explode(',', $ab ->image_url) as $url)
+                                    <div class="col-sm-4">
+                                        <figure class="mg-room">
+                                            <img src=" {{asset($url)}}" alt="pearl sea hotel" class="img-responsive center-block">
+                                        </figure>
+                                    </div>
+                                @endforeach
+                            @elseif (count(explode(',', $ab ->image_url)) == 4)
+                                @foreach( explode(',', $ab ->image_url) as $url)
+                                    <div class="col-md-3 col-xs-6">
+                                        <figure class="mg-room mg-room-col-4">
+                                            <img src=" {{asset($url)}}" alt="pearl sea hotel" class="img-responsive center-block">
+                                        </figure>
+                                    </div>
+                                @endforeach
+                            @elseif(count(explode(',', $ab ->image_url)) == 1)
                                 <div class="col-xs-12">
                                         <img src=" {{asset($ab ->image_url)}}" alt="pearl sea hotel" class="img-responsive center-block">
                                 </div>
