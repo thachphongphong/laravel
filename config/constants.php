@@ -30,6 +30,10 @@ return [
             'title' => 'Các tiện nghi của khách sạn',
             'desc' => 'Pearl Sea Hotel cam kết phục vụ quí khách với dịch vụ tốt nhất'
         ]
+        , 'recentnews' => [
+            'news' => 'TIN TỨC',
+            'gallery' => 'Hình ảnh'
+        ]
     ],
     'en' => [
         'bestroom' => [
@@ -60,6 +64,9 @@ return [
         'facilities' => [
             'title' => 'HOTEL FACILTIES',
             'desc' => 'The best service we have'
+        ], 'recentnews' => [
+            'news' => 'RECENT NEWS',
+            'gallery' => 'OUR GALLERY'
         ]
     ]
 ];

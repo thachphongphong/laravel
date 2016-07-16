@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ContactDetail;
 use App\Introduce;
 use App\Menu;
+use App\News;
 use App\Room;
 use App\RoomService;
 use App\Slider;
@@ -45,8 +46,8 @@ class HomeController extends Controller
         $about = Introduce::where('language_id', $language_id)->first();
         $contact = ContactDetail::where('language_id', $language_id)->first();
 
-
+        $new = News::where('language_id', $language_id)->orderBy('created_date', 'desc')->take(3)->get();
         return View::make('home', array('constants' => $constants, 'menus' => $menus, 'sliders' => $slider, 'abouts' => $about,
-            'rooms' => $room, 'contact' => $contact, 'room_services' => $room_service));
+            'rooms' => $room, 'contact' => $contact, 'room_services' => $room_service,'news'=>$new));
     }
 }
