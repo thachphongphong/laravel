@@ -7,7 +7,7 @@
 
                     <div class="mg-testimonial-slider" id="mg-testimonial-slider">
                         <blockquote cite="https://www.google.com/search?q=kh%C3%A1ch+s%E1%BA%A1n+bi%E1%BB%83n+ng%E1%BB%8Dc&ie=utf-8&oe=utf-8&client=firefox-b-ab&gfe_rd=cr&ei=abmIV7_AOPHH8geQ-b-gCQ#gfe_rd=cr&lrd=0x3142178627e86ad7:0xb0848a82ae2e3779,1,">
-                            <p>Mọi thứ đều rất tốt :).</p>
+                            <p>Mọi thứ đều rất tốt :). <br/> &nbsp; </p>
                             <footer><a href="https://www.google.com/search?q=kh%C3%A1ch+s%E1%BA%A1n+bi%E1%BB%83n+ng%E1%BB%8Dc&ie=utf-8&oe=utf-8&client=firefox-b-ab&gfe_rd=cr&ei=abmIV7_AOPHH8geQ-b-gCQ#gfe_rd=cr&lrd=0x3142178627e86ad7:0xb0848a82ae2e3779,1," target="_blank">Doàn Thị Mỹ Sương</a></footer>
                         </blockquote>
                         <blockquote cite="https://www.google.com/search?q=kh%C3%A1ch+s%E1%BA%A1n+bi%E1%BB%83n+ng%E1%BB%8Dc&ie=utf-8&oe=utf-8&client=firefox-b-ab&gfe_rd=cr&ei=abmIV7_AOPHH8geQ-b-gCQ#gfe_rd=cr&lrd=0x3142178627e86ad7:0xb0848a82ae2e3779,1,">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2016 at 05:26 AM
+-- Generation Time: Jul 16, 2016 at 07:59 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -130,15 +130,17 @@ CREATE TABLE IF NOT EXISTS `introduce` (
   `enabled` tinyint(2) NOT NULL DEFAULT '1',
   `created_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `introduce`
 --
 
 INSERT INTO `introduce` (`id`, `title`, `short_content`, `content`, `image_url`, `language_id`, `enabled`, `created_date`) VALUES
-(1, 'Giới thiệu Pearl Sea Hotel - Khách sạn Biển Ngọc', 'Tọa lạc trên một vị trí lý tưởng,bên cạnh bãi biển Mỹ Khê xinh đẹp,nơi được tạp chí Forbes bình chọn là một trong sáu bãi biển đẹp nhất hành tinh. Khách sạn Pearl Sea luôn là sự lựa chọn tuyệt vời của Quý khách. Đến với khách sạn Pearl Sea, Quý khách có đầy đủ không gian tiện lợi để ngắm bán đảo Sơn Trà thơ mộng bên cạnh bãi biển trong xanh, rực ánh nắng vàng, ngắm cảnh toàn thành phố Đà Nẵng, ngắm cầu quay Sông Hàn xinh đẹp, cầu Thuận Phước lấp lánh dưới ánh đèn màn đêm huyền ảo.\r\n\r\nKhách sạn Pearl Sea là một trong những khách sạn mới bên cạnh biển Mỹ Khê, khai trương vào tháng 04 năm 2011, được thiết kế theo tiêu chuẩn tương đương 3 sao gồm 10 tầng - 45 phòng cùng những trang thiết bị hiện đại, sang trọng và ấm cúng. Với đội ngũ nhân viên trẻ trung , năng động và nhiệt tình, Khách sạn Pearl Sea tự tin sẽ mang lại cho Quý khách sự hài lòng cao nhất.', 'Khách sạn tại Đà Nẵng này Tọa lạc trên một vị trí lý tưởng, bên cạnh bãi biển Mỹ Khê xinh đẹp, nơi được tạp chí Forbes bình chọn là 01 trong 06 bãi biển đẹp nhất hành tinh. Khách sạn Pearl Sea luôn là sự lựa chọn tuyệt vời của Quý khách. Đến với khách sạn Pearl Sea, Quý khách có đầy đủ không gian tiện lợi để ngắm bán đảo Sơn Trà thơ mộng bên cạnh bãi biển trong xanh, rực ánh nắng vàng, ngắm cảnh toàn thành phố Đà Nẵng, ngắm cầu quay Sông Hàn xinh đẹp, cầu Thuận Phước lấp lánh dưới ánh đèn màn đêm huyền ảo.\r\nBiển Mỹ Khê \r\n\r\nKhách sạn Pearl Sea khai trương vào đầu tháng 04 năm 2011, với kiến trúc độc đáo, được thiết kế 10 tầng - 45 phòng cùng những trang thiết bị hiện đại, sang trọng và ấm cúng sẽ đáp ứng được mọi nhu cầu của Quý khách. Với đội ngũ nhân viên chuyên nghiệp,năng động và nhiệt tình, Khách sạn Pearl Sea tự tin sẽ mang đến cho Quý khách những dịch vụ tốt nhất, luôn đem dến sự hài lòng, cảm giác thư giãn thoải mái thật sự như ngôi nhà tiện nghi và hạnh phúc của Qúy khách.\r\n\r\nChỉ mất khoảng bảy phút ô tô để đi từ sân bay Quốc tế Đà Nẵng, Nhà ga hay Trung tâm thương mại, khách sạn Pearl Sea là điểm đến vô cùng thuận lợi dành cho Quý khách. Tại đây, chỉ vài phút bách bộ Quý khách sẽ được hòa mình vào vẻ đẹp của thiên nhiên sơn thủy hữu tình với bờ cát trắng mịn màng, những làn nước trong xanh như được ôm ấp bởi ngọn núi Sơn Trà.\r\n\r\n Pearl Sea Hotel	Pearl Sea Hotel\r\nTừ Pearl Sea Hotel, Quý khách cũng có thể dễ dàng viếng thăm các danh lam thắng cảnh tại Đà Nẵng và các vùng lân cận\r\n\r\nBà Nà Hill - Đường lên tiên cảnh với trải nghiệm 4 mùa trong ngày (đi 35km, 45 phút)\r\nPhố cổ Hội An - Di sản văn hóa thế giới - 01 trong 10 thành phố du lịch hàng đầu thế giới (đi 30km, 45 phút)\r\nCù lao Chàm - Khu dự trữ sinh quyển thế giới (đi 12 hải lý, 90 phút)\r\nThánh địa Mỹ Sơn - Di sản văn hóa thế giới (đi 70km, 90 phút)\r\nĐèo Hải Vân - Thiên hạ đệ nhất hùng quan (đi 40km, 45 phút)\r\nCố đô Huế - Di sản văn hóa thế giới (đi 110km, 120 phút)\r\nBán đảo Sơn Trà, Phật Bà Linh Ứng Tự (đi 5km, 7 phút)\r\nNgũ Hành Sơn, thăm quan làng đá mỹ nghệ Non Nước (đi 7 km, 10 phút)\r\nBãi biển Mỹ Khê - 01 trong 06 bãi biển đẹp nhất hành tinh (đi bộ 300m, 5 phút)\r\nBana Hill	Ngũ Hành Sơn\r\nBana Hill	Ngũ Hành Sơn\r\nPhố cổ Hội An	Thánh địa Mỹ Sơn\r\nPhố cổ Hội An	Thánh địa Mỹ Sơn', 'images/gallery-06.png', 1, 1, '2016-07-11 00:00:00'),
-(2, 'Introduction Pearl Sea Hotel', 'Welcome to the Pearl Sea Hotel.\r\n\r\nThe Pearl Sea Hotel made it’s grand opening at the beginning of April 2011. It has a unique type of architecture and is considered a three star hotel. This ten story hotel has forty five rooms with all modern amenities making you feel comfortable like at home. The hotel staff are professional, friendly and caring and are ready to accommodate our guests.\r\n\r\nThe Pearl Sea Hotel is in an ideal location. We are a walking distance from My Khe beach considered by many as one of the most beautiful beaches in the world. At this beach the American soldiers first landed in 1965 to begin the Viet Nam War. From the hotel you have an exquisite view of the pristine Son Tra peninsula, along with the panorama of Da Nang. Also seen from the Pearl Sea Hotel is both famous folding Song Han and Thuan Phuoc bridges. We are 7 minutes away both from Da Nang International Airport and Da Nang Center of Business and Commerce. It’s a comfortable drive from our hotel to the most popular tourist places.', 'Welcome to the Pearl Sea Hotel.\r\n\r\nThe Pearl Sea Hotel made it’s grand opening at the beginning of April 2011. It has a unique type of architecture and is considered a three star hotel. This ten story hotel has forty five rooms with all modern amenities making you feel comfortable like at home. The hotel staff are professional, friendly and caring and are ready to accommodate our guests.\r\n\r\nBiển Mỹ Khê \r\n\r\nThe Pearl Sea Hotel is in an ideal location. We are a walking distance from My Khe beach considered by many as one of the most beautiful beaches in the world. At this beach the American soldiers first landed in 1965 to begin the Viet Nam War. From the hotel you have an exquisite view of the pristine Son Tra peninsula, along with the panorama of Da Nang. Also seen from the Pearl Sea Hotel is both famous folding Song Han and Thuan Phuoc bridges. We are 7 minutes away both from Da Nang International Airport and Da Nang Center of Business and Commerce. .\r\n\r\n Pearl Sea Hotel	Pearl Sea Hotel\r\nIt’s a comfortable drive from our hotel to the most popular tourist places:\r\n\r\nBa Na Hills – Cable cars (35 km, 45 min.)\r\nAncient town of Hoi An – an old trading center of the Chinese, Japanese and Portugees , one of ten popular tourist towns of the world (30 km, 45 min.)\r\nCù lao Chàm Island - a beautiful island with various wild animals and legendary landscapes (12 miles, 25min.)\r\nCham Island – Wild life preserve (12 nautical miles, 90 min.)\r\nAncient ruin of Cham towers (70 km, 90 min.)\r\nMountain pass Hai Van (40 km, 45 min.)\r\nHue city - Former imperial capital of Viet Nam (110 km, 120 min.)\r\nPeninsula Son Tra, Bodhisattva Linh Ung Tu’s memorial (5 km, 7 min.)\r\nNgu Hanh Son mountain peaks, village of fine handicrafts of Non Nuoc ( 7 km, 10 min.)\r\nMy Khe beach – one of the six most beautiful beaches of the world ( 300 m, 5 min.)', 'images/gallery-06.png', 2, 1, '2016-07-11 00:00:00');
+(1, 'Giới thiệu Khách sạn Biển Ngọc', 'Luôn là sự lựa chọn tuyệt vời của Quý khách', 'Khách sạn tại Đà Nẵng này Tọa lạc trên một vị trí lý tưởng, bên cạnh bãi biển Mỹ Khê xinh đẹp, nơi được tạp chí Forbes bình chọn là 01 trong 06 bãi biển đẹp nhất hành tinh. Khách sạn Pearl Sea luôn là sự lựa chọn tuyệt vời của Quý khách. Đến với khách sạn Pearl Sea, Quý khách có đầy đủ không gian tiện lợi để ngắm bán đảo Sơn Trà thơ mộng bên cạnh bãi biển trong xanh, rực ánh nắng vàng, ngắm cảnh toàn thành phố Đà Nẵng, ngắm cầu quay Sông Hàn xinh đẹp, cầu Thuận Phước lấp lánh dưới ánh đèn màn đêm huyền ảo.', 'images/about/pano-my-khe-new.jpg', 1, 1, '2016-07-11 00:00:00'),
+(2, 'Introduction Pearl Sea Hotel', 'Welcome to the Pearl Sea Hotel.\r\n\r\nThe Pearl Sea Hotel made it’s grand opening at the beginning of April 2011. It has a unique type of architecture and is considered a three star hotel. This ten story hotel has forty five rooms with all modern amenities making you feel comfortable like at home. The hotel staff are professional, friendly and caring and are ready to accommodate our guests.\r\n\r\nThe Pearl Sea Hotel is in an ideal location. We are a walking distance from My Khe beach considered by many as one of the most beautiful beaches in the world. At this beach the American soldiers first landed in 1965 to begin the Viet Nam War. From the hotel you have an exquisite view of the pristine Son Tra peninsula, along with the panorama of Da Nang. Also seen from the Pearl Sea Hotel is both famous folding Song Han and Thuan Phuoc bridges. We are 7 minutes away both from Da Nang International Airport and Da Nang Center of Business and Commerce. It’s a comfortable drive from our hotel to the most popular tourist places.', 'Welcome to the Pearl Sea Hotel.\r\n\r\nThe Pearl Sea Hotel made it’s grand opening at the beginning of April 2011. It has a unique type of architecture and is considered a three star hotel. This ten story hotel has forty five rooms with all modern amenities making you feel comfortable like at home. The hotel staff are professional, friendly and caring and are ready to accommodate our guests.\r\n\r\nBiển Mỹ Khê \r\n\r\nThe Pearl Sea Hotel is in an ideal location. We are a walking distance from My Khe beach considered by many as one of the most beautiful beaches in the world. At this beach the American soldiers first landed in 1965 to begin the Viet Nam War. From the hotel you have an exquisite view of the pristine Son Tra peninsula, along with the panorama of Da Nang. Also seen from the Pearl Sea Hotel is both famous folding Song Han and Thuan Phuoc bridges. We are 7 minutes away both from Da Nang International Airport and Da Nang Center of Business and Commerce. .\r\n\r\n Pearl Sea Hotel	Pearl Sea Hotel\r\nIt’s a comfortable drive from our hotel to the most popular tourist places:\r\n\r\nBa Na Hills – Cable cars (35 km, 45 min.)\r\nAncient town of Hoi An – an old trading center of the Chinese, Japanese and Portugees , one of ten popular tourist towns of the world (30 km, 45 min.)\r\nCù lao Chàm Island - a beautiful island with various wild animals and legendary landscapes (12 miles, 25min.)\r\nCham Island – Wild life preserve (12 nautical miles, 90 min.)\r\nAncient ruin of Cham towers (70 km, 90 min.)\r\nMountain pass Hai Van (40 km, 45 min.)\r\nHue city - Former imperial capital of Viet Nam (110 km, 120 min.)\r\nPeninsula Son Tra, Bodhisattva Linh Ung Tu’s memorial (5 km, 7 min.)\r\nNgu Hanh Son mountain peaks, village of fine handicrafts of Non Nuoc ( 7 km, 10 min.)\r\nMy Khe beach – one of the six most beautiful beaches of the world ( 300 m, 5 min.)', 'images/gallery-06.png', 2, 1, '2016-07-11 00:00:00'),
+(3, 'Giới thiệu Khách sạn Biển Ngọc', 'Được thiết kế theo tiêu chuẩn tương đương 3 sao gồm 10 tầng - 45 phòng cùng những trang thiết bị hiện đại', 'Khách sạn Pearl Sea khai trương vào đầu tháng 04 năm 2011, với kiến trúc độc đáo, được thiết kế 10 tầng - 45 phòng cùng những trang thiết bị hiện đại, sang trọng và ấm cúng sẽ đáp ứng được mọi nhu cầu của Quý khách. Với đội ngũ nhân viên chuyên nghiệp,năng động và nhiệt tình, Khách sạn Pearl Sea tự tin sẽ mang đến cho Quý khách những dịch vụ tốt nhất, luôn đem dến sự hài lòng, cảm giác thư giãn thoải mái thật sự như ngôi nhà tiện nghi và hạnh phúc của Qúy khách.\r\n\r\nChỉ mất khoảng bảy phút ô tô để đi từ sân bay Quốc tế Đà Nẵng, Nhà ga hay Trung tâm thương mại, khách sạn Pearl Sea là điểm đến vô cùng thuận lợi dành cho Quý khách. Tại đây, chỉ vài phút bách bộ Quý khách sẽ được hòa mình vào vẻ đẹp của thiên nhiên sơn thủy hữu tình với bờ cát trắng mịn màng, những làn nước trong xanh như được ôm ấp bởi ngọn núi Sơn Trà.', 'images/about/pearl-sea.jpg', 1, 1, '2016-07-11 00:00:00'),
+(4, 'Giới thiệu Khách sạn Biển Ngọc', 'Tọa lạc trên một vị trí lý tưởng,bên cạnh bãi biển Mỹ Khê xinh đẹp', 'Từ Pearl Sea Hotel, Quý khách cũng có thể dễ dàng viếng thăm các danh lam thắng cảnh tại Đà Nẵng và các vùng lân cận\r\n\r\n&#10004; Bà Nà Hill - Đường lên tiên cảnh với trải nghiệm 4 mùa trong ngày (đi 35km, 45 phút)\r\n&#10004; Phố cổ Hội An - Di sản văn hóa thế giới - 01 trong 10 thành phố du lịch hàng đầu thế giới (đi 30km, 45 phút)\r\n&#10004; Cù lao Chàm - Khu dự trữ sinh quyển thế giới (đi 12 hải lý, 90 phút)\r\n&#10004; Thánh địa Mỹ Sơn - Di sản văn hóa thế giới (đi 70km, 90 phút)\r\n&#10004; Đèo Hải Vân - Thiên hạ đệ nhất hùng quan (đi 40km, 45 phút)\r\n&#10004; Cố đô Huế - Di sản văn hóa thế giới (đi 110km, 120 phút)\r\n&#10004; Bán đảo Sơn Trà, Phật Bà Linh Ứng Tự (đi 5km, 7 phút)\r\n&#10004; Ngũ Hành Sơn, thăm quan làng đá mỹ nghệ Non Nước (đi 7 km, 10 phút)\r\n&#10004; Bãi biển Mỹ Khê - 01 trong 06 bãi biển đẹp nhất hành tinh (đi bộ 300m, 5 phút)', 'images/gallery-06.png,images/gallery-06.png', 1, 1, '2016-07-11 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -702,130 +704,67 @@ CREATE TABLE IF NOT EXISTS `room_service_detail` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
   `description` mediumtext,
+  `css_class` varchar(50) NOT NULL DEFAULT 'fa fa-cogs',
+  `room_service_id` int(11) NOT NULL,
+  `rate` int(11) NOT NULL DEFAULT '1',
   `language_id` int(11) NOT NULL,
   `enabled` tinyint(2) NOT NULL DEFAULT '1',
   `created_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `room_service_fk` (`room_service_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
 
 --
 -- Dumping data for table `room_service_detail`
 --
 
-INSERT INTO `room_service_detail` (`id`, `name`, `description`, `language_id`, `enabled`, `created_date`) VALUES
-(1, 'Dich vụ điện thoại quốc tế', NULL, 1, 1, '0000-00-00 00:00:00'),
-(2, 'Đón đưa sân bay', NULL, 1, 1, '0000-00-00 00:00:00'),
-(3, 'Dịch vụ du lịch theo tour', NULL, 1, 1, '0000-00-00 00:00:00'),
-(4, 'Đặt vé máy bay', NULL, 1, 1, '0000-00-00 00:00:00'),
-(5, 'Giặt ủi', NULL, 1, 1, '0000-00-00 00:00:00'),
-(6, 'Internet miễn phí', NULL, 1, 1, '0000-00-00 00:00:00'),
-(7, 'Cho thuê xe hơi,xe máy', NULL, 1, 1, '0000-00-00 00:00:00'),
-(8, 'Dịch vụ phòng', NULL, 1, 1, '0000-00-00 00:00:00'),
-(9, 'Dịch vụ nhà hàng', NULL, 1, 1, '0000-00-00 00:00:00'),
-(10, 'Phục vụ 24/24', NULL, 1, 1, '0000-00-00 00:00:00'),
-(11, 'Ăn sáng tự chọn', NULL, 1, 1, '0000-00-00 00:00:00'),
-(12, '5% phí phục vụ', NULL, 1, 1, '0000-00-00 00:00:00'),
-(13, 'Internet miễn phí', NULL, 1, 1, '0000-00-00 00:00:00'),
-(14, 'Chưa bao gồm VAT và các dịch vụ phát sinh', NULL, 1, 1, '0000-00-00 00:00:00'),
-(15, 'Miễn phí trẻ em dưới 6 tuổi ở chung phòng, trẻ em 6-10 tuổi phụ thu 50%,  trẻ em trên 10 tuổi phụ thu như người lớn.', NULL, 1, 1, '0000-00-00 00:00:00'),
-(16, 'Đặt thêm giường 150.000 VND', NULL, 1, 1, '0000-00-00 00:00:00'),
-(17, 'Thời gian trả phòng: 12h00', NULL, 1, 1, '0000-00-00 00:00:00'),
-(18, 'Thời gian nhận phòng: 14h00', NULL, 1, 1, '0000-00-00 00:00:00'),
-(19, 'Giá phòng có thể thay đổi', NULL, 1, 1, '0000-00-00 00:00:00'),
-(20, 'Phương thức thanh toán: Tiền mặt hoặc các loại thẻ: American Express, Diners Club, JCB, Master, Visa', NULL, 1, 1, '0000-00-00 00:00:00'),
-(21, 'Khách theo đoàn, khách ở dài hạn sẽ có chế độ đặc biệt', NULL, 1, 1, '0000-00-00 00:00:00'),
-(22, 'Trả phòng trễ: Đến 18h00: Tính nửa ngày, Sau 18h00: Tính một ngày', NULL, 1, 1, '0000-00-00 00:00:00'),
-(23, 'Đặt cọc tối thiểu 50% tổng tiền phòng đặt trước', NULL, 1, 1, '0000-00-00 00:00:00'),
-(24, 'Hủy phòng không hoàn trả đặt cọc.', NULL, 1, 1, '0000-00-00 00:00:00'),
-(25, 'International telephone service', NULL, 2, 1, '0000-00-00 00:00:00'),
-(26, 'Airport Transfer', NULL, 2, 1, '0000-00-00 00:00:00'),
-(27, 'Tour/Travel Information Service', NULL, 2, 1, '0000-00-00 00:00:00'),
-(28, 'Laundry Service', NULL, 2, 1, '0000-00-00 00:00:00'),
-(29, 'Free Internet', NULL, 2, 1, '0000-00-00 00:00:00'),
-(30, 'Cars, motorbikes Rental', NULL, 2, 1, '0000-00-00 00:00:00'),
-(31, 'Room Service', NULL, 2, 1, '0000-00-00 00:00:00'),
-(32, 'Restaurant service', NULL, 2, 1, '0000-00-00 00:00:00'),
-(33, 'Support 24/7', NULL, 2, 1, '0000-00-00 00:00:00'),
-(34, 'Breakfast', NULL, 2, 1, '0000-00-00 00:00:00'),
-(35, '5% sevice fee', NULL, 2, 1, '0000-00-00 00:00:00'),
-(36, 'Free Internet', NULL, 2, 1, '0000-00-00 00:00:00'),
-(37, 'Excluding VAT and other services', NULL, 2, 1, '0000-00-00 00:00:00'),
-(38, 'Free for children under 12 years old', NULL, 2, 1, '0000-00-00 00:00:00'),
-(39, 'Extra bed: 150.000 VND', NULL, 2, 1, '0000-00-00 00:00:00'),
-(40, 'Check-out time: 12h00', NULL, 2, 1, '0000-00-00 00:00:00'),
-(41, 'Check-in time: 14h00', NULL, 2, 1, '0000-00-00 00:00:00'),
-(42, 'Payment: American Express, Diners Club, JCB, MasterCard, Visa', NULL, 2, 1, '0000-00-00 00:00:00'),
-(43, 'Guests in groups, long term stay will be special prices', NULL, 2, 1, '0000-00-00 00:00:00'),
-(44, 'Late check-out: to 18:00: The half-day, after 18:00: The one day', NULL, 2, 1, '0000-00-00 00:00:00'),
-(45, '50% deposit', NULL, 2, 1, '0000-00-00 00:00:00'),
-(46, 'Cancellations are not refundable deposit.', NULL, 2, 1, '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `room_service_link`
---
-
-CREATE TABLE IF NOT EXISTS `room_service_link` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `room_service_id` int(11) NOT NULL,
-  `room_service_detail_id` int(11) NOT NULL,
-  `enabled` tinyint(2) NOT NULL DEFAULT '1',
-  `created_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
-
---
--- Dumping data for table `room_service_link`
---
-
-INSERT INTO `room_service_link` (`id`, `room_service_id`, `room_service_detail_id`, `enabled`, `created_date`) VALUES
-(1, 1, 1, 1, '0000-00-00 00:00:00'),
-(2, 1, 2, 1, '0000-00-00 00:00:00'),
-(3, 1, 3, 1, '0000-00-00 00:00:00'),
-(4, 1, 4, 1, '0000-00-00 00:00:00'),
-(5, 1, 5, 1, '0000-00-00 00:00:00'),
-(6, 1, 6, 1, '0000-00-00 00:00:00'),
-(7, 1, 7, 1, '0000-00-00 00:00:00'),
-(8, 1, 8, 1, '0000-00-00 00:00:00'),
-(9, 1, 9, 1, '0000-00-00 00:00:00'),
-(10, 1, 10, 1, '0000-00-00 00:00:00'),
-(11, 2, 11, 1, '0000-00-00 00:00:00'),
-(12, 2, 12, 1, '0000-00-00 00:00:00'),
-(13, 2, 13, 1, '0000-00-00 00:00:00'),
-(14, 2, 14, 1, '0000-00-00 00:00:00'),
-(15, 3, 15, 1, '0000-00-00 00:00:00'),
-(16, 3, 16, 1, '0000-00-00 00:00:00'),
-(17, 3, 17, 1, '0000-00-00 00:00:00'),
-(18, 3, 18, 1, '0000-00-00 00:00:00'),
-(19, 3, 19, 1, '0000-00-00 00:00:00'),
-(20, 3, 20, 1, '0000-00-00 00:00:00'),
-(21, 3, 21, 1, '0000-00-00 00:00:00'),
-(22, 3, 22, 1, '0000-00-00 00:00:00'),
-(23, 3, 23, 1, '0000-00-00 00:00:00'),
-(24, 3, 24, 1, '0000-00-00 00:00:00'),
-(25, 4, 25, 1, '0000-00-00 00:00:00'),
-(26, 4, 26, 1, '0000-00-00 00:00:00'),
-(27, 4, 27, 1, '0000-00-00 00:00:00'),
-(28, 4, 28, 1, '0000-00-00 00:00:00'),
-(29, 4, 29, 1, '0000-00-00 00:00:00'),
-(30, 4, 30, 1, '0000-00-00 00:00:00'),
-(31, 4, 31, 1, '0000-00-00 00:00:00'),
-(32, 4, 32, 1, '0000-00-00 00:00:00'),
-(33, 4, 33, 1, '0000-00-00 00:00:00'),
-(34, 5, 34, 1, '0000-00-00 00:00:00'),
-(35, 5, 35, 1, '0000-00-00 00:00:00'),
-(36, 5, 36, 1, '0000-00-00 00:00:00'),
-(37, 5, 37, 1, '0000-00-00 00:00:00'),
-(38, 6, 38, 1, '0000-00-00 00:00:00'),
-(39, 6, 39, 1, '0000-00-00 00:00:00'),
-(40, 6, 40, 1, '0000-00-00 00:00:00'),
-(41, 6, 41, 1, '0000-00-00 00:00:00'),
-(42, 6, 42, 1, '0000-00-00 00:00:00'),
-(43, 6, 43, 1, '0000-00-00 00:00:00'),
-(44, 6, 44, 1, '0000-00-00 00:00:00'),
-(45, 6, 45, 1, '0000-00-00 00:00:00'),
-(46, 6, 46, 1, '0000-00-00 00:00:00');
+INSERT INTO `room_service_detail` (`id`, `name`, `description`, `css_class`, `room_service_id`, `rate`, `language_id`, `enabled`, `created_date`) VALUES
+(1, 'Dich vụ điện thoại quốc tế', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-phone', 1, 4, 1, 1, '0000-00-00 00:00:00'),
+(2, 'Đón đưa sân bay', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 1, 100, 1, 1, '0000-00-00 00:00:00'),
+(3, 'Dịch vụ du lịch theo tour', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 1, 100, 1, 1, '0000-00-00 00:00:00'),
+(4, 'Đặt vé máy bay', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 1, 100, 1, 1, '0000-00-00 00:00:00'),
+(5, 'Giặt ủi', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 1, 100, 1, 1, '0000-00-00 00:00:00'),
+(6, 'Internet miễn phí', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fp-ht-computer', 1, 6, 1, 1, '0000-00-00 00:00:00'),
+(7, 'Cho thuê xe hơi,xe máy', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-car', 1, 3, 1, 1, '0000-00-00 00:00:00'),
+(8, 'Dịch vụ phòng', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fp-ht-maid', 1, 2, 1, 1, '0000-00-00 00:00:00'),
+(9, 'Dịch vụ nhà hàng', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-coffee', 1, 5, 1, 1, '0000-00-00 00:00:00'),
+(10, 'Phục vụ 24/24', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fp-ht-receptionist', 1, 1, 1, 1, '0000-00-00 00:00:00'),
+(11, 'Ăn sáng tự chọn', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-coffee', 2, 5, 1, 1, '0000-00-00 00:00:00'),
+(12, '5% phí phục vụ', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 2, 100, 1, 1, '0000-00-00 00:00:00'),
+(13, 'Internet miễn phí', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 2, 6, 1, 1, '0000-00-00 00:00:00'),
+(14, 'Chưa bao gồm VAT và các dịch vụ phát sinh', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 2, 100, 1, 1, '0000-00-00 00:00:00'),
+(15, 'Miễn phí trẻ em dưới 6 tuổi ở chung phòng, trẻ em 6-10 tuổi phụ thu 50%,  trẻ em trên 10 tuổi phụ thu như người lớn.', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 3, 100, 1, 1, '0000-00-00 00:00:00'),
+(16, 'Đặt thêm giường 150.000 VND', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 3, 100, 1, 1, '0000-00-00 00:00:00'),
+(17, 'Thời gian trả phòng: 12h00', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 3, 100, 1, 1, '0000-00-00 00:00:00'),
+(18, 'Thời gian nhận phòng: 14h00', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 3, 100, 1, 1, '0000-00-00 00:00:00'),
+(19, 'Giá phòng có thể thay đổi', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 3, 100, 1, 1, '0000-00-00 00:00:00'),
+(20, 'Phương thức thanh toán: Tiền mặt hoặc các loại thẻ: American Express, Diners Club, JCB, Master, Visa', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 3, 100, 1, 1, '0000-00-00 00:00:00'),
+(21, 'Khách theo đoàn, khách ở dài hạn sẽ có chế độ đặc biệt', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 3, 100, 1, 1, '0000-00-00 00:00:00'),
+(22, 'Trả phòng trễ: Đến 18h00: Tính nửa ngày, Sau 18h00: Tính một ngày', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 3, 100, 1, 1, '0000-00-00 00:00:00'),
+(23, 'Đặt cọc tối thiểu 50% tổng tiền phòng đặt trước', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 3, 100, 1, 1, '0000-00-00 00:00:00'),
+(24, 'Hủy phòng không hoàn trả đặt cọc.', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 3, 100, 1, 1, '0000-00-00 00:00:00'),
+(25, 'International telephone service', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-phone', 4, 4, 2, 1, '0000-00-00 00:00:00'),
+(26, 'Airport Transfer', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 4, 100, 2, 1, '0000-00-00 00:00:00'),
+(27, 'Tour/Travel Information Service', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 4, 100, 2, 1, '0000-00-00 00:00:00'),
+(28, 'Laundry Service', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 4, 100, 2, 1, '0000-00-00 00:00:00'),
+(29, 'Free Internet', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fp-ht-receptionist', 4, 6, 2, 1, '0000-00-00 00:00:00'),
+(30, 'Cars, motorbikes Rental', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-car', 4, 3, 2, 1, '0000-00-00 00:00:00'),
+(31, 'Room Service', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fp-ht-maid', 4, 2, 2, 1, '0000-00-00 00:00:00'),
+(32, 'Restaurant service', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-coffee', 4, 5, 2, 1, '0000-00-00 00:00:00'),
+(33, 'Support 24/7', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fp-ht-receptionist', 4, 1, 2, 1, '0000-00-00 00:00:00'),
+(34, 'Breakfast', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-coffee', 5, 100, 2, 1, '0000-00-00 00:00:00'),
+(35, '5% sevice fee', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 5, 100, 2, 1, '0000-00-00 00:00:00'),
+(36, 'Free Internet', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fp-ht-computer', 5, 100, 2, 1, '0000-00-00 00:00:00'),
+(37, 'Excluding VAT and other services', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 5, 100, 2, 1, '0000-00-00 00:00:00'),
+(38, 'Free for children under 12 years old', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 6, 100, 2, 1, '0000-00-00 00:00:00'),
+(39, 'Extra bed: 150.000 VND', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 6, 100, 2, 1, '0000-00-00 00:00:00'),
+(40, 'Check-out time: 12h00', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 6, 100, 2, 1, '0000-00-00 00:00:00'),
+(41, 'Check-in time: 14h00', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 6, 100, 2, 1, '0000-00-00 00:00:00'),
+(42, 'Payment: American Express, Diners Club, JCB, MasterCard, Visa', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 6, 100, 2, 1, '0000-00-00 00:00:00'),
+(43, 'Guests in groups, long term stay will be special prices', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 6, 100, 2, 1, '0000-00-00 00:00:00'),
+(44, 'Late check-out: to 18:00: The half-day, after 18:00: The one day', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 6, 100, 2, 1, '0000-00-00 00:00:00'),
+(45, '50% deposit', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 6, 100, 2, 1, '0000-00-00 00:00:00'),
+(46, 'Cancellations are not refundable deposit.', 'Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.', 'fa fa-cogs', 6, 100, 2, 1, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
