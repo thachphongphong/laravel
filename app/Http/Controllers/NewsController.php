@@ -2,33 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\ContactDetail;
+use App\Http\Requests;
 use App\Menu;
 use App\News;
-use App\Room;
-use App\Slider;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use View;
+use Config;
 use DB;
+use View;
+
 class NewsController extends Controller
 {
     public function load($language)
     {
-        $language_id = 1;
         if ($language == 'vi') {
             $language_id = 1;
+            $constants = Config::get('constants.vi');
         } else {
             $language_id = 2;
+            $constants = Config::get('constants.en');
         }
         $menus = Menu::with('submenus')
             ->where('language_id', $language_id)
             ->orderBy('order', 'asc')
             ->get();
-        $slider = Slider::all();
-
+        $contact = ContactDetail::where('language_id', $language_id)->first();
         $new = News::where('language_id', $language_id)->take(10)->get();
-        return View::make('news', array('menus' => $menus, 'sliders' => $slider, 'news' => $new));
+        return View::make('news', array('constants' => $constants,'menus' => $menus, 'contact' => $contact,  'news' => $new));
     }
 }

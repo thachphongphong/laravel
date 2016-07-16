@@ -2,22 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\ContactDetail;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Menu;
+use Config;
+use DB;
+use View;
 
 class Contact_UsController extends Controller
 {
     public function load($language)
     {
-        $language_id = 1;
         if ($language == 'vi') {
-            $language_id =1;
-        }else{
-            $language_id =2;
+            $language_id = 1;
+            $constants = Config::get('constants.vi');
+        } else {
+            $language_id = 2;
+            $constants = Config::get('constants.en');
         }
-        $string = "Load Booking_RoomController";
-        return $string;
+        $menus = Menu::with('submenus')
+            ->where('language_id', $language_id)
+            ->orderBy('order', 'asc')
+            ->get();
+        $contact = ContactDetail::where('language_id', $language_id)->first();
+
+        return View::make('booking', array('constants' => $constants,'menus' => $menus, 'contact' => $contact));
     }
 }
