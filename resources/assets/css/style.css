@@ -650,7 +650,7 @@ ul.styled-list.list-star li:before {
           transition: height 0.3s;
 }
 .navbar {
-  /*font-family: "Playfair Display", serif;*/
+  font-family: "Playfair Display", serif;
   margin-bottom: 0;
 }
 .navbar-default {
@@ -767,7 +767,7 @@ ul.styled-list.list-star li:before {
   display: block;
   width: 5px;
   height: 5px;
-  /*background-color: #e7b315;*/
+  background-color: #e7b315;
   border-radius: 5px;
   position: absolute;
   top: 50%;
@@ -851,7 +851,7 @@ ul.styled-list.list-star li:before {
 .mg-page-title {
   padding-top: 70px;
   padding-bottom: 50px;
-  background-image: url(../images/page-title.jpg);
+  background-image: url(../images/page-title.png);
   color: #fff;
   text-align: center;
 }
