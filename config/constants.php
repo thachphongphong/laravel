@@ -16,7 +16,7 @@ return [
             'newsletter_desc' => 'Để đăng ký nhận các bản tin mới nhất của Khách sạn Biển Ngọc, xin vui lòng điền email của bạn.
             Xin trân trọng cảm ơn.',
             'social_media_desc' => 'Các trang mạng xã hội của khách sạn Biển Ngọc.',
-            'subscribe'=>'Nhận tin'
+            'subscribe' => 'Nhận tin'
         ],
         'booknow' => [
             'find_room' => 'Tìm Phòng',
@@ -25,7 +25,11 @@ return [
             'adult' => 'Người lớn',
             'child' => 'Trẻ em',
             'find' => 'Tìm'
-            ]
+        ],
+        'facilities' => [
+            'title' => 'Các tiện nghi của khách sạn',
+            'desc' => 'Pearl Sea Hotel cam kết phục vụ quí khách với dịch vụ tốt nhất'
+        ]
     ],
     'en' => [
         'bestroom' => [
@@ -43,7 +47,7 @@ return [
             'newsletter_desc' => 'Để đăng ký nhận các bản tin mới nhất của Khách sạn Biển Ngọc, xin vui lòng điền email của bạn.
             Xin trân trọng cảm ơn.',
             'social_media_desc' => 'Các trang mạng xã hội của khách sạn Biển Ngọc.',
-            'subscribe'=>'Subscribe'
+            'subscribe' => 'Subscribe'
         ],
         'booknow' => [
             'find_room' => 'SEARCH ROOMS',
@@ -52,6 +56,10 @@ return [
             'adult' => 'Adult',
             'child' => 'Child',
             'find' => 'Check Now'
+        ],
+        'facilities' => [
+            'title' => 'HOTEL FACILTIES',
+            'desc' => 'The best service we have'
         ]
     ]
 ];
