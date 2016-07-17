@@ -33,6 +33,16 @@ return [
         , 'recentnews' => [
             'news' => 'TIN TỨC',
             'gallery' => 'Hình ảnh'
+        ],
+        'contact' => [
+            'title' => 'Liên hệ với chúng tôi',
+            'desc' => '',
+            'send_email'=>'Gởi email',
+            'full_name'=>'Họ Tên',
+            'email'=>'E-mail',
+            'subject'=>'Tiêu đề',
+            'message'=>'Nội dung',
+            'send'=>'Gởi',
         ]
     ],
     'en' => [
@@ -67,6 +77,16 @@ return [
         ], 'recentnews' => [
             'news' => 'RECENT NEWS',
             'gallery' => 'OUR GALLERY'
+        ],
+        'contact' => [
+            'title' => 'Contact Us',
+            'desc' => '',
+            'send_email'=>'SEND AN E-MAIL',
+            'full_name'=>'',
+            'email'=>'E-mail',
+            'subject'=>'Subject',
+            'message'=>'Message',
+            'send'=>'Send'
         ]
     ]
 ];

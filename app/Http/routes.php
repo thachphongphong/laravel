@@ -21,5 +21,5 @@ Route::get('{language}/news','NewsController@load');
 Route::get('{language}/reservation','ReservationController@load');
 Route::get('{language}/location','LocationController@load');
 Route::get('{language}/booking','Booking_RoomController@load');
-Route::get('{language}/contact','Contact_UsController@load');
+Route::get('{language}/contact','ContactController@load');
 Route::get('{language}/news/{id}','NewsDetailController@load');

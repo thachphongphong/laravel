@@ -9,7 +9,7 @@ use Config;
 use DB;
 use View;
 
-class Contact_UsController extends Controller
+class ContactController extends Controller
 {
     public function load($language)
     {
@@ -26,6 +26,6 @@ class Contact_UsController extends Controller
             ->get();
         $contact = ContactDetail::where('language_id', $language_id)->first();
 
-        return View::make('booking', array('constants' => $constants,'menus' => $menus, 'contact' => $contact));
+        return View::make('contact', array('constants' => $constants,'menus' => $menus, 'contact' => $contact));
     }
 }
