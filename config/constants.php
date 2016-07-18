@@ -41,7 +41,7 @@ return [
             'full_name'=>'Họ Tên',
             'email'=>'E-mail',
             'subject'=>'Tiêu đề',
-            'message'=>'Nội dung',
+            'content'=>'Nội dung',
             'send'=>'Gởi',
         ]
     ],
@@ -58,9 +58,8 @@ return [
             'social' => 'FACEBOOK',
             'newsletter' => 'NEWSLETTER',
             'social_media' => 'SOCIAL MEDIA',
-            'newsletter_desc' => 'Để đăng ký nhận các bản tin mới nhất của Khách sạn Biển Ngọc, xin vui lòng điền email của bạn.
-            Xin trân trọng cảm ơn.',
-            'social_media_desc' => 'Các trang mạng xã hội của khách sạn Biển Ngọc.',
+            'newsletter_desc' => 'To get the news letter from Pearl Sea Hotel, Please input your email. Thank you.',
+            'social_media_desc' => 'Another social page.',
             'subscribe' => 'Subscribe'
         ],
         'booknow' => [
@@ -85,7 +84,7 @@ return [
             'full_name'=>'',
             'email'=>'E-mail',
             'subject'=>'Subject',
-            'message'=>'Message',
+            'content'=>'Message',
             'send'=>'Send'
         ]
     ]

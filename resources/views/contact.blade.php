@@ -21,7 +21,7 @@
                     <form class="clearfix">
                         <div class="mg-contact-form-input">
                             <label for="full-name">{{$constants['contact']['full_name']}}</label>
-                            <input type="text" class="form-control" id="full-name">
+                            <input type="text" class="form-control" id="fullname">
                         </div>
                         <div class="mg-contact-form-input">
                             <label for="email">{{$constants['contact']['email']}}</label>
@@ -32,10 +32,11 @@
                             <input type="text" class="form-control" id="subject">
                         </div>
                         <div class="mg-contact-form-input">
-                            <label for="subject">{{$constants['contact']['message']}}</label>
-                            <textarea class="form-control" id="subject" rows="5"></textarea>
+                            <label for="content">{{$constants['contact']['content']}}</label>
+                            <textarea class="form-control" id="content" rows="5"></textarea>
                         </div>
-                        <input type="submit" class="btn btn-dark-main pull-right" value="{{$constants['contact']['send']}}">
+                        <input type="submit" id="send-btn" class="btn btn-dark-main pull-right"
+                               value="{{$constants['contact']['send']}}">
                     </form>
                 </div>
                 <div class="col-md-7">
