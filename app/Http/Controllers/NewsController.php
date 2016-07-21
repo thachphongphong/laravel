@@ -6,6 +6,7 @@ use App\ContactDetail;
 use App\Http\Requests;
 use App\Menu;
 use App\News;
+use App\PageTitle;
 use Config;
 use DB;
 use View;
@@ -21,12 +22,16 @@ class NewsController extends Controller
             $language_id = 2;
             $constants = Config::get('constants.en');
         }
+
+        $title = PageTitle::where('language_id', $language_id)->where('page_id', 3)
+            ->orderByRaw("RAND()")->first();
+
         $menus = Menu::with('submenus')
             ->where('language_id', $language_id)
             ->orderBy('order', 'asc')
             ->get();
         $contact = ContactDetail::where('language_id', $language_id)->first();
         $new = News::where('language_id', $language_id)->take(10)->get();
-        return View::make('news', array('constants' => $constants,'menus' => $menus, 'contact' => $contact,  'news' => $new));
+        return View::make('news', array('constants' => $constants,'menus' => $menus, 'contact' => $contact,  'news' => $new, 'title' =>$title));
     }
 }

@@ -1,6 +1,6 @@
 @extends('master')
 @section('content_section')
-
+    @include('title_section')
     <div class="mg-blog-list">
         <div class="container">
             <div class="row">
