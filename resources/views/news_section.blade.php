@@ -25,20 +25,14 @@
 
                     <div class="mg-gallery-container">
                         <ul class="mg-gallery" id="mg-gallery">
-                            <li><img src="{{asset('images/gallery-01.png')}}" alt="Partner Logo"></li>
-                            <li><img src="{{asset('images/gallery-02.png')}}" alt="Partner Logo"></li>
-                            <li><img src="{{asset('images/gallery-05.png')}}" alt="Partner Logo"></li>
-                            <li><img src="{{asset('images/gallery-07.png')}}" alt="Partner Logo"></li>
-                            <li><img src="{{asset('images/gallery-05.png')}}" alt="Partner Logo"></li>
-                            <li><img src="{{asset('images/gallery-06.png')}}" alt="Partner Logo"></li>
+                            @foreach ($images as $image)
+                                <li><img height="350" width="670" src="{{asset($image -> url)}}" alt="{{$image -> alt}}"></li>
+                            @endforeach
                         </ul>
                         <ul class="mg-gallery-thumb" id="mg-gallery-thumb">
-                            <li><img src="{{asset('images/gallery-thumb-01.png')}}" alt="Partner Logo"></li>
-                            <li><img src="{{asset('images/gallery-thumb-02.png')}}" alt="Partner Logo"></li>
-                            <li><img src="{{asset('images/gallery-thumb-05.png')}}" alt="Partner Logo"></li>
-                            <li><img src="{{asset('images/gallery-thumb-06.png')}}" alt="Partner Logo"></li>
-                            <li><img src="{{asset('images/gallery-thumb-07.png')}}" alt="Partner Logo"></li>
-                            <li><img src="{{asset('images/gallery-thumb-05.png')}}" alt="Partner Logo"></li>
+                            @foreach ($images as $image)
+                                <li><img height="60" width="101" src="{{asset($image -> thumb)}}" alt="{{$image -> alt}}"></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 @extends('master')
 @section('content_section')
     @include('title_section')
+    @include('book_now_section')
     <div class="mg-page mg-available-rooms">
         <div class="container">
             <div class="row">
@@ -16,7 +17,7 @@
                                     <h3 class="mg-avl-room-title"><a href="#">{{$room->name}}</a>
                                         <span>{{$room->price}}</span></h3>
 
-                                    <p>{{$room->description}}.</p>
+                                    <p><span>{{$room->description}}</span> - <span>{{$room->total_person}} {{$constants['room']['person']}}</span></p>
 
                                     <div class="row mg-room-fecilities">
                                         <div class="col-sm-6">
@@ -77,15 +78,25 @@
                                         </div>
                                     </div>
 
-                                    <a href="#" class="btn btn-dark ">View Details <i
-                                                class="fa fa-angle-double-right"></i></a>
-                                    <a href="#" class="btn btn-main pull-right">Book Now</a>
+                                    <a href=" {{ action("RoomDetailController@load", [(!Session::has('lang'))? Session::get('lang'): 'vi', $room->id]) }}" class="btn btn-dark "> <i
+                                                class="fa fa-angle-double-right">{{$constants['room']['detail']}}</i></a>
+                                    <a href="#" class="btn btn-main pull-right">{{$constants['room']['book']}}</a>
 
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn-main mg-promotion">
+        <div class="container">
+            <div class="row">
+                @foreach ($promotions as $pro)
+                    <h2 class="mg-sec-left-title">{{$pro->description}} : {{$pro->sale_off}}</h2>
+                    <p>{{$constants['room']['promotion_app']}} {{$constants['room']['promotion_from']}} :  {{ date('d-M-Y', strtotime($pro->apply_time_from)) }} {{$constants['room']['promotion_to']}} :  {{ date('d-M-Y', strtotime($pro->apply_time_to)) }}</p>
+                @endforeach
             </div>
         </div>
     </div>

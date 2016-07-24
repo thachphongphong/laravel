@@ -30,7 +30,7 @@
                                 @endforeach
                             @elseif (count(explode(',', $ab ->image_url)) == 4)
                                 @foreach( explode(',', $ab ->image_url) as $url)
-                                    <div class="col-md-3 col-xs-6">
+                                    <div class="col-sm-3">
                                         <figure class="mg-room mg-room-col-4">
                                             <img src=" {{asset($url)}}" alt="pearl sea hotel" class="img-responsive center-block">
                                         </figure>

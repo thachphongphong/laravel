@@ -42,7 +42,25 @@ return [
             'email'=>'E-mail',
             'subject'=>'Tiêu đề',
             'content'=>'Nội dung',
-            'send'=>'Gởi',
+            'send'=>'Gởi'
+        ],
+        'room' =>[
+            'detail'=>'Xem Chi Tiết',
+            'book' => 'Book Phòng',
+            'facilities' => 'Tiện Nghi Phòng',
+            'desc' => 'Mô Tả Phòng',
+            'person' => 'người',
+            'promotion_app' => 'Áp dụng',
+            'promotion_from' => 'từ ',
+            'promotion_to' => 'đến '
+        ],
+        'booking' =>[
+            'available'=>'Phòng Trống',
+            'step1'=>'Chọn Phòng',
+            'step2'=>'Thông Tin Người Book',
+            'step3'=>'Thanh Toán',
+            'step4'=>'Cảm ơn',
+            'select'=>'Chọn Phòng Này'
         ]
     ],
     'en' => [
@@ -86,6 +104,24 @@ return [
             'subject'=>'Subject',
             'content'=>'Message',
             'send'=>'Send'
+        ],
+        'room' =>[
+            'detail'=>'View Details',
+            'book' => 'Book Now',
+            'facilities' => 'Room Fecilities',
+            'desc' => 'Room Description',
+            'person' => 'person',
+            'promotion_app' => 'Apply',
+            'promotion_from' => 'from ',
+            'promotion_to' => 'to '
+        ],
+        'booking' =>[
+            'available'=>'Room Available',
+            'step1'=>'Select Room',
+            'step2'=>'Personal Info',
+            'step3'=>'Payment',
+            'step4'=>'Thank you',
+            'select'=>'Select This Room'
         ]
     ]
 ];

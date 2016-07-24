@@ -479,4 +479,18 @@ $(document).ready(function () {
             }
         });
     });
+
+
+    $('#findBooking').click(function () {
+        var checkin = $('#checkin').val();
+        var checkout = $('#checkout').val();
+        var adult = $('#adult').val();
+        if(checkin == '' || checkout == '' || adult == '' || adult == null){
+            return false;
+        }else{
+            $( "#bookingF" ).submit();
+            return true;
+        }
+
+    });
 });

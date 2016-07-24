@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ContactDetail;
+use App\Gallery;
 use App\Introduce;
 use App\Menu;
 use App\News;
@@ -13,6 +14,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use View;
 use DB;
 use Config;
@@ -37,6 +39,9 @@ class HomeController extends Controller
                 ->where('id', 4)
                 ->get();
         }
+
+        Session::put('lang', $language);
+
         $menus = Menu::with('submenus')
             ->where('language_id', $language_id)
             ->orderBy('order', 'asc')
@@ -46,8 +51,11 @@ class HomeController extends Controller
         $about = Introduce::where('language_id', $language_id)->first();
         $contact = ContactDetail::where('language_id', $language_id)->first();
 
-        $new = News::where('language_id', $language_id)->orderBy('created_date', 'desc')->take(3)->get();
+        $new = News::where('language_id', $language_id)->orderBy('created_date', 'desc')->take(2)->get();
+
+        $image = Gallery::all();
+
         return View::make('home', array('constants' => $constants, 'menus' => $menus, 'sliders' => $slider, 'abouts' => $about,
-            'rooms' => $room, 'contact' => $contact, 'room_services' => $room_service,'news'=>$new));
+            'rooms' => $room, 'contact' => $contact, 'room_services' => $room_service,'news'=>$new, 'images' => $image));
     }
 }

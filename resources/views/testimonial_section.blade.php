@@ -23,10 +23,10 @@
                 <div class="col-md-6">
                     <h2 class="mg-sec-left-title">Tours du lịch</h2>
                     <ul class="mg-part-logos" id="mg-part-logos">
-                        <li><a href="#"><img height="79" src="{{asset('images/tours/bana-hill.jpg')}}" alt="Tour Poster"></a></li>
-                        <li><a href="#"><img height="79" src="{{asset('images/tours/hue.jpg')}}" alt="Tour Poster"></a></li>
-                        <li><a href="#"><img height="79" src="{{asset('images/tours/pho-co-hoi-an.jpg')}}" alt="Tour Poster"></a></li>
-                        <li><a href="#"><img height="79" src="{{asset('images/tours/thanh-dia-my-son.jpg')}}" alt="Tour Poster"></a></li>
+                        <li><a href="#"><img height="79" src="{{asset('images/tours/bana-hill.jpg')}}" alt="bana-hill"></a></li>
+                        <li><a href="#"><img height="79" src="{{asset('images/tours/hue.jpg')}}" alt="hue"></a></li>
+                        <li><a href="#"><img height="79" src="{{asset('images/tours/pho-co-hoi-an.jpg')}}" alt="hoi an"></a></li>
+                        <li><a href="#"><img height="79" src="{{asset('images/tours/thanh-dia-my-son.jpg')}}" alt="my son"></a></li>
                     </ul>
                 </div>
             </div>
