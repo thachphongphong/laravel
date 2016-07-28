@@ -9,6 +9,7 @@ use App\Message;
 use Config;
 use DB;
 use Illuminate\Http\Request;
+use Mail;
 use View;
 
 class ContactController extends Controller
@@ -27,7 +28,6 @@ class ContactController extends Controller
             ->orderBy('order', 'asc')
             ->get();
         $contact = ContactDetail::where('language_id', $language_id)->first();
-
         return View::make('contact', array('constants' => $constants, 'menus' => $menus, 'contact' => $contact));
     }
 
@@ -40,7 +40,16 @@ class ContactController extends Controller
         $message->title = $message_info['title'];
         $message->content = $message_info['content'];
         $message->save();
+
+        // Send mail to admin
+        $data = array('data' => $message);
+        Mail::send('contact_mail', $data, function ($message) {
+            $message->from('contact@pearlseahotel.com', 'Pearl Sea Hotel');
+            $message->to('contact@pearlseahotel.com')->subject('Your Reminder!');
+        });
+
         return $message;
     }
+
 
 }
