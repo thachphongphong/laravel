@@ -60,7 +60,22 @@ return [
             'step2'=>'Thông Tin Người Book',
             'step3'=>'Thanh Toán',
             'step4'=>'Cảm ơn',
-            'select'=>'Chọn Phòng Này'
+            'select'=>'Chọn Phòng Này',
+            'firstname'=>'Họ',
+            'lastname'=>'Tên',
+            'email'=>'Địa chỉ email',
+            'email2'=>'Xác nhận địa chỉ email',
+            'phone'=>'Số điện thoại',
+            'confirm'=>'Chọn và Next, tôi đã đọc và đồng ý với ',
+            'terms'=>'nội quy của khách sạn',
+            'detail'=>'CHI TIẾT BOOKING',
+            'total'=>'Tổng tiền',
+            'paylater'=>'Thanh toán khi nhận phòng',
+            'devlater'=>'Chức năng thanh toán trực tuyến đang được phát triển.',
+            'pay'=>'Thanh toán sau',
+            'thankyou'=>'Cảm ơn bạn đã book phòng, Email sẽ được gửi tới bạn.',
+            'payId'=>'Booking ID',
+            'continue'=>'Tiếp tục'
         ]
     ],
     'en' => [
@@ -121,7 +136,22 @@ return [
             'step2'=>'Personal Info',
             'step3'=>'Payment',
             'step4'=>'Thank you',
-            'select'=>'Select This Room'
+            'select'=>'Select This Room',
+            'firstname'=>'First Name',
+            'lastname'=>'Last Name',
+            'email'=>'Email Address',
+            'email2'=>'Confirm Email Address',
+            'phone'=>'Phone',
+            'confirm'=>'By choosing and Next, I acknowledge having read and agreed to the ',
+            'terms'=>'terms and conditions',
+            'detail'=>'BOOKING DETAIL',
+            'total'=>'Total',
+            'paylater'=>'Full payment will be done at the hotel.',
+            'devlater'=>'Pay online be developing',
+            'pay'=>'Pay Later',
+            'thankyou'=>'Thank you! Your booking is confirmed. Invoice Sent in your email address',
+            'payId'=>'Your Booking ID',
+            'continue'=>'Next step'
         ]
     ]
 ];

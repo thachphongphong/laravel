@@ -80,7 +80,7 @@
 
                                     <a href=" {{ action("RoomDetailController@load", [(!Session::has('lang'))? Session::get('lang'): 'vi', $room->id]) }}" class="btn btn-dark "> <i
                                                 class="fa fa-angle-double-right">{{$constants['room']['detail']}}</i></a>
-                                    <a href="#" class="btn btn-main pull-right">{{$constants['room']['book']}}</a>
+                                    <a href="{{ URL::to( '/'.Session::get('lang').'/booking', [$room->id]) }}" class="btn btn-main pull-right">{{$constants['room']['book']}}</a>
 
                                 </div>
                             </div>

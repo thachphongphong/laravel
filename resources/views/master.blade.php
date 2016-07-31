@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from demo.cantothemes.com/html/mega/v1.1/fullwidth/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jun 2016 09:32:17 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta id="token" name="token" content="{{ csrf_token() }}">
+    <meta name="_token" content="{!! csrf_token() !!}"/>
     <link rel="shortcut icon" href="{{asset('/images/favicon.ico') }}">
     <title>PEARL SEA HOTEL</title>
 
@@ -59,5 +58,4 @@
 <script src="{{ asset('/js/script.js') }}"></script>
 </body>
 
-<!-- Mirrored from demo.cantothemes.com/html/mega/v1.1/fullwidth/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jun 2016 09:34:43 GMT -->
 </html>
