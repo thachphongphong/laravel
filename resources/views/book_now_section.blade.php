@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="mg-bn-forms">
-                        <form method="post" id="bookingF" action="{{ URL::to( '/'.Session::get('lang').'/booking/search') }}" accept-charset="UTF-8">
+                        <form method="post" id="bookingSearch" action="{{ URL::to( '/'.Session::get('lang').'/booking') }}" accept-charset="UTF-8">
                             <div class="row">
                                 <div class="col-md-3 col-xs-6">
                                     <div class="input-group date mg-check-in">

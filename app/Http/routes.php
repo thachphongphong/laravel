@@ -21,9 +21,12 @@ Route::get('{language}/local_food', 'Local_FoodController@load');
 Route::get('{language}/news', 'NewsController@load');
 Route::get('{language}/reservation', 'ReservationController@load');
 Route::get('{language}/location', 'LocationController@load');
+
 Route::get('{language}/booking', 'Booking_RoomController@load');
 Route::get('{language}/booking/{id}', 'Booking_RoomController@book');
-Route::post('{language}/booking/search', 'Booking_RoomController@search');
+Route::post('{language}/booking', 'Booking_RoomController@search');
+Route::post('{language}/booking/select', 'Booking_RoomController@select');
+
 Route::get('{language}/contact', 'ContactController@load');
 Route::post('{language}/contact/send', 'ContactController@addMessage');
 Route::get('{language}/news/{id}', 'NewsDetailController@load');
