@@ -4311,15 +4311,28 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 .flag-box-cont {
   content: '';
   display: block;
-  width: 5px;
-  height: 5px;
-  /*background-color: #e7b315;*/
   border-radius: 5px;
   /*position: absolute;*/
   top: 50%;
   left: -7px;
-  margin: 26px 20px;
   position: relative;
   -webkit-transition: margin 0.3s;
   transition: margin 0.3s;
+}
+
+.left {
+  float: left;
+  padding-right: 5px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  text-align: right;
+  display: inline;
+}
+
+.right {
+  float: left;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  text-align: left;
+  display: inline;
 }
