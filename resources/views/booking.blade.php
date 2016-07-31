@@ -121,40 +121,40 @@
                                             <div class="row pb40">
                                                 <div class="col-md-6">
                                                     <div class="mg-book-form-input">
-                                                        <label>First Name</label>
+                                                        <label>{{$constants['booking']['first_name']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>Address Line 1</label>
+                                                        <label>{{$constants['booking']['address_line_1']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>City</label>
+                                                        <label>{{$constants['booking']['city']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>State/Region</label>
+                                                        <label>{{$constants['booking']['state']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mg-book-form-input">
-                                                        <label>Last Name</label>
+                                                        <label>{{$constants['booking']['last_name']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>Address Line 2</label>
+                                                        <label>{{$constants['booking']['address_line_2']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>Zip/Post Code</label>
+                                                        <label>{{$constants['booking']['zip_code']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
 
                                                     <div class="mg-book-form-input">
-                                                        <label>Country</label>
+                                                        <label>{{$constants['booking']['country']}}</label>
                                                         <select class="form-control">
-                                                            <option value="">Select your country</option>
+                                                            <option value="">{{$constants['booking']['select_country']}}</option>
                                                             <option value="United States">United States</option>
                                                             <option value="United Kingdom">United Kingdom</option>
                                                             <option value="Canada">Canada</option>
@@ -478,44 +478,38 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <h2 class="mg-sec-left-title">Account Info</h2>
+                                            <h2 class="mg-sec-left-title">{{$constants['booking']['account_info']}}</h2>
 
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="mg-book-form-input">
-                                                        <label>Phone</label>
+                                                        <label>{{$constants['booking']['phone']}}</label>
                                                         <input type="tel" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>Password</label>
+                                                        <label>{{$constants['booking']['password']}}</label>
                                                         <input type="password" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mg-book-form-input">
-                                                        <label>Email Address</label>
+                                                        <label>{{$constants['booking']['email']}}</label>
                                                         <input type="email" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>Re-Password</label>
+                                                        <label>{{$constants['booking']['re_password']}}</label>
                                                         <input type="password" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="clearfix mg-terms-input">
-                                                <div class="pull-right">
-                                                    <label><input type="checkbox"> By Sign up you are agree with our <a
-                                                                href="#">terms and condition</a></label>
-                                                </div>
-                                            </div>
-                                            <a href="#payment" class="btn btn-dark-main btn-next-tab pull-right">Next</a>
-                                            <a href="#select-room" class="btn btn-default btn-prev-tab pull-left">Back</a>
+                                            <a href="#payment" class="btn btn-dark-main btn-next-tab pull-right">{{$constants['booking']['next']}}</a>
+                                            <a href="#select-room" class="btn btn-default btn-prev-tab pull-left">{{$constants['booking']['back']}}</a>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="mg-cart-container">
                                             <aside class="mg-widget mt50" id="mg-room-cart">
-                                                <h2 class="mg-widget-title">Booking Details</h2>
+                                                <h2 class="mg-widget-title">{{$constants['booking']['booking_details']}}</h2>
 
                                                 <div class="mg-widget-cart">
                                                     <div class="mg-cart-room">
@@ -525,23 +519,23 @@
                                                         <h3>Super Delux</h3>
                                                     </div>
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Check In:</strong>
+                                                        <strong>{{$constants['booking']['check_in']}}:</strong>
                                                         <span>27 Jan, 2015</span>
                                                     </div>
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Check Out:</strong>
+                                                        <strong>{{$constants['booking']['check_out']}}:</strong>
                                                         <span>28 Jan, 2015</span>
                                                     </div>
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Adults:</strong>
+                                                        <strong>{{$constants['booking']['adults']}}:</strong>
                                                         <span>2</span>
                                                     </div>
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Child:</strong>
+                                                        <strong>{{$constants['booking']['child']}}:</strong>
                                                         <span>1</span>
                                                     </div>
                                                     <div class="mg-cart-total">
-                                                        <strong>Total:</strong>
+                                                        <strong>{{$constants['booking']['total']}}:</strong>
                                                         <span>$249.99</span>
                                                     </div>
                                                 </div>
@@ -555,45 +549,45 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="mg-book-form-billing">
-                                            <h2 class="mg-sec-left-title">Billing Address</h2>
+                                            <h2 class="mg-sec-left-title">{{$constants['booking']['billing_address']}}</h2>
 
                                             <div class="row pb40">
                                                 <div class="col-md-6">
                                                     <div class="mg-book-form-input">
-                                                        <label>First Name</label>
+                                                        <label>{{$constants['booking']['first_name']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>Address Line 1</label>
+                                                        <label>{{$constants['booking']['address_line_1']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>City</label>
+                                                        <label>{{$constants['booking']['city']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>State/Region</label>
+                                                        <label>{{$constants['booking']['state']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mg-book-form-input">
-                                                        <label>Last Name</label>
+                                                        <label>{{$constants['booking']['last_name']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>Address Line 2</label>
+                                                        <label>{{$constants['booking']['address_line_2']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                     <div class="mg-book-form-input">
-                                                        <label>Zip/Post Code</label>
+                                                        <label>{{$constants['booking']['zip_code']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
 
                                                     <div class="mg-book-form-input">
-                                                        <label>Country</label>
+                                                        <label>{{$constants['booking']['country']}}</label>
                                                         <select class="form-control">
-                                                            <option value="">Select your country</option>
+                                                            <option value="">{{$constants['booking']['select_country']}}</option>
                                                             <option value="United States">United States</option>
                                                             <option value="United Kingdom">United Kingdom</option>
                                                             <option value="Canada">Canada</option>
@@ -917,29 +911,29 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <h2 class="mg-sec-left-title">Card Info</h2>
+                                            <h2 class="mg-sec-left-title">{{$constants['booking']['card_info']}}</h2>
 
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="mg-book-form-input">
-                                                        <label>Card Number</label>
+                                                        <label>{{$constants['booking']['card_number']}}</label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mg-book-form-input">
-                                                        <label>CVV</label>
+                                                        <label>{{$constants['booking']['cvv']}}</label>
                                                         <input type="password" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="mg-book-form-input">
-                                                        <label>Expire</label>
+                                                        <label>{{$constants['booking']['expire']}}</label>
 
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <select class="form-control">
-                                                                    <option value="">Month</option>
+                                                                    <option value="">{{$constants['booking']['month']}}</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
                                                                     <option value="3">3</option>
@@ -956,7 +950,7 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <select class="form-control">
-                                                                    <option value="">Year</option>
+                                                                    <option value="">{{$constants['booking']['year']}}</option>
                                                                     <option value="15">15</option>
                                                                     <option value="16">16</option>
                                                                     <option value="17">17</option>
@@ -974,15 +968,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="#thank-you" class="btn btn-dark-main btn-next-tab pull-right">Pay
-                                                Now</a>
-                                            <a href="#personal-info" class="btn btn-default btn-prev-tab pull-left">Back</a>
+                                            <a href="#thank-you" class="btn btn-dark-main btn-next-tab pull-right">{{$constants['booking']['pay_now']}}</a>
+                                            <a href="#personal-info" class="btn btn-default btn-prev-tab pull-left">{{$constants['booking']['back']}}</a>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="mg-cart-container">
                                             <aside class="mg-widget mt50" id="mg-room-cart">
-                                                <h2 class="mg-widget-title">Booking Details</h2>
+                                                <h2 class="mg-widget-title">{{$constants['booking']['booking_details']}}</h2>
 
                                                 <div class="mg-widget-cart">
                                                     <div class="mg-cart-room">
@@ -992,23 +985,23 @@
                                                         <h3>Super Delux</h3>
                                                     </div>
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Check In:</strong>
+                                                        <strong>{{$constants['booking']['check_in']}}:</strong>
                                                         <span>27 Jan, 2015</span>
                                                     </div>
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Check Out:</strong>
+                                                        <strong>{{$constants['booking']['check_out']}}:</strong>
                                                         <span>28 Jan, 2015</span>
                                                     </div>
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Adults:</strong>
+                                                        <strong>{{$constants['booking']['adults']}}:</strong>
                                                         <span>2</span>
                                                     </div>
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Child:</strong>
+                                                        <strong>{{$constants['booking']['child']}}:</strong>
                                                         <span>1</span>
                                                     </div>
                                                     <div class="mg-cart-address">
-                                                        <strong>Your Address:</strong>
+                                                        <strong>{{$constants['booking']['your_address']}}:</strong>
                                                         <address>
                                                             <strong>John Doe</strong><br>
                                                             Level 13, 2 Elizabeth St, Melbourne<br>
@@ -1016,7 +1009,7 @@
                                                         </address>
                                                     </div>
                                                     <div class="mg-cart-total">
-                                                        <strong>Total:</strong>
+                                                        <strong>{{$constants['booking']['total']}}:</strong>
                                                         <span>$249.99</span>
                                                     </div>
                                                 </div>
@@ -1030,12 +1023,11 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                                                 aria-hidden="true">&times;</span></button>
                                     <div class="mg-alert-icon"><i class="fa fa-check"></i></div>
-                                    <h3 class="mg-alert-payment">Thank you! Your booking is confirmed. Invoice Sent in your
-                                        email address</h3>
+                                    <h3 class="mg-alert-payment">{{$constants['booking']['thank_you']}}</h3>
                                 </div>
                                 <div class="mg-cart-container mg-paid">
                                     <aside class="mg-widget mt50" id="mg-room-cart">
-                                        <h2 class="mg-widget-title">Booking Details</h2>
+                                        <h2 class="mg-widget-title">{{$constants['booking']['booking_details']}}</h2>
 
                                         <div class="mg-widget-cart">
                                             <div class="row">
@@ -1058,23 +1050,23 @@
                                                     <h3 class="mg-payment-id">Your Payment ID: #105152396140</h3>
 
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Check In:</strong>
+                                                        <strong>{{$constants['booking']['check_in']}}:</strong>
                                                         <span>27 Jan, 2015</span>
                                                     </div>
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Check Out:</strong>
+                                                        <strong>{{$constants['booking']['check_out']}}:</strong>
                                                         <span>28 Jan, 2015</span>
                                                     </div>
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Adults:</strong>
+                                                        <strong>{{$constants['booking']['adults']}}:</strong>
                                                         <span>2</span>
                                                     </div>
                                                     <div class="mg-widget-cart-row">
-                                                        <strong>Child:</strong>
+                                                        <strong>{{$constants['booking']['child']}}:</strong>
                                                         <span>1</span>
                                                     </div>
                                                     <div class="mg-cart-address">
-                                                        <strong>Your Address:</strong>
+                                                        <strong>{{$constants['booking']['your_address']}}:</strong>
                                                         <address>
                                                             <strong>John Doe</strong><br>
                                                             Level 13, 2 Elizabeth St, Melbourne<br>
@@ -1082,7 +1074,7 @@
                                                         </address>
                                                     </div>
                                                     <div class="mg-cart-total">
-                                                        <strong>Total:</strong>
+                                                        <strong>{{$constants['booking']['total']}}:</strong>
                                                         <span>$249.99</span>
                                                     </div>
                                                 </div>
