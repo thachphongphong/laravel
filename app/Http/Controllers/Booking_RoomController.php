@@ -13,6 +13,7 @@ use Response;
 use Request;
 use Illuminate\Support\Facades\Session;
 use View;
+use Mail;
 
 class Booking_RoomController extends Controller
 {
@@ -122,15 +123,52 @@ class Booking_RoomController extends Controller
         if (Request::ajax()) {
             $roomId = $request->input('roomId');;
             $booking = Session::get('booking');
-            if($booking != null){
+            if ($booking != null) {
                 $booking->room_id = $roomId;
-            }else{
+            } else {
                 $booking = new BookingRoom();
                 $booking->room_id = $roomId;
             }
             Session::put('booking', $booking);
             $room = Room::where('language_id', $language_id)->where('id', $roomId)->get();
-            return Response::json(['success'=>true,'data'=>$room]);
+            return Response::json(['success' => true, 'data' => $room]);
         }
     }
+
+    public function makeBooking(\Illuminate\Http\Request $request)
+    {
+        // Getting all post data
+        $language = Session::get('lang');
+        if ($language == 'vi') {
+            $language_id = 1;
+            $constants = Config::get('constants.vi');
+        } else {
+            $language_id = 2;
+            $constants = Config::get('constants.en');
+        }
+        if (Request::ajax()) {
+            $booking = Session::get('booking');
+            if ($booking != null) {
+                //validate
+                $email = 'testeraxon@gmail.com';//$booking->email;
+//                $checkin = $booking->checkin;
+//                $checkout = $booking->checkout;
+//                $adults = $booking->adults;
+//                $child = $booking->child;
+//                $room_name = $booking->room_name;
+//
+//                // Send mail to admin
+//                $data = array('data' => ['email' => $email, 'checkin' => $checkin, 'checkout' => $checkout, 'adults' =>
+//                    $adults, 'child' => $child, 'room_name' => $room_name]);
+               // $data = array('email' => $email);
+                $data = array('constants' => $constants);
+                Mail::send('booking_mail',$data, function ($message) use ($email) {
+                    $message->from('contact@pearlseahotel.com', 'Pearl Sea Hotel');
+                    $message->to($email)->subject('Your have booked rooms at Pearl sea hotel!');
+                });
+            }
+            return Response::json(['success' => true, 'data' => 'ok']);
+        }
+    }
+
 }

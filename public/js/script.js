@@ -501,7 +501,12 @@ $(document).ready(function () {
 
     $('a[id="step1"]').on('shown.bs.tab', function (e) {
         var target = $(e.target).attr("href") // activated tab
-        console.log($(e.target).attr("rid"));
+        console.log((target));
         selectRoom($(e.target).attr("rid"));
+    });
+    $('a[id="step3"]').on('shown.bs.tab', function (e) {
+        var target = $(e.target).attr("href") // activated tab
+        console.log((target));
+        makeBooking();
     });
 });

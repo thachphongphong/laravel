@@ -236,7 +236,7 @@
                                                 <h2 class="mg-sec-left-title">{{$constants['booking']['paylater']}}</h2>
 
                                                 <h3>{{$constants['booking']['devlater']}}</h3>
-                                                <a href="#thank-you"
+                                                <a href="#thank-you" id="step3"
                                                    class="btn btn-dark-main btn-next-tab pull-right">{{$constants['booking']['pay']}}</a>
                                                 <a href="#personal-info"
                                                    class="btn btn-default btn-prev-tab pull-left">Back</a>
@@ -397,6 +397,33 @@
                 },
                 error: function () {
                     window.location.href = '{{URL(Session::get('lang').'/booking')}}';
+                }
+            })
+        }
+        function makeBooking() {
+            $.ajax({
+                type: "POST",
+                url: '{{URL(Session::get('lang').'/booking/make')}}',
+                data: {},
+                success: function (data) {
+                    if (data.success) {
+                        {{--var room = data.data[0];--}}
+                        {{--var assetBaseUrl = "{{ asset('') }}";--}}
+                        {{--$('#booking-room-url').attr('src', assetBaseUrl + room.image_url);--}}
+                        {{--$('#booking-room-url').attr('alt', room.name);--}}
+                        {{--$('#booking-room-name').text(room.name);--}}
+//                        $('#booking-checkin')
+//                        $('#booking-checkout')
+//                        $('#booking-adult')
+//                        $('#booking-child')
+//                        $('#booking-total')
+                    }else{
+                        {{--window.location.href = '{{URL(Session::get('lang').'/booking')}}';--}}
+                        console.log(data)
+                    }
+                },
+                error: function () {
+                    {{--window.location.href = '{{URL(Session::get('lang').'/booking')}}';--}}
                 }
             })
         }

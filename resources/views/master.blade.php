@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="_token" content="{!! csrf_token() !!}"/>
+    <meta id="token" name="token" content="{{ csrf_token() }}">
+
     <link rel="shortcut icon" href="{{asset('/images/favicon.ico') }}">
     <title>PEARL SEA HOTEL</title>
 
