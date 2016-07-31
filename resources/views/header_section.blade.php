@@ -32,7 +32,12 @@
                                 <li><a href="{{asset($menu ->url)}}">{{$menu ->name}}</a></li>
                             @endif
                         @endforeach
+
                     </ul>
+                </div>
+                <div class="flag-box-cont pull-right">
+                    <a href="{{ url('/vi/home') }}"><img src="{{asset('images/flag-vi.jpg')}}" alt="VI"></a>
+                    <a href="{{ url('/en/home') }}"><img src="{{asset('images/flag-en.jpg')}}" alt="EN"></a>
                 </div>
                 <!-- /.navbar-collapse -->
                 <div class="mg-search-box-cont pull-right">
@@ -45,6 +50,7 @@
                         </form>
                     </div>
                 </div>
+
             </div>
             <!-- /.container-fluid -->
         </nav>
