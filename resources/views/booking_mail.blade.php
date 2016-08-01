@@ -1,158 +1,213 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
-    <title>Reservation Confirmation HTML</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Chi Tiết Đặt Phòng</title>
 </head>
 <body>
-<table style="width: 664px; background-color: white;" border="1">
-    <tbody>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-size:12px;">
     <tr>
-        <td style="background-color: white; height: 169.55px;" colspan="3"
-            rowspan="1"><span style="color: #3333ff;"><img style="width: 100%; height: 169.55px;"
-                                                           title="HTML Reservation confirmation Template"
-                                                           alt="HTML Reservation confirmation Template"
-                                                           src="https://3lkpeq.dm1.livefilestore.com/y2p9xqJ0vzsL0VUf77JBZXUKjjHD3tF9onqsbVmjbEzEHyHCk4nuAsKB1LPraF_HsMQpCjpLEoWgLgNvIF39QOCdViiOQxdDZPH79NbQ92DedM/HTML%20Header1.jpg?psid=1"></span>
+        <td align="center">
+            <table width="700" border="0" cellpadding="0" cellspacing="0"
+                   style="border: solid 1px #c4c4c4; border-radius: 5px;box-shadow:0 0 5px #666666;">
+                <tr>
+                    <td valign="top">
+                        <table cellpadding="0" cellspacing="0" border="0" width="650" align="center"
+                               style="border: solid 1px #e8e8e8">
+                            <tr>
+                                <td valign="top">
+                                    <table width="630" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                        <tr>
+                                            <td align="center">
+                                                <table width="630" cellpadding="0" cellspacing="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td align="left">
+                                                            <br/>
+                                                            Thân gửi <b>{{$booking->full_name}}</b>
+                                                            <br/><br/>
+                                                            Cám ơn quý khách! Quý khách đã đặt phòng tại khách sạn Pearl Sea
+                                                            <br/>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <table width="630" cellpadding="0" cellspacing="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td align="left">
+                                                            <br/>
+
+                                                            <h1><b>Thông tin chi tiết đặt phòng:</b></h1>
+                                                            <br/>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <table width="630" cellpadding="0" cellspacing="0">
+                                                    <tbody align="left">
+                                                    <tr>
+                                                        <td valign="top">
+                                                            <b style="color: #f98131; border-bottom: solid 1px #e2e2e2;">Mã đặt
+                                                                phòng:</b> {{$booking->booking_id}}
+                                                        </td>
+                                                        <td>
+                                                            <b style="color: #f98131; border-bottom: solid 1px #e2e2e2;">Thời
+                                                                gian</b>
+                                                            <br/>
+                                                            {{$booking->created_date->format('d-m-Y')}}
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <b style="color: #f98131; border-bottom: solid 1px #e2e2e2;">Email
+                                                                nhận thông tin đặt phòng:</b>
+                                                            <br/>
+                                                            {{$booking->email}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr></tr>
+                                                    <tr>
+                                                        <td>
+                                                            <b style="color: #f98131; border-bottom: solid 1px #e2e2e2;">Ngày
+                                                                đến:</b>
+                                                            <br/>
+                                                            {{$booking->check_in->format('d-m-Y')}}
+                                                        </td>
+                                                        <td>
+                                                            <b style="color: #f98131; border-bottom: solid 1px #e2e2e2;">Ngày
+                                                                đi:</b>
+                                                            <br/>
+                                                            {{$booking->check_out->format('d-m-Y')}}
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td valign="top">
+                                                            <table>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td colspan="2">
+                                                                        <br/>
+
+                                                                        <h2>
+                                                                            <b style="color: #f98131; border-bottom: solid 1px #e2e2e2;">Thông
+                                                                                tin người đặt phòng</b>
+                                                                        </h2>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> Họ tên:</td>
+                                                                    <td>  {{$booking->full_name}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> Địa chỉ:</td>
+                                                                    <td>  {{$booking->address}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> Điện thoại:</td>
+                                                                    <td>  {{$booking->phone}}</td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table width="630" style="border-bottom: solid 1px #ccc;" cellpadding="0"
+                                                       cellspacing="0">
+                                                    <tbody align="left">
+                                                    <tr>
+                                                        <td align="left">
+                                                            <table width="630" cellpadding="5" cellspacing="1"
+                                                                   style="background:#fff;">
+                                                                <thead style="background: #ddd;">
+                                                                <tr>
+                                                                    <th style="width: 20px;">STT</th>
+                                                                    <th align="left" width="100">Tên phòng</th>
+                                                                    <th align="center" width="100">Giá tiền</th>
+                                                                    <th align="right" width="60">Số lượng</th>
+                                                                    <th align="right" width="120">Thành tiền(VNĐ)</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody style="background:#eee;">
+                                                                <?php $i = 0;
+                                                                $total_price = 0;
+                                                                ?>
+                                                                @foreach($rooms as $room)
+                                                                    <?php $i++;
+                                                                    $total_price += ($room->price) * ($booking->total_room);
+                                                                    ?>
+                                                                    <tr>
+                                                                        <td>{{$i}}</td>
+                                                                        <td align='left'>{{$room->name}}<br/></td>
+                                                                        <td align='right'>{{$room->price}}</td>
+                                                                        <td align='center'> {{$booking->total_room}}</td>
+                                                                        <td align='right'>{{($room->price)*($booking->total_room)}}</td>
+                                                                    </tr>
+                                                                @endforeach
+                                                                </tbody>
+                                                                <tfoot>
+                                                                <tr>
+                                                                    <td colspan="4" align="right">Tổng số tiền:</td>
+                                                                    <td colspan="1" align="right"><b
+                                                                                style="color: #ff0000">{{$total_price}}</b>
+                                                                    </td>
+                                                                </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+
+                                                <div style="width:630px;text-align:left">
+                                                    <span style="color:#f98131"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">
+                                                <div style="width: 700px; text-align: justify; padding: 10px 40px 10px 40px; font-family: serif; ">
+                                                    <p>Lần nữa, cảm ơn Quý khách đã đặt phòng tại <a style="color:#f98131">http://www.pearlseahotel.com</a>
+                                                    </p>
+                                                    <br/>
+                                                    Trân trọng,
+                                                    <br/>
+                                                    <a style="color:#f98131">http://www.pearlseahotel.com/</a>
+                                                </div>
+                                                <br/>
+
+                                                <div style="width: 700px; text-align: justify; padding: 10px 40px 10px 40px; "></div>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                        </table>
+                    </td>
+                </tr>
+            </table>
         </td>
-        <td>
-            <div style="text-align: left;">
-                <h2 style="background-color: white;"><span style="color: #2828ca;"><span
-                                style="font-style: italic;"><span style="font-weight: bold;">Pear sea
-                                hotel</span></span></span></h2>
-            </div>
-            <div style="text-align: right;">
-                <div style="text-align: left; background-color: white;">diachi</div>
-                <div style="text-align: left;">W:<a target="_blank" href="http://www.setupmyhote.com">website
-                    </a></div>
-            </div>
-            <div style="text-align: right;">
-                <div style="text-align: left;">E:<a href="mailto:HTML%20Reservation%20confirmation%20Template">admin@pearlseahotel
-                        .com<span
-                                style="color: white;"></span></a><br>
-                    P: +12 3456789
-                </div>
-            </div>
-            F:&nbsp; +12 3456710
-            <span style="text-decoration: underline;"><br>
-            </span></td>
     </tr>
-    <tr align="center">
-        <td style="height: 66.8333px;" colspan="4" rowspan="1">
-            <h2>Reservation Confirmation</h2>
-        </td>
-    </tr>
-    <tr>
-        <td style="width: 148.35px;"><span style="font-weight: bold;">Guest
-              Name</span></td>
-        <td style="height: 20px;" colspan="3" rowspan="1">&nbsp;Mr.
-            Setupmyhotel.com<br>
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Reservation no</strong><br>
-        </td>
-        <td colspan="3" rowspan="1"><br>
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Arrival Date</strong><br>
-        </td>
-        <td><br>
-        </td>
-        <td><strong>Arrival Time</strong><br>
-        </td>
-        <td><br>
-        </td>
-    </tr>
-    <tr style="height: 23px;">
-        <td><strong>Departure Date</strong><br>
-        </td>
-        <td><br>
-        </td>
-        <td><strong>Departure Time</strong><br>
-        </td>
-        <td><br>
-        </td>
-    </tr>
-    <tr>
-        <td><strong>No of Rooms</strong></td>
-        <td><br>
-        </td>
-        <td style="width: 148.65px;"><strong>Room Type </strong></td>
-        <td style="width: 183.5px;"><br>
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Room Rate</strong></td>
-        <td><br>
-        </td>
-        <td><strong>No: of Adults / Child</strong></td>
-        <td><br>
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Arrival Details</strong></td>
-        <td colspan="3" rowspan="1"><br>
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Departure Details</strong></td>
-        <td colspan="3" rowspan="1"><br>
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Billing Details</strong></td>
-        <td colspan="3" rowspan="1"><br>
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Special Requests</strong></td>
-        <td colspan="3" rowspan="1"><br>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="4" rowspan="1">
-            <div style="text-align: center;"><strong><span style="text-decoration: underline;">*Reservation
-                  Policy</span>*</strong></div>
-            <ul>
-                <li>Check outs after 14 00 hours are subject to charge, as are all
-                    arrivals prior to 10 00&nbsp;&nbsp;&nbsp; hours, which are
-                    billed from the previous night.
-                </li>
-                <li>The room tariff
-                    mentioned above is applicable per room per night. Taxes, service
-                    charges&nbsp;&nbsp; and other levies are additional wherever
-                    applicable.
-                </li>
-                <li>The room tariff is not&nbsp;&nbsp; inclusive of airport
-                    transfer. However, should you require any facilitation for the
-                    same please feel free to contact us.
-                </li>
-                <li>Guaranteed Room Reservations not cancelled 48 hours before
-                    arrival would attract a retention charge equivalent to one
-                    night’s room tariff. In the event of a cancellation before 48
-                    hrs, please retain the cancellation number, to ensure that no
-                    retention charge is levied.&nbsp; </li>
-                <li>Guests are&nbsp;&nbsp; requested to settle their bills
-                    directly while checking out. We are not in a position to
-                    accept&nbsp;&nbsp;&nbsp; personal checks and a signing facility
-                    is extended&nbsp; only to those corporate accounts that have a
-                    credit facility with the respective hotel.&nbsp; </li>
-                <li>Prior information for a Smoking or Non-smoking Room will
-                    enable us to provide on priority, subject to availability.&nbsp;
-                </li>
-            </ul>
-            Thanks and Regards,<br>
-            <br>
-            <br>
-            Reservation Executive<br>
-            newsletters@setupmyhotel.com
-        </td>
-    </tr>
-    </tbody>
 </table>
-<p><br>
-</p>
+</td>
+</tr>
+<tr>
+</tr>
+</table>
+
 </body>
 </html>
-

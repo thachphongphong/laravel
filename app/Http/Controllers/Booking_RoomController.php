@@ -135,6 +135,7 @@ class Booking_RoomController extends Controller
         }
     }
 
+
     public function makeBooking(\Illuminate\Http\Request $request)
     {
         // Getting all post data
@@ -149,26 +150,81 @@ class Booking_RoomController extends Controller
         if (Request::ajax()) {
             $booking = Session::get('booking');
             if ($booking != null) {
+
+                //mock session to booking
+                $booking->booking_id = uniqid();
+                $booking->room_id = 1;
+                $booking->total_room = 2;
+                $booking->full_name = 'Le test';
+                $booking->address = 'Da nang, viet nam';
+                $booking->email = 'testeraxon@gmail.com';
+                $booking->phone = '012398838';
+                $booking->check_in = '06/Oct/2016';
+                $booking->check_out = '08/Oct/2016';
+
                 //validate
-                $email = 'testeraxon@gmail.com';//$booking->email;
-//                $checkin = $booking->checkin;
-//                $checkout = $booking->checkout;
-//                $adults = $booking->adults;
-//                $child = $booking->child;
-//                $room_name = $booking->room_name;
-//
-//                // Send mail to admin
-//                $data = array('data' => ['email' => $email, 'checkin' => $checkin, 'checkout' => $checkout, 'adults' =>
-//                    $adults, 'child' => $child, 'room_name' => $room_name]);
-               // $data = array('email' => $email);
-                $data = array('constants' => $constants);
-                Mail::send('booking_mail',$data, function ($message) use ($email) {
+                $booking_id = uniqid();
+                $room_id = $booking->room_id;
+                $total_room = $booking->total_room;
+                $full_name = $booking->full_name;
+                $address = $booking->address;
+                $email = $booking->email;
+                $phone = $booking->phone;
+                $check_in = $booking->check_in;
+                $check_out = $booking->check_out;
+
+//                if ($room_id == null || $room_id == 0 || $room_id == "") return Response::json(['success' => false, 'data' =>
+//                    '$room_id']);
+//                if ($total_room == null || $total_room == 0 || $total_room == "") return Response::json(['success' => false, 'data' =>
+//                    '$total_room']);
+//                if ($email == null || $email == 0 || $email == "") return Response::json(['success' => false, 'data' =>
+//                    '$email']);
+//                if ($check_in == null || $check_in == 0 || $check_in == "") return Response::json(['success' => false, 'data' =>
+//                    '$check_in']);
+//                if ($check_out == null || $check_out == 0 || $check_out == "") return Response::json(['success' => false, 'data' =>
+//                    '$check_out']);
+
+
+                // save booking
+                $booking_room = BookingRoom::create();
+                $booking_room->room_id = $room_id;
+                $booking_room->booking_id = $booking_id;
+                $booking_room->total_room = $total_room;
+                $booking_room->full_name = $full_name;
+                $booking_room->address = $address;
+                $booking_room->phone = $phone;
+
+                //convert string date to datetime
+                $check_in_date = date_create_from_format('d/M/Y', $check_in);
+                $check_in_date->getTimestamp();
+
+                //convert string date to datetime
+                $check_out_date = date_create_from_format('d/M/Y', $check_out);
+                $check_out_date->getTimestamp();
+
+                $booking_room->check_in = $check_in_date;
+                $booking_room->check_out = $check_out_date;
+
+                $booking_room->created_date = Carbon::now();
+                $booking_room->save();
+
+
+                $room = Room::where('language_id', $language_id)->where('id', $room_id)->get();
+                $data = array('constants' => $constants, 'booking' => $booking_room, 'rooms' => $room);
+
+                // sent mail to admin
+                Mail::send('booking_mail', $data, function ($message) use ($email) {
                     $message->from('contact@pearlseahotel.com', 'Pearl Sea Hotel');
-                    $message->to($email)->subject('Your have booked rooms at Pearl sea hotel!');
+                    $message->to('contact@pearlseahotel.com')->subject('Your have booked rooms at Pearl sea hotel!');
+                });
+
+                // sent mail to customer
+                Mail::send('booking_mail', $data, function ($message) use ($email) {
+                    $message->from('contact@pearlseahotel.com', 'Pearl Sea Hotel');
+                    $message->to($email)->subject('??t phòng t?i Pearl sea hotel!');
                 });
             }
             return Response::json(['success' => true, 'data' => 'ok']);
         }
     }
-
 }
