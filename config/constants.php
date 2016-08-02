@@ -79,7 +79,12 @@ return [
         ],
         'validate' =>[
             'email'=>'Email không hợp lệ.',
-            'email2'=>'Email không giống nhau.'
+            'email2'=>'Email không giống nhau.',
+            'phone'=>'Số điện thoại không hợp lệ.',
+            'firstname'=>'Bạn phải nhập họ.',
+            'lastname'=>'Bạn phải nhập tên.',
+            'checkin'=>'Bạn phải chọn ngày.',
+            'checkout'=>'Bạn phải chọn ngày.'
         ]
     ],
     'en' => [
@@ -159,7 +164,12 @@ return [
         ],
         'validate' =>[
             'email'=>'Email is not valid.',
-            'email2'=>'Email is not macth.'
+            'email2'=>'Email is not macth.',
+            'phone'=>'Phone is not valid.',
+            'firstname'=>'First Name is not empty.',
+            'lastname'=>'Last Name is not empty.',
+            'checkin'=>'Select a date.',
+            'checkout'=>'Select a date.'
         ]
     ]
 ];

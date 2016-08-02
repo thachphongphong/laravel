@@ -33,6 +33,8 @@
     <script src="{{ asset('/js/respond.min.js') }}"></script>
     <![endif]-->
     <script src="{{ asset('/js/modernizr.custom.min.js') }}"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ asset('/js/jquery.min.js') }}"></script>
 </head>
 <body>
 <div class="preloader"></div>
@@ -42,8 +44,7 @@
 @include('footer_section')
 
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="{{ asset('/js/jquery.min.js') }}"></script>
+
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/js/owl.carousel.min.js') }}"></script>

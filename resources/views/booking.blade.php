@@ -17,23 +17,23 @@
 
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active">
-                                    <a href="#select-room" aria-controls="select-room" role="tab"
+                                    <a href="#select-room" id="step1" aria-controls="select-room" role="tab"
                                        data-toggle="tab"><span
                                                 class="mg-bs-tab-num">1</span><span
                                                 class="mg-bs-bar"></span>{{$constants['booking']['step1']}}</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#personal-info" aria-controls="personal-info" role="tab" data-toggle="tab"><span
+                                    <a href="#personal-info" id="step2" class="disabled" aria-controls="personal-info" role="tab" data-toggle="tab"><span
                                                 class="mg-bs-tab-num">2</span><span
                                                 class="mg-bs-bar"></span>{{$constants['booking']['step2']}}</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#payment" aria-controls="payment" role="tab" data-toggle="tab"><span
+                                    <a href="#payment" id="step3" class="disabled" aria-controls="payment" role="tab" data-toggle="tab"><span
                                                 class="mg-bs-tab-num">3</span><span
                                                 class="mg-bs-bar"></span>{{$constants['booking']['step3']}}</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#thank-you" aria-controls="thank-you" role="tab" data-toggle="tab"><span
+                                    <a href="#thank-you" id="step4" class="disabled" aria-controls="thank-you" role="tab" data-toggle="tab"><span
                                                 class="mg-bs-tab-num">4</span>{{$constants['booking']['step4']}}</a>
                                 </li>
                             </ul>
@@ -143,16 +143,21 @@
                                                             <div class="mg-book-form-input">
                                                                 <div class="input-group date mg-check-in">
                                                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                                                        <input type="text" class="form-control" id="booking-checkin" name="booking-checkin" placeholder="{{$constants['booknow']['checkin']}}">
+                                                                        <input type="text" class="form-control" id="booking-checkin" onchange="hasCheckin(this)" 
+                                                                        name="booking-checkin" placeholder="{{$constants['booknow']['checkin']}}">
+                                                                       
                                                                 </div>
+                                                                 <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['checkin']}}</div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <div class="input-group date mg-check-out">
                                                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                                                        <input type="text" class="form-control" id="booking-checkout" name="booking-checkout" placeholder="{{$constants['booknow']['checkout']}}">
+                                                                        <input type="text" class="form-control" id="booking-checkout"   onchange="hasCheckout(this)" 
+                                                                        name="booking-checkout" placeholder="{{$constants['booknow']['checkout']}}">
                                                                 </div>
+                                                                <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['checkout']}}</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -185,15 +190,17 @@
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['firstname']}}</label>
-                                                                <input id="firstname" name="firstname" type="text"
+                                                                <input id="firstname" name="firstname" type="text" onblur="checkText(this)"
                                                                        class="form-control">
+                                                               <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['firstname']}}</div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['lastname']}}</label>
-                                                                <input id="lastname" name="lastname" type="text"
+                                                                <input id="lastname" name="lastname" type="text" onblur="checkText(this)"
                                                                        class="form-control">
+                                                                <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['lastname']}}</div>        
                                                             </div>
                                                         </div>
                                                     </div>
@@ -201,7 +208,7 @@
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['email']}}</label>
-                                                                <input id="email" name="email" type="text" onblur="checkEmail(this)"
+                                                                <input id="email1" name="email1" type="text" onblur="checkEmail(this)"
                                                                        class="form-control">
                                                                <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['email']}}</div>
                                                             </div>
@@ -209,7 +216,7 @@
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['email2']}}</label>
-                                                                <input name="email2" type="text"  onblur="checkEmail(this); checkSameEmail(this)"
+                                                                <input id="email2" name="email2"  type="text"  onblur="checkEmail(this); checkSameEmail(this)"
                                                                        class="form-control">
                                                                 <div  style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['email']}}</div>
                                                                 <div  style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['email2']}}</div>
@@ -220,8 +227,9 @@
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['phone']}}</label>
-                                                                <input id="phone" name="phone" type="text"
+                                                                <input id="phone" name="phone" type="text" onblur="checkPhone(this)"
                                                                        class="form-control">
+                                                                <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['phone']}}</div>     
                                                             </div>
                                                         </div>
 
@@ -269,14 +277,14 @@
                                         <div class="col-md-12">
                                             <div class="clearfix mg-terms-input">
                                                 <div class="pull-right">
-                                                    <label><input
+                                                    <label><input id="accept"
                                                                 type="checkbox"> {{$constants['booking']['confirm']}}
                                                         <a
                                                                 href="#">{{$constants['booking']['terms']}}</a></label>
                                                 </div>
                                             </div>
                                             <a href="#payment" id="step2"
-                                               class="btn btn-dark-main btn-next-tab pull-right">Next</a>
+                                               class="btn btn-dark-main btn-next-tab pull-right disabled">Next</a>
                                             <a href="#select-room"
                                                class="btn btn-default btn-prev-tab pull-left">Back</a>
                                         </div>
@@ -328,7 +336,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <a href="#thank-you"
+                                            <a href="#thank-you" id="step3"
                                                class="btn btn-dark-main btn-next-tab pull-right">{{$constants['booking']['pay']}}</a>
                                             <a href="#personal-info"
                                                class="btn btn-default btn-prev-tab pull-left">Back</a>
@@ -429,6 +437,56 @@
         </div>
     @endif
     <script type="text/javascript">
+        $(document).ready(function(){
+                $('a[href="#personal-info"]').click(function(event){
+                    if ($(this).hasClass('disabled')) {
+                        return false;
+                    }
+                });
+
+                $('a[href="#payment"]').click(function(event){
+                    if ($(this).hasClass('disabled')) {
+                        return false;
+                    }
+                });
+
+                $('a[href="#thank-you"]').click(function(event){
+                    if ($(this).hasClass('disabled')) {
+                        return false;
+                    }
+                });
+
+                $('#accept').change(function(){
+                    if($(this).prop('checked')){
+                        var checkin =   $('#booking-checkin').val();
+                        var checkout =   $('#booking-checkout').val();
+                        var firstname =  $('#firstname').val();
+                        var lastname =  $('#lastname').val();
+                        var email1 =  $('#email1').val();
+                        var email2 =  $('#email2').val();
+                        var phone =  $('#phone').val();
+                        if(isText(checkin) && isText(checkout) && isText(firstname) && isText(lastname) && isEmail(email1) && isEmail(email2) && isSameEmail(email1, email2) && isPhone(phone)){
+                             $('a[href="#payment"]').removeClass("disabled");
+                             $('#step2').removeClass("disabled");
+                        }else{
+                           $('#booking-checkin').change();
+                            $('#booking-checkout').change();
+                            $('#firstname').blur();
+                            $('#lastname').blur();
+                            $('#email1').blur();
+                            $('#email2').blur();
+                            $('#phone').blur(); 
+                            $(this).prop('checked', false);
+                        }
+                      
+                    }else{
+                        $('a[href="#payment"]').addClass("disabled");
+                        $('#step2').addClass("disabled");
+                    }
+                });
+
+             
+        });
         var checkin = "";
         @if(Session::has('booking') && ! empty(Session::get('booking')->check_in))
             checkin = '{{ date('d/m/Y', strtotime(Session::get('booking')->check_in))}}';
@@ -482,6 +540,19 @@
                        $('#booking-adult-txt').text(adult);
                        $('#booking-child-txt').text(child);
                        $('#booking-total-txt').text(checkin);
+
+
+                       var checkin =   $('#booking-checkin').val();
+                        var checkout =   $('#booking-checkout').val();
+                        var firstname =  $('#firstname').val();
+                        var lastname =  $('#lastname').val();
+                        var email1 =  $('#email1').val();
+                        var email2 =  $('#email2').val();
+                        var phone =  $('#phone').val(); 
+                       if(isText(checkin) && isText(checkout) && isText(firstname) && isText(lastname) && isEmail(email1) && isEmail(email2) && isSameEmail(email1, email2) && isPhone(phone)){
+                             $('a[href="#payment"]').removeClass("disabled");
+                             $('#step2').removeClass("disabled");
+                        };
                     }else{
                         window.location.href = '{{URL(Session::get('lang').'/booking')}}';
                     }
@@ -503,11 +574,6 @@
                         {{--$('#booking-room-url').attr('src', assetBaseUrl + room.image_url);--}}
                         {{--$('#booking-room-url').attr('alt', room.name);--}}
                         {{--$('#booking-room-name').text(room.name);--}}
-//                        $('#booking-checkin')
-//                        $('#booking-checkout')
-//                        $('#booking-adult')
-//                        $('#booking-child')
-//                        $('#booking-total')
                     }else{
                         {{--window.location.href = '{{URL(Session::get('lang').'/booking')}}';--}}
                         console.log(data)
@@ -521,9 +587,9 @@
 
          function userInfo() {
             checkin =   $('#booking-checkin').val();
-            checkout =   $('#booking-checkin').val();
-            adult =   $('#booking-checkin').val();
-            child =   $('#booking-checkin').val();
+            checkout =   $('#booking-checkout').val();
+            adult =   $('#booking-adult').val();
+            child =   $('#booking-child').val();
             var firstname =  $('#firstname').val();
             var lastname =  $('#lastname').val();
             var email1 =  $('#email1').val();
@@ -549,14 +615,14 @@
                     if (data.success) {
                         var room = data.data[0];
                         var assetBaseUrl = "{{ asset('') }}";
-                        $('#booking-room-url').attr('src', assetBaseUrl + room.image_url);
-                        $('#booking-room-url').attr('alt', room.name);
-                        $('#booking-room-name').text(room.name);
-                       $('#booking-checkin-txt').text(checkin);
-                       $('#booking-checkout-txt').text(checkout);
-                       $('#booking-adult-txt').text(adult);
-                       $('#booking-child-txt').text(child);
-                       $('#booking-total-txt').text(checkin);
+                        $('#payment #booking-room-url').attr('src', assetBaseUrl + room.image_url);
+                        $('#payment #booking-room-url').attr('alt', room.name);
+                        $('#payment #booking-room-name').text(room.name);
+                       $('#payment #booking-checkin-txt').text(checkin);
+                       $('#payment #booking-checkout-txt').text(checkout);
+                       $('#payment #booking-adult-txt').text(adult);
+                       $('#payment #booking-child-txt').text(child);
+                       $('#payment #booking-total-txt').text(checkin);
                     }else{
                         window.location.href = '{{URL(Session::get('lang').'/booking')}}';
                     }

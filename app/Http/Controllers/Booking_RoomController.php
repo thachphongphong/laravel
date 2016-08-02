@@ -227,4 +227,40 @@ class Booking_RoomController extends Controller
             return Response::json(['success' => true, 'data' => 'ok']);
         }
     }
+
+    public function userInfo(\Illuminate\Http\Request $request)
+    {
+        // Getting all post data
+        $language = Session::get('lang');
+        if ($language == 'vi') {
+            $language_id = 1;
+        } else {
+            $language_id = 2;
+        }
+        if (Request::ajax()) {
+            $checkin = $request->input('checkin');
+            $checkout = $request->input('checkout');
+            $adult = $request->input('adult');
+            $child = $request->input('child');
+            $firstname = $request->input('firstname');
+            $lastname = $request->input('lastname');
+            $email1 = $request->input('email1');
+            $email2 = $request->input('email2');
+            $phone = $request->input('phone');
+
+            $booking = Session::get('booking');
+            if ($booking == null) {
+                return Response::json(['success' => false, 'data' => 'Booking error!']);
+            } else {
+                $booking->full_name = $firstname + ' ' + $lastname;
+                $booking->email =  $email1;
+                $booking->phone = $phone;
+                $booking->check_in =  $checkin;
+                $booking->check_out = $checkout;
+            }
+            Session::put('booking', $booking);
+            $room = Room::where('language_id', $language_id)->where('id',  $booking->room_id )->get();
+            return Response::json(['success' => true, 'data' => $room]);
+        }
+    }
 }

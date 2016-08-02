@@ -26,6 +26,7 @@ Route::get('{language}/booking', 'Booking_RoomController@load');
 Route::get('{language}/booking/{id}', 'Booking_RoomController@book');
 Route::post('{language}/booking', 'Booking_RoomController@search');
 Route::post('{language}/booking/select', 'Booking_RoomController@select');
+Route::post('{language}/booking/userInfo', 'Booking_RoomController@userInfo');
 Route::post('{language}/booking/make', 'Booking_RoomController@makeBooking');
 Route::get('{language}/contact', 'ContactController@load');
 Route::post('{language}/contact/send', 'ContactController@addMessage');
