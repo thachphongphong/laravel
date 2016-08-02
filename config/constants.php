@@ -76,6 +76,10 @@ return [
             'thankyou'=>'Cảm ơn bạn đã book phòng, Email sẽ được gửi tới bạn.',
             'payId'=>'Booking ID',
             'continue'=>'Tiếp tục'
+        ],
+        'validate' =>[
+            'email'=>'Email không hợp lệ.',
+            'email2'=>'Email không giống nhau.'
         ]
     ],
     'en' => [
@@ -152,6 +156,10 @@ return [
             'thankyou'=>'Thank you! Your booking is confirmed. Invoice Sent in your email address',
             'payId'=>'Your Booking ID',
             'continue'=>'Next step'
+        ],
+        'validate' =>[
+            'email'=>'Email is not valid.',
+            'email2'=>'Email is not macth.'
         ]
     ]
 ];

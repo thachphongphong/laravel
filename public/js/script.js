@@ -1,3 +1,4 @@
+var adultSelect, childSelect;
 (function ($) {
     "use strict";
 
@@ -5,7 +6,14 @@
      * Customly Styled Select input field
      */
     [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
-        new SelectFx(el);
+      if(el.id=='booking-adult' || el.id=='adult'){
+            adultSelect = new SelectFx(el); 
+      }else if(el.id=='booking-child' || el.id=='child'){
+            childSelect = new SelectFx(el); 
+      }else{
+           new SelectFx(el);   
+      }
+
     });
 
     /*
@@ -508,5 +516,10 @@ $(document).ready(function () {
         var target = $(e.target).attr("href") // activated tab
         console.log((target));
         makeBooking();
+    });
+
+    $('a[id="step2"]').on('shown.bs.tab', function (e) {
+        var target = $(e.target).attr("href") // activated tab
+        userInfo();
     });
 });

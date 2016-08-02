@@ -58,6 +58,7 @@
 <script src="{{ asset('/js/gmaps.min.js') }}"></script>
 <script src="{{ asset('/js/jquery.parallax-1.1.3.js') }}"></script>
 <script src="{{ asset('/js/script.js') }}"></script>
+<script src="{{ asset('/js/validate.js') }}"></script>
 </body>
 
 </html>
