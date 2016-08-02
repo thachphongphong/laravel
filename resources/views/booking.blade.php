@@ -2,6 +2,13 @@
 @section('content_section')
     @include('title_section')
     @if(! empty($booking))
+        <style>
+            div.cs-skin-elastic {
+                background: transparent;
+                font-size: 14px;
+                color: #000;
+            }
+        </style>
         <div class="mg-page">
             <div class="container">
                 <div class="row">
@@ -134,6 +141,49 @@
                                                     <div class="col-md-12">
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
+                                                                <div class="input-group date mg-check-in">
+                                                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                                                        <input type="text" class="form-control" id="booking-checkin" name="booking-checkin" placeholder="{{$constants['booknow']['checkin']}}">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="mg-book-form-input">
+                                                                <div class="input-group date mg-check-out">
+                                                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                                                        <input type="text" class="form-control" id="booking-checkout" name="booking-checkout" placeholder="{{$constants['booknow']['checkout']}}">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-6">
+                                                            <div class="mg-book-form-input">
+                                                                <select class="cs-select cs-skin-elastic form-control" id="booking-adult" name="booking-adult">
+                                                                    <option value="" disabled selected>{{$constants['booknow']['adult']}}</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="mg-book-form-input">
+                                                                <select class="cs-select cs-skin-elastic form-control" id="booking-child" name="booking-child">
+                                                                    <option value="" disabled selected>{{$constants['booknow']['child']}}</option>
+                                                                    <option value="0">0</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-6">
+                                                            <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['firstname']}}</label>
                                                                 <input id="firstname" name="firstname" type="text"
                                                                        class="form-control">
@@ -151,15 +201,18 @@
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['email']}}</label>
-                                                                <input id="email" name="email" type="text"
+                                                                <input id="email" name="email" type="text" onblur="checkEmail(this)"
                                                                        class="form-control">
+                                                               <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['email']}}</div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['email2']}}</label>
-                                                                <input id="email2" name="email2" type="text"
+                                                                <input name="email2" type="text"  onblur="checkEmail(this); checkSameEmail(this)"
                                                                        class="form-control">
+                                                                <div  style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['email']}}</div>
+                                                                <div  style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['email2']}}</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -189,23 +242,23 @@
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['checkin']}}:</strong>
-                                                            <span id="booking-checkin" ></span>
+                                                            <span id="booking-checkin-txt" ></span>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['checkout']}}:</strong>
-                                                            <span id="booking-checkout"></span>
+                                                            <span id="booking-checkout-txt"></span>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['adult']}}:</strong>
-                                                            <span id="booking-adult">0</span>
+                                                            <span id="booking-adult-txt">0</span>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['child']}}:</strong>
-                                                            <span id="booking-child">0</span>
+                                                            <span id="booking-child-txt">0</span>
                                                         </div>
                                                         <div class="mg-cart-total">
                                                             <strong>{{$constants['booking']['total']}}:</strong>
-                                                            <span id="booking-total">0</span>
+                                                            <span id="booking-total-txt">0</span>
                                                         </div>
                                                     </div>
                                                 </aside>
@@ -222,7 +275,7 @@
                                                                 href="#">{{$constants['booking']['terms']}}</a></label>
                                                 </div>
                                             </div>
-                                            <a href="#payment"
+                                            <a href="#payment" id="step2"
                                                class="btn btn-dark-main btn-next-tab pull-right">Next</a>
                                             <a href="#select-room"
                                                class="btn btn-default btn-prev-tab pull-left">Back</a>
@@ -236,10 +289,6 @@
                                                 <h2 class="mg-sec-left-title">{{$constants['booking']['paylater']}}</h2>
 
                                                 <h3>{{$constants['booking']['devlater']}}</h3>
-                                                <a href="#thank-you" id="step3"
-                                                   class="btn btn-dark-main btn-next-tab pull-right">{{$constants['booking']['pay']}}</a>
-                                                <a href="#personal-info"
-                                                   class="btn btn-default btn-prev-tab pull-left">Back</a>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -249,34 +298,40 @@
 
                                                     <div class="mg-widget-cart">
                                                         <div class="mg-cart-room">
-                                                            <img src="images/room-1.png" alt="Delux Room"
-                                                                 class="img-responsive">
-
-                                                            <h3>Super Delux</h3>
+                                                            <img id="booking-room-url" src="123" alt="" class="img-responsive">
+                                                            <h3 id="booking-room-name"></h3>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['checkin']}}:</strong>
-                                                            <span>27 Jan, 2015</span>
+                                                            <span id="booking-checkin-txt" ></span>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['checkout']}}:</strong>
-                                                            <span>28 Jan, 2015</span>
+                                                            <span id="booking-checkout-txt"></span>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['adult']}}:</strong>
-                                                            <span>2</span>
+                                                            <span id="booking-adult-txt">0</span>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['child']}}:</strong>
-                                                            <span>1</span>
+                                                            <span id="booking-child-txt">0</span>
                                                         </div>
                                                         <div class="mg-cart-total">
                                                             <strong>{{$constants['booking']['total']}}:</strong>
-                                                            <span>$249.99</span>
+                                                            <span id="booking-total-txt">0</span>
                                                         </div>
                                                     </div>
                                                 </aside>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a href="#thank-you"
+                                               class="btn btn-dark-main btn-next-tab pull-right">{{$constants['booking']['pay']}}</a>
+                                            <a href="#personal-info"
+                                               class="btn btn-default btn-prev-tab pull-left">Back</a>
                                         </div>
                                     </div>
                                 </div>
@@ -374,7 +429,43 @@
         </div>
     @endif
     <script type="text/javascript">
+        var checkin = "";
+        @if(Session::has('booking') && ! empty(Session::get('booking')->check_in))
+            checkin = '{{ date('d/m/Y', strtotime(Session::get('booking')->check_in))}}';
+        @endif
+
+        var checkout = "";
+        @if(Session::has('booking') && ! empty(Session::get('booking')->check_out))
+            checkout = '{{date('d/m/Y', strtotime(Session::get('booking')->check_out))}}';
+        @endif
+
+        var adult = "0";
+        @if(Session::has('booking') && ! empty(Session::get('booking')->adult))
+            adult = '{{Session::get('booking')->adult}}';
+        @endif
+
+        var child = "0";
+        @if(Session::has('booking') && ! empty(Session::get('booking')->child))
+            child = '{{Session::get('booking')->child}}';
+        @endif
+
+
         function selectRoom(roomId) {
+             if(checkin != "")
+                $('#booking-checkin').val(checkin);
+            if(checkout != "")
+                $('#booking-checkout').val(checkout);
+            if(adult != "0"){
+                $('#booking-adult select').val(adult);
+                 adultSelect.current = adult;
+                 adultSelect._changeOption();
+            }
+            if(child != "0"){
+                $('#booking-child select').val(child);
+                 childSelect.current = child;
+                 childSelect._changeOption();
+            }
+
             $.ajax({
                 type: "POST",
                 url: '{{URL(Session::get('lang').'/booking/select')}}',
@@ -386,11 +477,11 @@
                         $('#booking-room-url').attr('src', assetBaseUrl + room.image_url);
                         $('#booking-room-url').attr('alt', room.name);
                         $('#booking-room-name').text(room.name);
-//                        $('#booking-checkin')
-//                        $('#booking-checkout')
-//                        $('#booking-adult')
-//                        $('#booking-child')
-//                        $('#booking-total')
+                       $('#booking-checkin-txt').text(checkin);
+                       $('#booking-checkout-txt').text(checkout);
+                       $('#booking-adult-txt').text(adult);
+                       $('#booking-child-txt').text(child);
+                       $('#booking-total-txt').text(checkin);
                     }else{
                         window.location.href = '{{URL(Session::get('lang').'/booking')}}';
                     }
@@ -425,7 +516,55 @@
                 error: function () {
                     {{--window.location.href = '{{URL(Session::get('lang').'/booking')}}';--}}
                 }
-            })
-        }
+            });
+        };
+
+         function userInfo() {
+            checkin =   $('#booking-checkin').val();
+            checkout =   $('#booking-checkin').val();
+            adult =   $('#booking-checkin').val();
+            child =   $('#booking-checkin').val();
+            var firstname =  $('#firstname').val();
+            var lastname =  $('#lastname').val();
+            var email1 =  $('#email1').val();
+            var email2 =  $('#email2').val();
+            var phone =  $('#phone').val();;
+
+            $.ajax({
+                type: "POST",
+                url: '{{URL(Session::get('lang').'/booking/userInfo')}}',
+                data: {
+                    checkin : checkin,
+                    checkout : checkout,
+                    adult : adult,
+                    child : child,
+                    firstname : firstname,
+                    lastname : lastname,
+                    email1 : email1,
+                    email2 : email2,
+                    phone : phone
+
+                },
+                success: function (data) {
+                    if (data.success) {
+                        var room = data.data[0];
+                        var assetBaseUrl = "{{ asset('') }}";
+                        $('#booking-room-url').attr('src', assetBaseUrl + room.image_url);
+                        $('#booking-room-url').attr('alt', room.name);
+                        $('#booking-room-name').text(room.name);
+                       $('#booking-checkin-txt').text(checkin);
+                       $('#booking-checkout-txt').text(checkout);
+                       $('#booking-adult-txt').text(adult);
+                       $('#booking-child-txt').text(child);
+                       $('#booking-total-txt').text(checkin);
+                    }else{
+                        window.location.href = '{{URL(Session::get('lang').'/booking')}}';
+                    }
+                },
+                error: function () {
+                    window.location.href = '{{URL(Session::get('lang').'/booking')}}';
+                }
+            });
+         }
     </script>
 @endsection
