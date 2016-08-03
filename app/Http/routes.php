@@ -33,6 +33,8 @@ Route::post('{language}/contact/send', 'ContactController@addMessage');
 Route::get('{language}/news/{id}', 'NewsDetailController@load');
 Route::get('{language}/admin', 'Auth\LoginController@load');
 Route::post('{language}/admin/login','Auth\LoginController@login');
+Route::get('{language}/admin/logout','Auth\LoginController@logout')->middleware('auth');
 Route::get('{language}/admin/password/forgot','Auth\LoginController@forgot');
 Route::post('{language}/admin/password/reset','Auth\LoginController@reset');
 Route::post('{language}/admin/password/update','Auth\LoginController@update');
+Route::get('{language}/admin/dashboard','Admin\DashboardController@load')->middleware('auth');

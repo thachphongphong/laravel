@@ -1,52 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Pearl Sea Hotel | Danang Hotel | Coastal Hotels| Danang Beach | My Khe Beach</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@extends('layouts.app')
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Welcome</div>
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-				 <?php 
-				 $menus = DB::connection('mysql')-> select('select * from menu');
-				for ($i=0;$i<sizeof($menus);$i++) {
-					$menu_name= $menus[$i]->name;
-                    $menu_url = $menus[$i]->url;
-					echo '<a href="'.$menu_url.'">'.$menu_name.'</a></br>';
-				}
-				 ?>
+                <div class="panel-body">
+                    Your Application's Landing Page.
+                </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+@endsection

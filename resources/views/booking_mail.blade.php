@@ -111,10 +111,10 @@
                                                                     <td> Họ tên:</td>
                                                                     <td>  {{$booking->full_name}}</td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td> Địa chỉ:</td>
-                                                                    <td>  {{$booking->address}}</td>
-                                                                </tr>
+                                                                {{--<tr>--}}
+                                                                    {{--<td> Địa chỉ:</td>--}}
+                                                                    {{--<td>  {{$booking->address}}</td>--}}
+                                                                {{--</tr>--}}
                                                                 <tr>
                                                                     <td> Điện thoại:</td>
                                                                     <td>  {{$booking->phone}}</td>
@@ -165,8 +165,8 @@
                                                                 </tbody>
                                                                 <tfoot>
                                                                 <tr>
-                                                                    <td colspan="4" align="right">Tổng số tiền:</td>
-                                                                    <td colspan="1" align="right"><b
+                                                                    <td colspan="5" align="right">Tổng số tiền:</td>
+                                                                    <td colspan="2" align="right"><b
                                                                                 style="color: #ff0000">{{$total_price}}</b>
                                                                     </td>
                                                                 </tr>
