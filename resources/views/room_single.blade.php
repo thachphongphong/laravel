@@ -89,9 +89,29 @@
                     <div class="mg-single-room-txt">
                         <h2 class="mg-sec-left-title">{{$constants['room']['desc']}}</h2>
 
-                        <p>Sẽ đc cập nhật</p>
-
-                        <p>Đang phát triển.</p>
+                        <div class="mb80">
+                            @foreach ($services as $service)
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne{{$service->id}}">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseOne{{$service->id}}" aria-expanded="true" aria-controls="collapseOne{{$service->id}}">
+                                                {{$service->name}}
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne{{$service->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne{{$service->id}}">
+                                     @if(count($service->roomServiceDetail))
+                                         @foreach ($service->roomServiceDetail as $detail)
+                                            <div class="panel-body">
+                                                <i class="{{$detail->css_class}}"></i> {{$detail->name}}
+                                            </div>
+                                         @endforeach
+                                     @endif
+                                    </div>
+                                </div>
+                            @endforeach
+                            
+                        </div>
                     </div>
                 </div>
             </div>

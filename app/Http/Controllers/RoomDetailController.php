@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ContactDetail;
 use App\Gallery;
+use App\RoomService;
 use App\Http\Requests;
 use App\Menu;
 use App\PageTitle;
@@ -35,10 +36,13 @@ class RoomDetailController extends Controller
         $title->desc = $room ->description . ' - ' . $room->total_person . ' ' . $constants['room']['person'];
 
 //        $promotion =
+     $room_service = RoomService::with('roomServiceDetail')
+            ->where('language_id', $language_id)
+            ->get();
 
         $image = Gallery::where('room_id', $id)->get();
 
         return View::make('room_single', array('constants' => $constants,'menus' => $menus, 'contact' => $contact, 'title' =>$title,
-            'room' =>$room, 'images' => $image));
+            'room' =>$room, 'images' => $image,  'services' => $room_service));
     }
 }
