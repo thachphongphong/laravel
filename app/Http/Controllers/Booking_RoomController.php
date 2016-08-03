@@ -150,29 +150,17 @@ class Booking_RoomController extends Controller
         if (Request::ajax()) {
             $booking = Session::get('booking');
             if ($booking != null) {
-
-                //mock session to booking
-                $booking->booking_id = uniqid();
-                $booking->room_id = 1;
-                $booking->total_room = 2;
-                $booking->full_name = 'Le test';
-                $booking->address = 'Da nang, viet nam';
-                $booking->email = 'testeraxon@gmail.com';
-                $booking->phone = '012398838';
-                $booking->check_in = '06/Oct/2016';
-                $booking->check_out = '08/Oct/2016';
-
+                $booking->address = 'Unknow';
                 //validate
                 $booking_id = uniqid();
                 $room_id = $booking->room_id;
                 $total_room = $booking->total_room;
                 $full_name = $booking->full_name;
-                $address = $booking->address;
                 $email = $booking->email;
                 $phone = $booking->phone;
                 $check_in = $booking->check_in;
                 $check_out = $booking->check_out;
-
+                $address = $booking->address;
 //                if ($room_id == null || $room_id == 0 || $room_id == "") return Response::json(['success' => false, 'data' =>
 //                    '$room_id']);
 //                if ($total_room == null || $total_room == 0 || $total_room == "") return Response::json(['success' => false, 'data' =>
@@ -189,17 +177,17 @@ class Booking_RoomController extends Controller
                 $booking_room = BookingRoom::create();
                 $booking_room->room_id = $room_id;
                 $booking_room->booking_id = $booking_id;
-                $booking_room->total_room = $total_room;
+                $booking_room->total_room = $total_room == 0 ? 1 : $total_room;
                 $booking_room->full_name = $full_name;
                 $booking_room->address = $address;
                 $booking_room->phone = $phone;
 
                 //convert string date to datetime
-                $check_in_date = date_create_from_format('d/M/Y', $check_in);
+                $check_in_date = date_create_from_format('m/d/Y', $check_in);
                 $check_in_date->getTimestamp();
 
                 //convert string date to datetime
-                $check_out_date = date_create_from_format('d/M/Y', $check_out);
+                $check_out_date = date_create_from_format('m/d/Y', $check_out);
                 $check_out_date->getTimestamp();
 
                 $booking_room->check_in = $check_in_date;
@@ -221,10 +209,10 @@ class Booking_RoomController extends Controller
                 // sent mail to customer
                 Mail::send('booking_mail', $data, function ($message) use ($email) {
                     $message->from('contact@pearlseahotel.com', 'Pearl Sea Hotel');
-                    $message->to($email)->subject('??t ph�ng t?i Pearl sea hotel!');
+                    $message->to($email)->subject('Đặt phòng tại Pearl sea hotel!');
                 });
             }
-            return Response::json(['success' => true, 'data' => 'ok']);
+            return Response::json(['success' => true, 'data' => $booking_room]);
         }
     }
 
@@ -252,14 +240,14 @@ class Booking_RoomController extends Controller
             if ($booking == null) {
                 return Response::json(['success' => false, 'data' => 'Booking error!']);
             } else {
-                $booking->full_name = $firstname + ' ' + $lastname;
-                $booking->email =  $email1;
+                $booking->full_name = $firstname . ' ' . $lastname;
+                $booking->email = $email1;
                 $booking->phone = $phone;
-                $booking->check_in =  $checkin;
+                $booking->check_in = $checkin;
                 $booking->check_out = $checkout;
             }
             Session::put('booking', $booking);
-            $room = Room::where('language_id', $language_id)->where('id',  $booking->room_id )->get();
+            $room = Room::where('language_id', $language_id)->where('id', $booking->room_id)->get();
             return Response::json(['success' => true, 'data' => $room]);
         }
     }

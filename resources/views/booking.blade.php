@@ -23,17 +23,20 @@
                                                 class="mg-bs-bar"></span>{{$constants['booking']['step1']}}</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#personal-info" id="step2" class="disabled" aria-controls="personal-info" role="tab" data-toggle="tab"><span
+                                    <a href="#personal-info" id="step2" class="disabled" aria-controls="personal-info" role="tab"
+                                       data-toggle="tab"><span
                                                 class="mg-bs-tab-num">2</span><span
                                                 class="mg-bs-bar"></span>{{$constants['booking']['step2']}}</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#payment" id="step3" class="disabled" aria-controls="payment" role="tab" data-toggle="tab"><span
+                                    <a href="#payment" id="step3" class="disabled" aria-controls="payment" role="tab"
+                                       data-toggle="tab"><span
                                                 class="mg-bs-tab-num">3</span><span
                                                 class="mg-bs-bar"></span>{{$constants['booking']['step3']}}</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#thank-you" id="step4" class="disabled" aria-controls="thank-you" role="tab" data-toggle="tab"><span
+                                    <a href="#thank-you" id="step4" class="disabled" aria-controls="thank-you" role="tab"
+                                       data-toggle="tab"><span
                                                 class="mg-bs-tab-num">4</span>{{$constants['booking']['step4']}}</a>
                                 </li>
                             </ul>
@@ -119,7 +122,7 @@
                                                         </div>
                                                         @if($booking->room_id == $room->id)
                                                             <a href="#personal-info" rid="{{$room->id}}" id="step1"
-                                                            class="btn btn-success btn-next-tab">{{$constants['booking']['continue']}}</a>
+                                                               class="btn btn-success btn-next-tab">{{$constants['booking']['continue']}}</a>
 
                                                         @else
                                                             <a href="#personal-info" rid="{{$room->id}}" id="step1"
@@ -142,30 +145,44 @@
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <div class="input-group date mg-check-in">
-                                                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                                                        <input type="text" class="form-control" id="booking-checkin" onchange="hasCheckin(this)" 
-                                                                        name="booking-checkin" placeholder="{{$constants['booknow']['checkin']}}">
-                                                                       
+                                                                    <div class="input-group-addon"><i class="fa fa-calendar"></i>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" id="booking-checkin"
+                                                                           onchange="hasCheckin(this)"
+                                                                           name="booking-checkin"
+                                                                           placeholder="{{$constants['booknow']['checkin']}}">
+
                                                                 </div>
-                                                                 <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['checkin']}}</div>
+                                                                <div style="display:none;" class="alert alert-warning"
+                                                                     role="alert"><i
+                                                                            class="fa fa-warning"></i> {{$constants['validate']['checkin']}}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <div class="input-group date mg-check-out">
-                                                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                                                        <input type="text" class="form-control" id="booking-checkout"   onchange="hasCheckout(this)" 
-                                                                        name="booking-checkout" placeholder="{{$constants['booknow']['checkout']}}">
+                                                                    <div class="input-group-addon"><i class="fa fa-calendar"></i>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" id="booking-checkout"
+                                                                           onchange="hasCheckout(this)"
+                                                                           name="booking-checkout"
+                                                                           placeholder="{{$constants['booknow']['checkout']}}">
                                                                 </div>
-                                                                <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['checkout']}}</div>
+                                                                <div style="display:none;" class="alert alert-warning"
+                                                                     role="alert"><i
+                                                                            class="fa fa-warning"></i> {{$constants['validate']['checkout']}}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
-                                                                <select class="cs-select cs-skin-elastic form-control" id="booking-adult" name="booking-adult">
-                                                                    <option value="" disabled selected>{{$constants['booknow']['adult']}}</option>
+                                                                <select class="cs-select cs-skin-elastic form-control"
+                                                                        id="booking-adult" name="booking-adult">
+                                                                    <option value="" disabled
+                                                                            selected>{{$constants['booknow']['adult']}}</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
                                                                     <option value="3">3</option>
@@ -174,8 +191,10 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
-                                                                <select class="cs-select cs-skin-elastic form-control" id="booking-child" name="booking-child">
-                                                                    <option value="" disabled selected>{{$constants['booknow']['child']}}</option>
+                                                                <select class="cs-select cs-skin-elastic form-control"
+                                                                        id="booking-child" name="booking-child">
+                                                                    <option value="" disabled
+                                                                            selected>{{$constants['booknow']['child']}}</option>
                                                                     <option value="0">0</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -190,17 +209,27 @@
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['firstname']}}</label>
-                                                                <input id="firstname" name="firstname" type="text" onblur="checkText(this)"
+                                                                <input id="firstname" name="firstname" type="text"
+                                                                       onblur="checkText(this)"
                                                                        class="form-control">
-                                                               <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['firstname']}}</div>
+
+                                                                <div style="display:none;" class="alert alert-warning"
+                                                                     role="alert"><i
+                                                                            class="fa fa-warning"></i> {{$constants['validate']['firstname']}}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['lastname']}}</label>
-                                                                <input id="lastname" name="lastname" type="text" onblur="checkText(this)"
+                                                                <input id="lastname" name="lastname" type="text"
+                                                                       onblur="checkText(this)"
                                                                        class="form-control">
-                                                                <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['lastname']}}</div>        
+
+                                                                <div style="display:none;" class="alert alert-warning"
+                                                                     role="alert"><i
+                                                                            class="fa fa-warning"></i> {{$constants['validate']['lastname']}}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -208,18 +237,31 @@
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['email']}}</label>
-                                                                <input id="email1" name="email1" type="text" onblur="checkEmail(this)"
+                                                                <input id="email1" name="email1" type="text"
+                                                                       onblur="checkEmail(this)"
                                                                        class="form-control">
-                                                               <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['email']}}</div>
+
+                                                                <div style="display:none;" class="alert alert-warning"
+                                                                     role="alert"><i
+                                                                            class="fa fa-warning"></i> {{$constants['validate']['email']}}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['email2']}}</label>
-                                                                <input id="email2" name="email2"  type="text"  onblur="checkEmail(this); checkSameEmail(this)"
+                                                                <input id="email2" name="email2" type="text"
+                                                                       onblur="checkEmail(this); checkSameEmail(this)"
                                                                        class="form-control">
-                                                                <div  style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['email']}}</div>
-                                                                <div  style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['email2']}}</div>
+
+                                                                <div style="display:none;" class="alert alert-warning"
+                                                                     role="alert"><i
+                                                                            class="fa fa-warning"></i> {{$constants['validate']['email']}}
+                                                                </div>
+                                                                <div style="display:none;" class="alert alert-warning"
+                                                                     role="alert"><i
+                                                                            class="fa fa-warning"></i> {{$constants['validate']['email2']}}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -227,9 +269,14 @@
                                                         <div class="col-md-6">
                                                             <div class="mg-book-form-input">
                                                                 <label>{{$constants['booking']['phone']}}</label>
-                                                                <input id="phone" name="phone" type="text" onblur="checkPhone(this)"
+                                                                <input id="phone" name="phone" type="text"
+                                                                       onblur="checkPhone(this)"
                                                                        class="form-control">
-                                                                <div style="display:none;"  class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> {{$constants['validate']['phone']}}</div>     
+
+                                                                <div style="display:none;" class="alert alert-warning"
+                                                                     role="alert"><i
+                                                                            class="fa fa-warning"></i> {{$constants['validate']['phone']}}
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -246,11 +293,12 @@
                                                     <div class="mg-widget-cart">
                                                         <div class="mg-cart-room">
                                                             <img id="booking-room-url" src="123" alt="" class="img-responsive">
+
                                                             <h3 id="booking-room-name"></h3>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['checkin']}}:</strong>
-                                                            <span id="booking-checkin-txt" ></span>
+                                                            <span id="booking-checkin-txt"></span>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['checkout']}}:</strong>
@@ -278,7 +326,7 @@
                                             <div class="clearfix mg-terms-input">
                                                 <div class="pull-right">
                                                     <label><input id="accept"
-                                                                type="checkbox"> {{$constants['booking']['confirm']}}
+                                                                  type="checkbox"> {{$constants['booking']['confirm']}}
                                                         <a
                                                                 href="#">{{$constants['booking']['terms']}}</a></label>
                                                 </div>
@@ -307,11 +355,12 @@
                                                     <div class="mg-widget-cart">
                                                         <div class="mg-cart-room">
                                                             <img id="booking-room-url" src="123" alt="" class="img-responsive">
+
                                                             <h3 id="booking-room-name"></h3>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['checkin']}}:</strong>
-                                                            <span id="booking-checkin-txt" ></span>
+                                                            <span id="booking-checkin-txt"></span>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
                                                             <strong>{{$constants['booknow']['checkout']}}:</strong>
@@ -437,91 +486,91 @@
         </div>
     @endif
     <script type="text/javascript">
-        $(document).ready(function(){
-                $('a[href="#personal-info"]').click(function(event){
-                    if ($(this).hasClass('disabled')) {
-                        return false;
-                    }
-                });
+        $(document).ready(function () {
+            $('a[href="#personal-info"]').click(function (event) {
+                if ($(this).hasClass('disabled')) {
+                    return false;
+                }
+            });
 
-                $('a[href="#payment"]').click(function(event){
-                    if ($(this).hasClass('disabled')) {
-                        return false;
-                    }
-                });
+            $('a[href="#payment"]').click(function (event) {
+                if ($(this).hasClass('disabled')) {
+                    return false;
+                }
+            });
 
-                $('a[href="#thank-you"]').click(function(event){
-                    if ($(this).hasClass('disabled')) {
-                        return false;
-                    }
-                });
+            $('a[href="#thank-you"]').click(function (event) {
+                if ($(this).hasClass('disabled')) {
+                    return false;
+                }
+            });
 
-                $('#accept').change(function(){
-                    if($(this).prop('checked')){
-                        var checkin =   $('#booking-checkin').val();
-                        var checkout =   $('#booking-checkout').val();
-                        var firstname =  $('#firstname').val();
-                        var lastname =  $('#lastname').val();
-                        var email1 =  $('#email1').val();
-                        var email2 =  $('#email2').val();
-                        var phone =  $('#phone').val();
-                        if(isText(checkin) && isText(checkout) && isText(firstname) && isText(lastname) && isEmail(email1) && isEmail(email2) && isSameEmail(email1, email2) && isPhone(phone)){
-                             $('a[href="#payment"]').removeClass("disabled");
-                             $('#step2').removeClass("disabled");
-                        }else{
-                           $('#booking-checkin').change();
-                            $('#booking-checkout').change();
-                            $('#firstname').blur();
-                            $('#lastname').blur();
-                            $('#email1').blur();
-                            $('#email2').blur();
-                            $('#phone').blur(); 
-                            $(this).prop('checked', false);
-                        }
-                      
-                    }else{
-                        $('a[href="#payment"]').addClass("disabled");
-                        $('#step2').addClass("disabled");
+            $('#accept').change(function () {
+                if ($(this).prop('checked')) {
+                    var checkin = $('#booking-checkin').val();
+                    var checkout = $('#booking-checkout').val();
+                    var firstname = $('#firstname').val();
+                    var lastname = $('#lastname').val();
+                    var email1 = $('#email1').val();
+                    var email2 = $('#email2').val();
+                    var phone = $('#phone').val();
+                    if (isText(checkin) && isText(checkout) && isText(firstname) && isText(lastname) && isEmail(email1) && isEmail(email2) && isSameEmail(email1, email2) && isPhone(phone)) {
+                        $('a[href="#payment"]').removeClass("disabled");
+                        $('#step2').removeClass("disabled");
+                    } else {
+                        $('#booking-checkin').change();
+                        $('#booking-checkout').change();
+                        $('#firstname').blur();
+                        $('#lastname').blur();
+                        $('#email1').blur();
+                        $('#email2').blur();
+                        $('#phone').blur();
+                        $(this).prop('checked', false);
                     }
-                });
 
-             
+                } else {
+                    $('a[href="#payment"]').addClass("disabled");
+                    $('#step2').addClass("disabled");
+                }
+            });
+
+
         });
         var checkin = "";
         @if(Session::has('booking') && ! empty(Session::get('booking')->check_in))
             checkin = '{{ date('d/m/Y', strtotime(Session::get('booking')->check_in))}}';
-        @endif
+                @endif
 
-        var checkout = "";
+                var checkout = "";
         @if(Session::has('booking') && ! empty(Session::get('booking')->check_out))
             checkout = '{{date('d/m/Y', strtotime(Session::get('booking')->check_out))}}';
-        @endif
+                @endif
 
-        var adult = "0";
+                var adult = "0";
         @if(Session::has('booking') && ! empty(Session::get('booking')->adult))
             adult = '{{Session::get('booking')->adult}}';
-        @endif
+                @endif
 
-        var child = "0";
+                var child = "0";
         @if(Session::has('booking') && ! empty(Session::get('booking')->child))
             child = '{{Session::get('booking')->child}}';
         @endif
 
 
         function selectRoom(roomId) {
-             if(checkin != "")
+            if (checkin != "")
                 $('#booking-checkin').val(checkin);
-            if(checkout != "")
+            if (checkout != "")
                 $('#booking-checkout').val(checkout);
-            if(adult != "0"){
+            if (adult != "0") {
                 $('#booking-adult select').val(adult);
-                 adultSelect.current = adult;
-                 adultSelect._changeOption();
+                adultSelect.current = adult;
+                adultSelect._changeOption();
             }
-            if(child != "0"){
+            if (child != "0") {
                 $('#booking-child select').val(child);
-                 childSelect.current = child;
-                 childSelect._changeOption();
+                childSelect.current = child;
+                childSelect._changeOption();
             }
 
             $.ajax({
@@ -535,25 +584,26 @@
                         $('#booking-room-url').attr('src', assetBaseUrl + room.image_url);
                         $('#booking-room-url').attr('alt', room.name);
                         $('#booking-room-name').text(room.name);
-                       $('#booking-checkin-txt').text(checkin);
-                       $('#booking-checkout-txt').text(checkout);
-                       $('#booking-adult-txt').text(adult);
-                       $('#booking-child-txt').text(child);
-                       $('#booking-total-txt').text(checkin);
+                        $('#booking-checkin-txt').text(checkin);
+                        $('#booking-checkout-txt').text(checkout);
+                        $('#booking-adult-txt').text(adult);
+                        $('#booking-child-txt').text(child);
+                        $('#booking-total-txt').text(checkin);
 
 
-                       var checkin =   $('#booking-checkin').val();
-                        var checkout =   $('#booking-checkout').val();
-                        var firstname =  $('#firstname').val();
-                        var lastname =  $('#lastname').val();
-                        var email1 =  $('#email1').val();
-                        var email2 =  $('#email2').val();
-                        var phone =  $('#phone').val(); 
-                       if(isText(checkin) && isText(checkout) && isText(firstname) && isText(lastname) && isEmail(email1) && isEmail(email2) && isSameEmail(email1, email2) && isPhone(phone)){
-                             $('a[href="#payment"]').removeClass("disabled");
-                             $('#step2').removeClass("disabled");
-                        };
-                    }else{
+                        var checkin = $('#booking-checkin').val();
+                        var checkout = $('#booking-checkout').val();
+                        var firstname = $('#firstname').val();
+                        var lastname = $('#lastname').val();
+                        var email1 = $('#email1').val();
+                        var email2 = $('#email2').val();
+                        var phone = $('#phone').val();
+                        if (isText(checkin) && isText(checkout) && isText(firstname) && isText(lastname) && isEmail(email1) && isEmail(email2) && isSameEmail(email1, email2) && isPhone(phone)) {
+                            $('a[href="#payment"]').removeClass("disabled");
+                            $('#step2').removeClass("disabled");
+                        }
+                        ;
+                    } else {
                         window.location.href = '{{URL(Session::get('lang').'/booking')}}';
                     }
                 },
@@ -574,7 +624,7 @@
                         {{--$('#booking-room-url').attr('src', assetBaseUrl + room.image_url);--}}
                         {{--$('#booking-room-url').attr('alt', room.name);--}}
                         {{--$('#booking-room-name').text(room.name);--}}
-                    }else{
+                    } else {
                         {{--window.location.href = '{{URL(Session::get('lang').'/booking')}}';--}}
                         console.log(data)
                     }
@@ -583,32 +633,33 @@
                     {{--window.location.href = '{{URL(Session::get('lang').'/booking')}}';--}}
                 }
             });
-        };
+        }
+        ;
 
-         function userInfo() {
-            checkin =   $('#booking-checkin').val();
-            checkout =   $('#booking-checkout').val();
-            adult =   $('#booking-adult').val();
-            child =   $('#booking-child').val();
-            var firstname =  $('#firstname').val();
-            var lastname =  $('#lastname').val();
-            var email1 =  $('#email1').val();
-            var email2 =  $('#email2').val();
-            var phone =  $('#phone').val();;
-
+        function userInfo() {
+            checkin = $('#booking-checkin').val();
+            checkout = $('#booking-checkout').val();
+            adult = $('#booking-adult').val();
+            child = $('#booking-child').val();
+            var firstname = $('#firstname').val();
+            var lastname = $('#lastname').val();
+            var email1 = $('#email1').val();
+            var email2 = $('#email2').val();
+            var phone = $('#phone').val();
+            ;
             $.ajax({
                 type: "POST",
                 url: '{{URL(Session::get('lang').'/booking/userInfo')}}',
                 data: {
-                    checkin : checkin,
-                    checkout : checkout,
-                    adult : adult,
-                    child : child,
-                    firstname : firstname,
-                    lastname : lastname,
-                    email1 : email1,
-                    email2 : email2,
-                    phone : phone
+                    checkin: checkin,
+                    checkout: checkout,
+                    adult: adult,
+                    child: child,
+                    firstname: firstname,
+                    lastname: lastname,
+                    email1: email1,
+                    email2: email2,
+                    phone: phone
 
                 },
                 success: function (data) {
@@ -618,12 +669,12 @@
                         $('#payment #booking-room-url').attr('src', assetBaseUrl + room.image_url);
                         $('#payment #booking-room-url').attr('alt', room.name);
                         $('#payment #booking-room-name').text(room.name);
-                       $('#payment #booking-checkin-txt').text(checkin);
-                       $('#payment #booking-checkout-txt').text(checkout);
-                       $('#payment #booking-adult-txt').text(adult);
-                       $('#payment #booking-child-txt').text(child);
-                       $('#payment #booking-total-txt').text(checkin);
-                    }else{
+                        $('#payment #booking-checkin-txt').text(checkin);
+                        $('#payment #booking-checkout-txt').text(checkout);
+                        $('#payment #booking-adult-txt').text(adult);
+                        $('#payment #booking-child-txt').text(child);
+                        $('#payment #booking-total-txt').text(checkin);
+                    } else {
                         window.location.href = '{{URL(Session::get('lang').'/booking')}}';
                     }
                 },
@@ -631,6 +682,6 @@
                     window.location.href = '{{URL(Session::get('lang').'/booking')}}';
                 }
             });
-         }
+        }
     </script>
 @endsection

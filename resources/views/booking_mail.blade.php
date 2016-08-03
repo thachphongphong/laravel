@@ -138,12 +138,16 @@
                                                                     <th align="left" width="100">Tên phòng</th>
                                                                     <th align="center" width="100">Giá tiền</th>
                                                                     <th align="right" width="60">Số lượng</th>
+                                                                    <th align="right" width="60">Số ngày</th>
                                                                     <th align="right" width="120">Thành tiền(VNĐ)</th>
                                                                 </tr>
                                                                 </thead>
                                                                 <tbody style="background:#eee;">
                                                                 <?php $i = 0;
                                                                 $total_price = 0;
+                                                                $days = (strtotime($booking->check_out->format('d-m-Y')) - strtotime
+                                                                                ($booking->check_in->format('d-m-Y')))
+                                                                        / (60 * 60 * 24);
                                                                 ?>
                                                                 @foreach($rooms as $room)
                                                                     <?php $i++;
@@ -154,7 +158,8 @@
                                                                         <td align='left'>{{$room->name}}<br/></td>
                                                                         <td align='right'>{{$room->price}}</td>
                                                                         <td align='center'> {{$booking->total_room}}</td>
-                                                                        <td align='right'>{{($room->price)*($booking->total_room)}}</td>
+                                                                        <td align='center'> {{$days}}</td>
+                                                                        <td align='right'>{{($room->price)*($booking->total_room)*($days==0?1:$days)}}</td>
                                                                     </tr>
                                                                 @endforeach
                                                                 </tbody>
