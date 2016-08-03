@@ -1282,6 +1282,7 @@ div.cs-skin-elastic {
   background: transparent;
   font-size: 14px;
   color: #fff;
+  z-index: 5;
 }
 div.cs-skin-elastic > span {
   background-color: transparent;

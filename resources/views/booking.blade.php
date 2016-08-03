@@ -245,7 +245,7 @@
 
                                                     <div class="mg-widget-cart">
                                                         <div class="mg-cart-room">
-                                                            <img id="booking-room-url" src="123" alt="" class="img-responsive">
+                                                            <img id="booking-room-url" src="{{asset('images/room.jpg')}}" alt="" class="img-responsive">
                                                             <h3 id="booking-room-name"></h3>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
@@ -306,7 +306,7 @@
 
                                                     <div class="mg-widget-cart">
                                                         <div class="mg-cart-room">
-                                                            <img id="booking-room-url" src="123" alt="" class="img-responsive">
+                                                            <img id="booking-room-url" src="{{asset('images/room.jpg')}}" alt="" class="img-responsive">
                                                             <h3 id="booking-room-name"></h3>
                                                         </div>
                                                         <div class="mg-widget-cart-row">
