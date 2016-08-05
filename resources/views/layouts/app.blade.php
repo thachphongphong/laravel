@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="_token" content="{!! csrf_token() !!}"/>
+    <meta id="token" name="token" content="{{ csrf_token() }}">
 
-    <title>Pear Sea Administration</title>
+    <link rel="shortcut icon" href="{{asset('/images/favicon.ico') }}">
+    <title>PEARL SEA HOTEL ADMINISTRATION</title>
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Playfair+Display:400,400italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+    <!-- Bootstrap -->
+    <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/font-awesome.min.css') }}" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('/css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/owl.theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/owl.transitions.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/cs-select.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/bootstrap-datepicker3.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/freepik.hotels.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
 
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="{{ asset('/js/html5shiv.min.js') }}"></script>
+    <script src="{{ asset('/js/respond.min.js') }}"></script>
+    <![endif]-->
+    <script src="{{ asset('/js/modernizr.custom.min.js') }}"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ asset('/js/jquery.min.js') }}"></script>
     <style>
         body {
             font-family: 'Lato';
@@ -25,56 +45,64 @@
         }
     </style>
 </head>
+<body>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
 
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/vi') }}">
-                    Pearl Sea Hotel
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('admin/home') }}">Trang chính</a></li>
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->username }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('vi/admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-            </div>
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
-    </nav>
 
-    @yield('content')
+        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <!-- Left Side Of Navbar -->
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url('admin/home') }}">Trang chính</a></li>
+            </ul>
 
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+            <!-- Right Side Of Navbar -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Authentication Links -->
+                @if (Auth::guest())
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->username }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('vi/admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                @endif
+            </ul>
+        </div>
+    </div>
+</nav>
+@yield('content')
+
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('/js/jssor.slider.mini.js') }}"></script>
+<script src="{{ asset('/js/classie.js') }}"></script>
+<script src="{{ asset('/js/selectFx.js') }}"></script>
+<script src="{{ asset('/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('/js/starrr.min.js') }}"></script>
+<script src="{{ asset('/js/nivo-lightbox.min.js') }}"></script>
+<script src="{{ asset('/js/jquery.shuffle.min.js') }}"></script>
+{{--<script src="http://maps.google.com/maps/api/js?sensor=true') }}"></script>--}}
+<script src="{{ asset('/js/gmaps.min.js') }}"></script>
+<script src="{{ asset('/js/jquery.parallax-1.1.3.js') }}"></script>
+<script src="{{ asset('/js/script.js') }}"></script>
+<script src="{{ asset('/js/validate.js') }}"></script>
 </body>
+
 </html>

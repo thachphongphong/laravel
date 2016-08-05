@@ -38,3 +38,5 @@ Route::get('{language}/admin/password/forgot','Auth\LoginController@forgot');
 Route::post('{language}/admin/password/reset','Auth\LoginController@reset');
 Route::post('{language}/admin/password/update','Auth\LoginController@update');
 Route::get('{language}/admin/dashboard','Admin\DashboardController@load')->middleware('auth');
+Route::get('{language}/admin/dashboard/contact/{language_code}','Admin\DashboardController@loadContact')->middleware('auth');
+Route::post('{language}/admin/dashboard/updateContact','Admin\DashboardController@updateContact')->middleware('auth');

@@ -452,7 +452,7 @@ $(window).load(function () {
  * Preloader
  */
 $(window).load(function () {
-    $('.preloader').fadeOut("slow");
+    $('.preloader').fadeOut("fast");
 });
 
 $(document).ready(function () {
