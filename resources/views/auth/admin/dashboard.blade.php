@@ -86,7 +86,7 @@
                                                         id="contact_message_fail">
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                                                                     aria-hidden="true">&times;</span></button>
-                                                        <i class="fa fa-question-circle"></i> <strong>Cập nhật thông tin liên hệ không
+                                                        <i class="fa fa-question-circle"></i>Cập nhật thông tin liên hệ không
                                                             thành công
                                                     </div>
 
