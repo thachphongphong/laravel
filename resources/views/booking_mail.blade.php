@@ -151,7 +151,7 @@
                                                                 ?>
                                                                 @foreach($rooms as $room)
                                                                     <?php $i++;
-                                                                    $total_price += ($room->price) * ($booking->total_room);
+                                                                    $total_price += ($room->price) * ($booking->total_room)*($days==0?1:$days);
                                                                     ?>
                                                                     <tr>
                                                                         <td>{{$i}}</td>
