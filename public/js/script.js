@@ -7,9 +7,17 @@ var adultSelect, childSelect;
      */
     [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
       if(el.id=='booking-adult' || el.id=='adult'){
-            adultSelect = new SelectFx(el); 
+            adultSelect = new SelectFx(el, {
+                  onChange: function(val) {
+                    $('#booking-adult-txt').text(val);
+                  }
+            });
       }else if(el.id=='booking-child' || el.id=='child'){
-            childSelect = new SelectFx(el); 
+            childSelect = new SelectFx(el,{
+                  onChange: function(val) {
+                    $('#booking-child-txt').text(val);
+                  }
+            });
       }else{
            new SelectFx(el);   
       }
