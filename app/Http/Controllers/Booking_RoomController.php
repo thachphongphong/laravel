@@ -183,11 +183,11 @@ class Booking_RoomController extends Controller
                 $booking_room->phone = $phone;
 
                 //convert string date to datetime
-                $check_in_date = date_create_from_format('m/d/Y', $check_in);
+                $check_in_date = date_create_from_format('d/m/Y', $check_in);
                 $check_in_date->getTimestamp();
 
                 //convert string date to datetime
-                $check_out_date = date_create_from_format('m/d/Y', $check_out);
+                $check_out_date = date_create_from_format('d/m/Y', $check_out);
                 $check_out_date->getTimestamp();
 
                 $booking_room->check_in = $check_in_date;
@@ -201,14 +201,25 @@ class Booking_RoomController extends Controller
                 $data = array('constants' => $constants, 'booking' => $booking_room, 'rooms' => $room);
 
                 // sent mail to admin
-                Mail::send('booking_mail', $data, function ($message) use ($email) {
-                    $message->from('contact@pearlseahotel.com', 'Pearl Sea Hotel');
-                    $message->to('contact@pearlseahotel.com')->subject('Your have booked rooms at Pearl sea hotel!');
+                $mail_from = 'contact@pearlseahotel.com';
+                $reception_mail_address = Config::get('constants.admin.reception_email');
+                $main_mail_address = Config::get('constants.admin.main_email');
+
+                // sent mail to main account
+                Mail::send('booking_mail', $data, function ($message) use ($main_mail_address, $mail_from) {
+                    $message->from($mail_from, 'Pearl Sea Hotel');
+                    $message->to($main_mail_address)->subject('Khách hàng đặt phòng');
+                });
+
+                // sent mail to reception
+                Mail::send('booking_mail', $data, function ($message) use ($reception_mail_address, $mail_from) {
+                    $message->from($mail_from, 'Pearl Sea Hotel');
+                    $message->to($reception_mail_address)->subject('Khách hàng đặt phòng');
                 });
 
                 // sent mail to customer
-                Mail::send('booking_mail', $data, function ($message) use ($email) {
-                    $message->from('contact@pearlseahotel.com', 'Pearl Sea Hotel');
+                Mail::send('booking_mail', $data, function ($message) use ($email, $mail_from) {
+                    $message->from($mail_from, 'Pearl Sea Hotel');
                     $message->to($email)->subject('Đặt phòng tại Pearl sea hotel!');
                 });
             }

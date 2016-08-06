@@ -171,5 +171,9 @@ return [
             'checkin'=>'Select a date.',
             'checkout'=>'Select a date.'
         ]
+    ],
+    'admin'=>[
+        'reception_email' => 'letanbienngoc@gmail.com',
+        'main_email' => 'pearlseahotel@gmail.com'
     ]
 ];

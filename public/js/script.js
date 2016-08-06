@@ -498,7 +498,7 @@ $(document).ready(function () {
         if(checkin == '' || checkout == '' || adult == '' || adult == null){
             return false;
         }else{
-            $( "#bookingF" ).submit();
+            $( "#bookingSearch" ).submit();
             return true;
         }
 
