@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'administrator', 'testeraxon@gmail.com', '$2y$10$noNfPdNWmGC0iPYUk2hakemYyxuTlVycWXxuJh18n12sZlAtnX.Oy', 'geoJRzJ3hz5ZyW86P4l0ID2f1HfuQvOhPGuv6KlegIT9t7fKFVMVURCeObCg', '2016-08-03 08:48:06', '2016-08-03 10:10:11');
+(1, 'administrator', 'pearlseahotel@gmail.com', '$2y$10$noNfPdNWmGC0iPYUk2hakemYyxuTlVycWXxuJh18n12sZlAtnX.Oy', 'geoJRzJ3hz5ZyW86P4l0ID2f1HfuQvOhPGuv6KlegIT9t7fKFVMVURCeObCg', '2016-08-03 08:48:06', '2016-08-03 10:10:11');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

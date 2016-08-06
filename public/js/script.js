@@ -282,6 +282,7 @@ var adultSelect, childSelect;
      */
     $('.input-group.mg-check-in').datepicker({
         startDate: "dateToday",
+        format: 'dd/mm/yyyy',
         autoclose: true
     });
 
@@ -335,6 +336,7 @@ var adultSelect, childSelect;
 
     $('.input-group.mg-check-out').datepicker({
         startDate: "dateToday",
+        format: 'dd/mm/yyyy',
         autoclose: true
     });
 

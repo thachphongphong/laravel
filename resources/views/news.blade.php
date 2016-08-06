@@ -20,7 +20,7 @@
                                     {!!html_entity_decode($new->introtext)!!}
                                 </div>
                                 <footer class="clearfix">
-                                    <a href="#" class="mg-read-more">Continue Reading <i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="./news/{{$new->id}}" class="mg-read-more">Continue Reading <i class="fa fa-long-arrow-right"></i></a>
                                 </footer>
                             </article>
                         @endforeach

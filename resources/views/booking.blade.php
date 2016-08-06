@@ -292,7 +292,7 @@
 
                                                     <div class="mg-widget-cart">
                                                         <div class="mg-cart-room">
-                                                            <img id="booking-room-url" src="123" alt="" class="img-responsive">
+                                                            <img id="booking-room-url" src="{{asset('images/room.jpg')}}" alt="pearlsea" class="img-responsive">
 
                                                             <h3 id="booking-room-name"></h3>
                                                         </div>
@@ -354,7 +354,7 @@
 
                                                     <div class="mg-widget-cart">
                                                         <div class="mg-cart-room">
-                                                            <img id="booking-room-url" src="123" alt="" class="img-responsive">
+                                                            <img id="booking-room-url" src="{{asset('images/room.jpg')}}" alt="pearlsea" class="img-responsive">
 
                                                             <h3 id="booking-room-name"></h3>
                                                         </div>
@@ -473,6 +473,12 @@
         </div>
     @endif
     <script type="text/javascript">
+         var session_checkin = "";
+         var session_checkout = "";
+         var session_adult = "0";
+         var session_child = "0";
+         var session_total = 0;
+
         $(document).ready(function () {
             $('a[href="#personal-info"]').click(function (event) {
                 if ($(this).hasClass('disabled')) {
@@ -523,40 +529,39 @@
 
 
         });
-        var checkin = "";
+       
         @if(Session::has('booking') && ! empty(Session::get('booking')->check_in))
-            checkin = '{{ date('d/m/Y', strtotime(Session::get('booking')->check_in))}}';
+            session_checkin = '{{ date('d/m/Y', strtotime(Session::get('booking')->check_in))}}';
                 @endif
 
-                var checkout = "";
+        
         @if(Session::has('booking') && ! empty(Session::get('booking')->check_out))
-            checkout = '{{date('d/m/Y', strtotime(Session::get('booking')->check_out))}}';
+            session_checkout = '{{date('d/m/Y', strtotime(Session::get('booking')->check_out))}}';
                 @endif
 
-                var adult = "0";
+       
         @if(Session::has('booking') && ! empty(Session::get('booking')->adult))
-            adult = '{{Session::get('booking')->adult}}';
+            session_adult = '{{Session::get('booking')->adult}}';
                 @endif
 
-                var child = "0";
+        
         @if(Session::has('booking') && ! empty(Session::get('booking')->child))
-            child = '{{Session::get('booking')->child}}';
+            session_child = '{{Session::get('booking')->child}}';
         @endif
 
-
         function selectRoom(roomId) {
-            if (checkin != "")
-                $('#booking-checkin').val(checkin);
-            if (checkout != "")
-                $('#booking-checkout').val(checkout);
-            if (adult != "0") {
-                $('#booking-adult select').val(adult);
-                adultSelect.current = adult;
+            if (session_checkin != "")
+                $('#booking-checkin').val(session_checkin);
+            if (session_checkout != "")
+                $('#booking-checkout').val(session_checkout);
+            if (session_adult != "0") {
+                $('#booking-adult select').val(session_adult);
+                adultSelect.current = session_adult;
                 adultSelect._changeOption();
             }
-            if (child != "0") {
-                $('#booking-child select').val(child);
-                childSelect.current = child;
+            if (session_child != "0") {
+                $('#booking-child select').val(session_child);
+                childSelect.current = session_child;
                 childSelect._changeOption();
             }
 
@@ -571,11 +576,11 @@
                         $('#booking-room-url').attr('src', assetBaseUrl + room.image_url);
                         $('#booking-room-url').attr('alt', room.name);
                         $('#booking-room-name').text(room.name);
-                        $('#booking-checkin-txt').text(checkin);
-                        $('#booking-checkout-txt').text(checkout);
-                        $('#booking-adult-txt').text(adult);
-                        $('#booking-child-txt').text(child);
-                        $('#booking-total-txt').text(checkin);
+                        $('#booking-checkin-txt').text(session_checkin);
+                        $('#booking-checkout-txt').text(session_checkout);
+                        $('#booking-adult-txt').text(session_adult);
+                        $('#booking-child-txt').text(session_child);
+                        $('#booking-total-txt').text(session_total);
 
 
                         var checkin = $('#booking-checkin').val();
@@ -624,10 +629,10 @@
         ;
 
         function userInfo() {
-            checkin = $('#booking-checkin').val();
-            checkout = $('#booking-checkout').val();
-            adult = $('#booking-adult').val();
-            child = $('#booking-child').val();
+            var checkin = $('#booking-checkin').val();
+            var checkout = $('#booking-checkout').val();
+            var adult = $('#booking-adult').val();
+            var child = $('#booking-child').val();
             var firstname = $('#firstname').val();
             var lastname = $('#lastname').val();
             var email1 = $('#email1').val();
@@ -656,11 +661,11 @@
                         $('#payment #booking-room-url').attr('src', assetBaseUrl + room.image_url);
                         $('#payment #booking-room-url').attr('alt', room.name);
                         $('#payment #booking-room-name').text(room.name);
-                        $('#payment #booking-checkin-txt').text(checkin);
-                        $('#payment #booking-checkout-txt').text(checkout);
-                        $('#payment #booking-adult-txt').text(adult);
-                        $('#payment #booking-child-txt').text(child);
-                        $('#payment #booking-total-txt').text(checkin);
+                        $('#payment #booking-checkin-txt').text(session_checkin);
+                        $('#payment #booking-checkout-txt').text(session_checkout);
+                        $('#payment #booking-adult-txt').text(session_adult);
+                        $('#payment #booking-child-txt').text(session_child);
+                        $('#payment #booking-total-txt').text(session_total);
                     } else {
                         window.location.href = '{{URL(Session::get('lang').'/booking')}}';
                     }
