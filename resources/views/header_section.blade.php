@@ -37,9 +37,10 @@
                 </div>
                 <div class="flag-box-cont pull-right">
                     <div style="padding-top: 50%;">
-                        <div class="left"><a href="{{ url('/vi/home') }}"><img src="{{asset('images/flag-vi.jpg')}}" alt="VI"></a>
+                        <div class="lang_left"><a href="{{ url('/vi/home') }}"><img src="{{asset('images/flag-vi.jpg')}}"
+                                                                                alt="VI"></a>
                         </div>
-                        <div class="right"><a href="{{ url('/en/home') }}"><img src="{{asset('images/flag-en.jpg')}}"
+                        <div class="lang_right"><a href="{{ url('/en/home') }}"><img src="{{asset('images/flag-en.jpg')}}"
                                                                                 alt="EN"></a></div>
                     </div>
                 </div>

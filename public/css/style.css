@@ -5162,7 +5162,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
     transition: margin 0.3s;
 }
 
-.left {
+.lang_left {
     float: left;
     padding-right: 5px;
     padding-top: 11px;
@@ -5171,7 +5171,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
     display: inline;
 }
 
-.right {
+.lang_right {
     float: left;
     padding-top: 11px;
     padding-bottom: 11px;
