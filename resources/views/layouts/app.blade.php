@@ -69,8 +69,7 @@
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
-                @if (Auth::guest())
-                @else
+                @if (!Auth::guest())
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->username }} <span class="caret"></span>
@@ -87,8 +86,8 @@
 </nav>
 @yield('content')
 
-
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
+@if (Auth::guest())
+<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('/js/jssor.slider.mini.js') }}"></script>
@@ -103,6 +102,10 @@
 <script src="{{ asset('/js/jquery.parallax-1.1.3.js') }}"></script>
 <script src="{{ asset('/js/script.js') }}"></script>
 <script src="{{ asset('/js/validate.js') }}"></script>
+@else
+<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/js/dashboard.js') }}"></script>
+@endif
 </body>
 
 </html>

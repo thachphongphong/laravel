@@ -56,7 +56,7 @@
                                                     </div>
                                                     <div class="col-sm-7">
                                                         <h3 class="mg-avl-room-title"><a href="#">{{$room->name}}</a>
-                                                            <span>{{$room->price}}</span></h3>
+                                                            <span id ="room-price">{{$room->price}}</span></h3>
 
                                                         <p><span>{{$room->description}}</span> -
                                                             <span>{{$room->total_person}} {{$constants['room']['person']}}</span>
@@ -148,7 +148,7 @@
                                                                     <div class="input-group-addon"><i class="fa fa-calendar"></i>
                                                                     </div>
                                                                     <input type="text" class="form-control" id="booking-checkin"
-                                                                           onchange="hasCheckin(this)"
+                                                                           onchange="hasCheckin(this); updateBooking('in');"
                                                                            name="booking-checkin"
                                                                            placeholder="{{$constants['booknow']['checkin']}}">
 
@@ -165,7 +165,7 @@
                                                                     <div class="input-group-addon"><i class="fa fa-calendar"></i>
                                                                     </div>
                                                                     <input type="text" class="form-control" id="booking-checkout"
-                                                                           onchange="hasCheckout(this)"
+                                                                           onchange="hasCheckout(this); updateBooking('out');"
                                                                            name="booking-checkout"
                                                                            placeholder="{{$constants['booknow']['checkout']}}">
                                                                 </div>
@@ -478,6 +478,28 @@
          var session_adult = "0";
          var session_child = "0";
          var session_total = 0;
+           @if(Session::has('booking') && ! empty(Session::get('booking')->check_in))
+                session_checkin = '{{ date('d/m/Y', strtotime(Session::get('booking')->check_in))}}';
+            @endif
+
+            
+            @if(Session::has('booking') && ! empty(Session::get('booking')->check_out))
+                session_checkout = '{{date('d/m/Y', strtotime(Session::get('booking')->check_out))}}';
+            @endif
+
+           
+            @if(Session::has('booking') && ! empty(Session::get('booking')->adult))
+                session_adult = '{{Session::get('booking')->adult}}';
+                    @endif
+
+            
+            @if(Session::has('booking') && ! empty(Session::get('booking')->child))
+                session_child = '{{Session::get('booking')->child}}';
+            @endif
+
+            @if(Session::has('booking') && ! empty(Session::get('booking')->total_money))
+                session_total = '{{Session::get('booking')->total_money}}';
+            @endif
 
         $(document).ready(function () {
             $('a[href="#personal-info"]').click(function (event) {
@@ -526,28 +548,8 @@
                     $('#step2').addClass("disabled");
                 }
             });
-
-
         });
        
-        @if(Session::has('booking') && ! empty(Session::get('booking')->check_in))
-            session_checkin = '{{ date('d/m/Y', strtotime(Session::get('booking')->check_in))}}';
-                @endif
-
-        
-        @if(Session::has('booking') && ! empty(Session::get('booking')->check_out))
-            session_checkout = '{{date('d/m/Y', strtotime(Session::get('booking')->check_out))}}';
-                @endif
-
-       
-        @if(Session::has('booking') && ! empty(Session::get('booking')->adult))
-            session_adult = '{{Session::get('booking')->adult}}';
-                @endif
-
-        
-        @if(Session::has('booking') && ! empty(Session::get('booking')->child))
-            session_child = '{{Session::get('booking')->child}}';
-        @endif
 
         function selectRoom(roomId) {
             if (session_checkin != "")
@@ -571,17 +573,32 @@
                 data: {roomId: roomId},
                 success: function (data) {
                     if (data.success) {
-                        var room = data.data[0];
-                        var assetBaseUrl = "{{ asset('') }}";
-                        $('#booking-room-url').attr('src', assetBaseUrl + room.image_url);
-                        $('#booking-room-url').attr('alt', room.name);
-                        $('#booking-room-name').text(room.name);
-                        $('#booking-checkin-txt').text(session_checkin);
-                        $('#booking-checkout-txt').text(session_checkout);
-                        $('#booking-adult-txt').text(session_adult);
-                        $('#booking-child-txt').text(session_child);
-                        $('#booking-total-txt').text(session_total);
+                       
+                        var room = data.room;
+                        if(room != ""){
+                            var assetBaseUrl = "{{ asset('') }}";
+                            if(typeof room.image_url != 'undefined')
+                            $('#booking-room-url').attr('src', assetBaseUrl + room.image_url);
+                             if(typeof room.name != 'undefined')
+                            $('#booking-room-url').attr('alt', room.name);
+                             if(typeof room.name != 'undefined')
+                            $('#booking-room-name').text(room.name);
+                        }
+                      
 
+                        var booking = data.booking;
+                        if(booking != ""){
+                            if(typeof booking.check_in != 'undefined')
+                            $('#booking-checkin-txt').text($.format.date(booking.check_in.date, "dd/MM/yyyy"));
+                            if(typeof booking.checkout != 'undefined')
+                            $('#booking-checkout-txt').text($.format.date(booking.check_out.date, "dd/MM/yyyy"));
+                            if(typeof booking.adult != 'undefined')
+                            $('#booking-adult-txt').text(booking.adult);
+                            if(typeof booking.child != 'undefined')
+                            $('#booking-child-txt').text(booking.child);
+                            if(typeof booking.total_money != 'undefined')
+                            $('#booking-total-txt').text(booking.total_money);
+                        }    
 
                         var checkin = $('#booking-checkin').val();
                         var checkout = $('#booking-checkout').val();
@@ -656,16 +673,28 @@
                 },
                 success: function (data) {
                     if (data.success) {
-                        var room = data.data[0];
-                        var assetBaseUrl = "{{ asset('') }}";
-                        $('#payment #booking-room-url').attr('src', assetBaseUrl + room.image_url);
-                        $('#payment #booking-room-url').attr('alt', room.name);
-                        $('#payment #booking-room-name').text(room.name);
-                        $('#payment #booking-checkin-txt').text(session_checkin);
-                        $('#payment #booking-checkout-txt').text(session_checkout);
-                        $('#payment #booking-adult-txt').text(session_adult);
-                        $('#payment #booking-child-txt').text(session_child);
-                        $('#payment #booking-total-txt').text(session_total);
+
+                        var room = data.room;
+                         if(room != ""){
+                            var assetBaseUrl = "{{ asset('') }}";
+                            $('#payment #booking-room-url').attr('src', assetBaseUrl + room.image_url);
+                            $('#payment #booking-room-url').attr('alt', room.name);
+                            $('#payment #booking-room-name').text(room.name);
+                         }
+
+                       var booking = data.booking;
+                        if(booking != ""){
+                            if(typeof booking.check_in != 'undefined')
+                                $('#payment #booking-checkin-txt').text($.format.date(booking.check_in.date, "dd/MM/yyyy"));
+                            if(typeof booking.checkout != 'undefined')
+                                $('#payment #booking-checkout-txt').text($.format.date(booking.check_out.date, "dd/MM/yyyy"));
+                            if(typeof booking.adult != 'undefined')
+                                $('#payment #booking-adult-txt').text(booking.adult);
+                            if(typeof booking.child != 'undefined')
+                                $('#payment #booking-child-txt').text(booking.child);
+                            if(typeof booking.total != 'undefined')
+                                $('#payment #booking-total-txt').text(booking.total_money);
+                        }    
                     } else {
                         window.location.href = '{{URL(Session::get('lang').'/booking')}}';
                     }
@@ -674,6 +703,8 @@
                     window.location.href = '{{URL(Session::get('lang').'/booking')}}';
                 }
             });
-        }
+        };
+       
     </script>
 @endsection
+
