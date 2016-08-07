@@ -1032,6 +1032,41 @@ ul.styled-list.list-star li:before {
     text-indent: -2px;
 }
 
+.mg-lang-box-trigger {
+    padding: 11px 0;
+    text-align: center;
+    width: 43px;
+    cursor: pointer;
+    display: block;
+    color: #fff;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.mg-lang-box {
+    min-width: 65px;
+    position: absolute;
+    bottom: -84px;
+    right: 0;
+    padding: 5px;
+    background-color: rgba(22, 38, 46, 0.95);
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+}
+
+.mg-lang-box.mg-sb-active {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+}
+
+
 .mg-page-title {
     padding-top: 70px;
     padding-bottom: 50px;

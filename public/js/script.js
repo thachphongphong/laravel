@@ -138,6 +138,20 @@ var adultSelect, childSelect;
     });
 
     /*
+     * Lang box toggle at Header
+     */
+    $('.mg-lang-box-trigger').click(function () {
+        var lbox = $(this).next();
+
+        // $(this).toggleClass('mg-sb-active');
+        $(this).find('i').toggleClass('fa-times');
+        lbox.toggleClass('mg-sb-active');
+
+        return false;
+    });
+
+
+    /*
      * Main Menu dropdown at Hover
      */
     if ($(window).width() >= 768) {

@@ -187,24 +187,17 @@ class Booking_RoomController extends Controller
                 $booking_room = BookingRoom::create();
                 $booking_room->room_id = $room_id;
                 $booking_room->booking_id = $booking_id;
-                $booking_room->total_room = $total_room == 0 ? 1 : $total_room;
+//                $booking_room->total_room = $total_room == 0 ? 1 : $total_room;
                 $booking_room->full_name = $full_name;
                 $booking_room->address = $address;
                 $booking_room->phone = $phone;
+                $booking_room->email =  $email;
 
                 $booking_room->adult = $adult ;
                 $booking_room->child = $child ;
 
-                //convert string date to datetime
-                $check_in_date = date_create_from_format('d/m/Y', $check_in);
-                $check_in_date->getTimestamp();
-
-                //convert string date to datetime
-                $check_out_date = date_create_from_format('d/m/Y', $check_out);
-                $check_out_date->getTimestamp();
-
-                $booking_room->check_in = $check_in_date;
-                $booking_room->check_out = $check_out_date;
+                $booking_room->check_in = $check_in;
+                $booking_room->check_out = $check_out;
 
                 $booking_room->created_date = Carbon::now();
                 $booking_room->save();

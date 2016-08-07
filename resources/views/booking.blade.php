@@ -686,13 +686,13 @@
                         if(booking != ""){
                             if(typeof booking.check_in != 'undefined')
                                 $('#payment #booking-checkin-txt').text($.format.date(booking.check_in.date, "dd/MM/yyyy"));
-                            if(typeof booking.checkout != 'undefined')
+                            if(typeof booking.check_out != 'undefined')
                                 $('#payment #booking-checkout-txt').text($.format.date(booking.check_out.date, "dd/MM/yyyy"));
                             if(typeof booking.adult != 'undefined')
                                 $('#payment #booking-adult-txt').text(booking.adult);
                             if(typeof booking.child != 'undefined')
                                 $('#payment #booking-child-txt').text(booking.child);
-                            if(typeof booking.total != 'undefined')
+                            if(typeof booking.total_money != 'undefined')
                                 $('#payment #booking-total-txt').text(booking.total_money);
                         }    
                     } else {
