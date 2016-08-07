@@ -170,6 +170,7 @@ class Booking_RoomController extends Controller
                 $address = $booking->address;
                 $adult = $booking->adult ;
                 $child = $booking->child ;
+                $total_money = $booking->total_money;
 
 //                if ($room_id == null || $room_id == 0 || $room_id == "") return Response::json(['success' => false, 'data' =>
 //                    '$room_id']);
@@ -198,6 +199,8 @@ class Booking_RoomController extends Controller
 
                 $booking_room->check_in = $check_in;
                 $booking_room->check_out = $check_out;
+
+                $booking_room->total_money = $total_money;
 
                 $booking_room->created_date = Carbon::now();
                 $booking_room->save();

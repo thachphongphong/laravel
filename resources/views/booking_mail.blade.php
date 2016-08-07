@@ -150,16 +150,13 @@
                                                                         / (60 * 60 * 24);
                                                                 ?>
                                                                 @foreach($rooms as $room)
-                                                                    <?php $i++;
-                                                                    $total_price += ($room->price) * ($booking->total_room)*($days==0?1:$days);
-                                                                    ?>
                                                                     <tr>
                                                                         <td>{{$i}}</td>
                                                                         <td align='left'>{{$room->name}}<br/></td>
                                                                         <td align='right'>{{$room->price}}</td>
                                                                         <td align='center'> {{$booking->total_room}}</td>
                                                                         <td align='center'> {{$days}}</td>
-                                                                        <td align='right'>{{($room->price)*($booking->total_room)*($days==0?1:$days)}}</td>
+                                                                        <td align='right'>{{$booking->total_money}}</td>
                                                                     </tr>
                                                                 @endforeach
                                                                 </tbody>
@@ -167,7 +164,7 @@
                                                                 <tr>
                                                                     <td colspan="5" align="right">Tổng số tiền:</td>
                                                                     <td colspan="2" align="right"><b
-                                                                                style="color: #ff0000">{{$total_price}}</b>
+                                                                                style="color: #ff0000">{{$booking->total_money}}</b>
                                                                     </td>
                                                                 </tr>
                                                                 </tfoot>
