@@ -101,8 +101,8 @@ class Booking_RoomController extends Controller
         $booking = new BookingRoom();
         $booking->check_in = Carbon::createFromFormat('d/m/Y', $checkin);
         $booking->check_out = Carbon::createFromFormat('d/m/Y', $checkout);
-        $booking->adult = $adult;
-        $booking->child = $child;
+        $booking->adult = ($adult == null) ? 0 : $adult;
+        $booking->child = ($child == null) ? 0 : $child;
         Session::put('booking', $booking);
 
         $room = Room::with('roomdetails')->where('language_id', $language_id)->get();
@@ -123,15 +123,22 @@ class Booking_RoomController extends Controller
         if (Request::ajax()) {
             $roomId = $request->input('roomId');;
             $booking = Session::get('booking');
+            $room = Room::where('language_id', $language_id)->where('id', $roomId)->first();
+
             if ($booking != null) {
                 $booking->room_id = $roomId;
+                if(($booking->check_in != null) && ($booking->check_out != null)){
+                    $totalDay = $booking->check_out->diffInDays($booking->check_in);
+                    $booking->total_money =$totalDay * ($room->price);
+                }
+                
             } else {
                 $booking = new BookingRoom();
                 $booking->room_id = $roomId;
             }
             Session::put('booking', $booking);
-            $room = Room::where('language_id', $language_id)->where('id', $roomId)->get();
-            return Response::json(['success' => true, 'data' => $room]);
+            
+            return Response::json(['success' => true, 'room' => $room, 'booking' => $booking]);
         }
     }
 
@@ -161,6 +168,10 @@ class Booking_RoomController extends Controller
                 $check_in = $booking->check_in;
                 $check_out = $booking->check_out;
                 $address = $booking->address;
+                $adult = $booking->adult ;
+                $child = $booking->child ;
+                $total_money = $booking->total_money;
+
 //                if ($room_id == null || $room_id == 0 || $room_id == "") return Response::json(['success' => false, 'data' =>
 //                    '$room_id']);
 //                if ($total_room == null || $total_room == 0 || $total_room == "") return Response::json(['success' => false, 'data' =>
@@ -177,21 +188,19 @@ class Booking_RoomController extends Controller
                 $booking_room = BookingRoom::create();
                 $booking_room->room_id = $room_id;
                 $booking_room->booking_id = $booking_id;
-                $booking_room->total_room = $total_room == 0 ? 1 : $total_room;
+//                $booking_room->total_room = $total_room == 0 ? 1 : $total_room;
                 $booking_room->full_name = $full_name;
                 $booking_room->address = $address;
                 $booking_room->phone = $phone;
+                $booking_room->email =  $email;
 
-                //convert string date to datetime
-                $check_in_date = date_create_from_format('d/m/Y', $check_in);
-                $check_in_date->getTimestamp();
+                $booking_room->adult = $adult ;
+                $booking_room->child = $child ;
 
-                //convert string date to datetime
-                $check_out_date = date_create_from_format('d/m/Y', $check_out);
-                $check_out_date->getTimestamp();
+                $booking_room->check_in = $check_in;
+                $booking_room->check_out = $check_out;
 
-                $booking_room->check_in = $check_in_date;
-                $booking_room->check_out = $check_out_date;
+                $booking_room->total_money = $total_money;
 
                 $booking_room->created_date = Carbon::now();
                 $booking_room->save();
@@ -251,15 +260,23 @@ class Booking_RoomController extends Controller
             if ($booking == null) {
                 return Response::json(['success' => false, 'data' => 'Booking error!']);
             } else {
+                $booking->check_in =   $booking->check_in = Carbon::createFromFormat('d/m/Y', $checkin);
+                $booking->check_out = Carbon::createFromFormat('d/m/Y', $checkout);
+                $booking->adult = $adult;
+                $booking->child = $child;
                 $booking->full_name = $firstname . ' ' . $lastname;
                 $booking->email = $email1;
                 $booking->phone = $phone;
-                $booking->check_in = $checkin;
-                $booking->check_out = $checkout;
             }
+
+            $room = Room::where('language_id', $language_id)->where('id', $booking->room_id)->first();
+             if(($booking->check_in != null) && ($booking->check_out != null)){
+                    $totalDay = $booking->check_out->diffInDays($booking->check_in);
+                    $booking->total_money =$totalDay * ($room->price);
+                }
+           
             Session::put('booking', $booking);
-            $room = Room::where('language_id', $language_id)->where('id', $booking->room_id)->get();
-            return Response::json(['success' => true, 'data' => $room]);
+            return Response::json(['success' => true, 'room' => $room, 'booking' => $booking]);
         }
     }
 }
