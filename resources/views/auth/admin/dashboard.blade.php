@@ -75,20 +75,22 @@
                                                           rows="5">{{$contact->address}}</textarea>
                                             </div>
 
-                                                <div class="col-md-6">
-                                                    <div class="alert alert-success alert-dismissible hidden_alert" role="alert"
-                                                         id="contact_message_ok">
-                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                                                    aria-hidden="true">&times;</span></button>
-                                                        <i class="fa fa-check-circle"></i>Cập nhật thông tin liên hệ thành công
-                                                    </div>
-                                                    <div class="alert alert-danger alert-dismissible hidden_alert" role="alert"
-                                                        id="contact_message_fail">
-                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                                                    aria-hidden="true">&times;</span></button>
-                                                        <i class="fa fa-question-circle"></i>Cập nhật thông tin liên hệ không
-                                                            thành công
-                                                    </div>
+                                            <div class="col-md-6">
+                                                <div class="alert alert-success alert-dismissible hidden_alert" role="alert"
+                                                     id="contact_message_ok">
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                            aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <i class="fa fa-check-circle"></i>Cập nhật thông tin liên hệ thành công
+                                                </div>
+                                                <div class="alert alert-danger alert-dismissible hidden_alert" role="alert"
+                                                     id="contact_message_fail">
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                            aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <i class="fa fa-question-circle"></i>Cập nhật thông tin liên hệ không
+                                                    thành công
+                                                </div>
 
                                             </div>
                                             <input type="button" id="update-contact-btn" class="btn btn-dark-main pull-right"
@@ -97,8 +99,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="messages4">
-                                Tin tức
+                            <div role="tabpanel" class="tab-pane fade" id="article">
+                                <form action="/new-post" method="post">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <div class="form-group">
+                                        <input required="required" value="{{ old('title') }}" placeholder="Enter title here" type="text" name = "title"class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea id="article_body" name='article_body'class="form-control">{{ old('body') }}</textarea>
+                                    </div>
+                                    <input type="submit" name='publish' class="btn btn-success" value = "Publish"/>
+                                    <input type="submit" name='save' class="btn btn-default" value = "Save Draft" />
+                                </form>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="settings4">
                                 Đặt phòng
@@ -130,6 +142,8 @@
                 var telephone = $('#telephone').val();
                 var phone = $('#phone').val();
                 var address = $('#address').val();
+                tinyMCE.get('address').getContent();
+
                 $.ajax({
                     type: "POST",
                     url: '{{URL('vi/admin/dashboard/updateContact')}}',
