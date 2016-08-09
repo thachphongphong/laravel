@@ -26,6 +26,12 @@
                                 </a>
                             </li>
                             <li role="presentation">
+                                <a href="#upload" aria-controls="upload" role="tab" data-toggle="tab">
+                                    <i class="fa fa-cogs"></i>
+                                    Upload
+                                </a>
+                            </li>
+                            <li role="presentation">
                                 <a href="#settings4" aria-controls="settings4" role="tab" data-toggle="tab">
                                     <i class="fa fa-cogs"></i>
                                     Book phòng
@@ -39,8 +45,9 @@
                             </div>
                             @include('auth.admin.intro_section')
                             @include('auth.admin.article_section')
+                            @include('auth.admin.upload')
                             <div role="tabpanel" class="tab-pane fade" id="settings4">
-                                Đặt phòng
+
                             </div>
                         </div>
 

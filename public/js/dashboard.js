@@ -32,6 +32,10 @@ $(document).ready(function () {
     $('#btn-cancel').click(function () {
         resetNews();
     });
+    $('#btn-upload').click(function () {
+        upload();
+    });
+
 
     function updateContact() {
         var id = $('#contact_id').val();
@@ -143,7 +147,7 @@ $(document).ready(function () {
         });
     }
 
-    function resetNews(){
+    function resetNews() {
         $('#news_title').val("");
         $('#news_image_url').val("");
         $('#news_introtext').val("");
@@ -152,5 +156,26 @@ $(document).ready(function () {
         $('#news_message_ok').addClass('hidden_alert');
         $('#news_message_fail').addClass('hidden_alert');
         $('#news_message_validate').addClass('hidden_alert');
+    }
+
+    function upload() {
+        var form = document.forms.namedItem("upload_image"); // high importance!, here you need change "yourformname" with the name of your form
+        var formdata = new FormData(form); // high importance!
+
+        $.ajax({
+            async: true,
+            type: "POST",
+            dataType: "json", // or html if you want...
+            contentType: false, // high importance!
+            url: DASH_BOARD_URL + '/upload', // you need change it.
+            data: formdata, // high importance!
+            processData: false, // high importance!
+            success: function (data) {
+                alert(data.data)
+                //do thing with data....
+
+            },
+            timeout: 10000
+        });
     }
 })
