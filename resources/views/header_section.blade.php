@@ -11,7 +11,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="{{asset('images/logo.png')}}" alt="logo"></a>
+                    <a class="navbar-brand" href="#">
+                        <img id="logo1" src="{{asset('images/logo.png')}}" alt="logo">
+                        <img id="logo2" src="{{asset('images/logo-s.png')}}" alt="logo">
+                    </a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -49,7 +52,7 @@
                 </div>
                 -->
                 <div class="mg-search-box-cont pull-right">
-                     <a href="#" class="mg-lang-box-trigger"><i class="fa fa-language"></i></a>
+                     <a href="#" class="mg-lang-box-trigger"><i class="fa fa-globe"></i></a>
                     <div class="mg-lang-box">
                         <a href="{{ url('/vi/home') }}"><img src="{{asset('images/flag-vi.jpg')}}" alt="VI"></a>
                         <a href="{{ url('/en/home') }}"><img src="{{asset('images/flag-en.jpg')}}" alt="EN"></a>
