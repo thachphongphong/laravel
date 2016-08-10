@@ -5,7 +5,7 @@ return [
             'title' => 'NHỮNG PHÒNG TỐT NHẤT',
             'desc' => 'Được chọn bởi khách hàng',
             'view' => 'Xem chi tiết',
-            'book' => 'Đặt phòng'
+            'book' => 'Book'
         ],
         'footer' => [
             'contact' => 'LIÊN HỆ',
@@ -46,7 +46,7 @@ return [
         ],
         'room' => [
             'detail' => 'Xem Chi Tiết',
-            'book' => 'Book Phòng',
+            'book' => 'Book',
             'facilities' => 'Tiện Nghi Phòng',
             'desc' => 'Mô Tả Phòng',
             'person' => 'người',
@@ -131,7 +131,7 @@ return [
         ],
         'room' => [
             'detail' => 'View Details',
-            'book' => 'Book Now',
+            'book' => 'Book',
             'facilities' => 'Room Fecilities',
             'desc' => 'Room Description',
             'person' => 'person',
