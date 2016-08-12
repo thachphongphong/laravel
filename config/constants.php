@@ -175,6 +175,6 @@ return [
     'admin' => [
         'reception_email' => 'letanbienngoc@gmail.com',
         'main_email' => 'pearlseahotel@gmail.com',
-        'imagePath' => 'images'
+        'imagePath' => 'public/images'
     ]
 ];
