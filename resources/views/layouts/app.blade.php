@@ -63,7 +63,7 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('admin/home') }}">Trang chính</a></li>
+                <li><a href="{{ url('vi/home') }}">Trang chính</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
