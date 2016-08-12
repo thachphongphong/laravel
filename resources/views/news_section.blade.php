@@ -9,7 +9,7 @@
 
                             <li>
                                 <div class="mg-recnt-post">
-                                    <div class="mg-rp-date">{{ date('F d, Y', strtotime($new->created_date)) }}
+                                    <div class="mg-rp-date">{{ date('M d, Y', strtotime($new->created_date)) }}
                                         {{--<div class="mg-rp-month">{{ date('F d, Y', strtotime($new->created_date)) }}</div>--}}
                                     </div>
                                     <h3><a href="./news/{{$new->id}}">{{$new->title}}</a></h3>
