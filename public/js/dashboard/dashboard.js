@@ -178,4 +178,15 @@ $(document).ready(function () {
             timeout: 10000
         });
     }
+
+
+     $('a').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("href") // activated tab
+            if(target == '#introduce'){
+                loadIntroduce('vi');
+            }
+            if(target == '#introduce'){
+                loadIntroduce('vi');
+            }
+     });
 })

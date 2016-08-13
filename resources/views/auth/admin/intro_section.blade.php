@@ -1,62 +1,53 @@
-@section('intro_section')
-<div role="tabpanel" class="tab-pane fade" id="introduce">
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="mg-sec-left-title">Giới thiệu</h2>
-            <input type="button" id="contact_vi" class="btn btn-danger"
-                   value="Tiếng Việt">
-
-            <input type="button" id="contact_en" class="btn btn-primary"
-                   value="Tiếng Anh">
-
-            <form class="clearfix">
-                <div class="mg-contact-form-input" style="display:none">
-                    <input type="text" class="form-control" id="contact_id"
-                           disabled value="{{$contact->id}}">
-                </div>
+<form id="introduction">
+    @foreach ($abouts as $ab)
+        <div class="row">
+            <div class="col-md-12">
                 <div class="mg-contact-form-input">
-                    <label for="email">Tên hiển thị</label>
-                    <input type="text" class="form-control" id="name" value="{{$contact->name}}">
-                </div>
-                <div class="mg-contact-form-input">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" value="{{$contact->email_to}}">
-                </div>
-                <div class="mg-contact-form-input">
-                    <label for="telephone">Điện thoại</label>
-                    <input type="text" class="form-control" id="telephone"
-                           value=" {{$contact->telephone}}">
-                </div>
-                <div class="mg-contact-form-input">
-                    <label for="phone">Di động</label>
-                    <input type="text" class="form-control" id="phone" value="{{$contact->phone}}">
-                </div>
-                <div class="mg-contact-form-input">
-                    <label for="content">Địa chỉ</label>
-                    <textarea class="form-control" id="address"
-                              rows="5">{{$contact->address}}</textarea>
-                </div>
-
-                    <div class="col-md-6">
-                        <div class="alert alert-success alert-dismissible hidden_alert" role="alert"
-                             id="contact_message_ok">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span></button>
-                            <i class="fa fa-check-circle"></i>Cập nhật thông tin liên hệ thành công
-                        </div>
-                        <div class="alert alert-danger alert-dismissible hidden_alert" role="alert"
-                            id="contact_message_fail">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span></button>
-                            <i class="fa fa-question-circle"></i>Cập nhật thông tin liên hệ không
-                                thành công
-                        </div>
-
-                </div>
-                <input type="button" id="update-contact-btn" class="btn btn-dark-main pull-right"
-                       value="Cập nhật thông tin liên hệ">
-            </form>
+                    <textarea class="form-control" rows="5">{{$ab ->content}}</textarea>
+                    <input type="button" onclick="saveAbout(this);" content-id="{{$ab ->id}}" lang-id="{{$ab ->language_id}}" class="btn btn-xs btn-primary" value="Save">  
+                </div>                
+            </div>
         </div>
-    </div>
-</div>
-@show
+        <div class="row">
+            @if ($ab ->image_url != "" && is_array(explode(',', $ab ->image_url)))
+                @if (count(explode(',', $ab ->image_url)) == 2)
+                    @foreach( explode(',', $ab ->image_url) as $url)
+                        <div class="col-sm-6">
+                            <div class="mg-contact-form-input">
+                                <img id="img-{{$ab ->id}}" src="{{asset($url)}}" alt="pearl sea hotel" class="img-responsive center-block">  
+                                <input type="button" onclick="deleteImageAbout(this);" img-url="{{$url}}" content-id="{{$ab ->id}}" class="btn btn-xs  btn-danger" value="Delete">
+                           </div>                
+                       </div>
+                    @endforeach
+                @elseif (count(explode(',', $ab ->image_url)) == 3)
+                    @foreach( explode(',', $ab ->image_url) as $url)
+                        <div class="col-sm-4">
+                             <div class="mg-contact-form-input">
+                                <img id="img-{{$ab ->id}}" src=" {{asset($url)}}" alt="pearl sea hotel" class="img-responsive center-block">
+                                <input type="button" onclick="deleteImageAbout(this);" img-url="{{$url}}" content-id="{{$ab ->id}}" class="btn btn-xs btn-xsn btn-danger" value="Delete">
+                            </div>
+                        </div>
+                    @endforeach
+                @elseif (count(explode(',', $ab ->image_url)) == 4)
+                    @foreach( explode(',', $ab ->image_url) as $url)
+                        <div class="col-sm-3">
+                        <div class="mg-contact-form-input">
+                            <img id="img-{{$ab ->id}}" src=" {{asset($url)}}" alt="pearl sea hotel" class="img-responsive center-block">
+                            <input type="button" onclick="deleteImageAbout(this);" img-url="{{$url}}" content-id="{{$ab ->id}}" class="btn btn-xs btn-danger" value="Delete">
+                        </div>
+                        </div>
+                    @endforeach
+                @elseif(count(explode(',', $ab ->image_url)) == 1)
+                    <div class="col-xs-12">
+                    <div class="mg-contact-form-input">
+                            <img id="img-{{$ab ->id}}" src=" {{asset($ab ->image_url)}}" alt="pearl sea hotel" class="img-responsive center-block">
+                            <input type="button" onclick="deleteImageAbout(this);" img-url="{{$ab ->image_url}}" content-id="{{$ab ->id}}" class="btn btn-xs btn-danger" value="Delete">
+                    </div>
+                    </div>
+                @endif
+                 <input type="button" onclick="addImageAbout(this);" content-id="{{$ab ->id}}" class="btn btn-xs  btn-primary" value="Add"> 
+            @endif
+        </div>
+        <hr/>
+    @endforeach    
+</form>

@@ -104,7 +104,9 @@
 <script src="{{ asset('/js/validate.js') }}"></script>
 @else
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('/js/dashboard.js') }}"></script>
+<script src="{{ asset('/js/dashboard/dashboard.js') }}"></script>
+<script src="{{ asset('/js/dashboard/about.js') }}"></script>
+<script src="{{ asset('/js/dashboard/booking.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/js/tinymce/tinymce.min.js') }}"></script>
 @endif
 

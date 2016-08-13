@@ -31,6 +31,7 @@ Route::post('{language}/booking/make', 'Booking_RoomController@makeBooking');
 Route::get('{language}/contact', 'ContactController@load');
 Route::post('{language}/contact/send', 'ContactController@addMessage');
 Route::get('{language}/news/{id}', 'NewsDetailController@load');
+
 Route::get('{language}/admin', 'Auth\LoginController@load');
 Route::post('{language}/admin/login', 'Auth\LoginController@login');
 Route::get('{language}/admin/logout', 'Auth\LoginController@logout')->middleware('auth');
@@ -43,3 +44,7 @@ Route::post('{language}/admin/dashboard/updateContact', 'Admin\DashboardControll
 Route::post('{language}/admin/dashboard/addNews', 'Admin\DashboardController@addNews')->middleware('auth');
 
 Route::post('{language}/admin/dashboard/upload', 'Admin\UploadImageController@upload')->middleware('auth');;
+
+Route::get('{language}/admin/dashboard/introduce/{language_code}', 'Admin\AboutController@introduce')->middleware('auth');
+Route::post('{language}/admin/dashboard/saveAbout', 'Admin\AboutController@saveAbout')->middleware('auth');
+Route::post('{language}/admin/dashboard/deleteImageAbout', 'Admin\AboutController@deleteImageAbout')->middleware('auth');
