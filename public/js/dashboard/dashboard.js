@@ -274,4 +274,15 @@ $(document).ready(function () {
         var controlId = $("#div_upload_image").data('controlId');
         replace(controlId, $('#filePath').val());
     }
+
+
+     $('a').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("href") // activated tab
+            if(target == '#introduce'){
+                loadIntroduce('vi');
+            }
+            if(target == '#introduce'){
+                loadIntroduce('vi');
+            }
+     });
 })

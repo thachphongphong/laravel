@@ -14,8 +14,14 @@
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a href="#introduce" aria-controls="introduce" role="tab" data-toggle="tab">
+                                <a href="#contact" aria-controls="contact" role="tab" data-toggle="tab">
                                     <i class="fa fa-info"></i>
+                                    Liên Hệ
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#introduce" aria-controls="introduce" role="tab" data-toggle="tab">
+                                    <i class="fa fa-hotel"></i>
                                     Giới Thiệu
                                 </a>
                             </li>
@@ -37,16 +43,37 @@
                                     Sửa phòng
                                 </a>
                             </li>
+                             <li role="presentation">
+                                <a href="#booking" aria-controls="booking" role="tab" data-toggle="tab">
+                                    <i class="fa fa-list-ul"></i>
+                                    Booking
+                                </a>
+                            </li>
                         </ul>
 
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane fade in active" id="home4">
                                 <h1>Trang quản trị hệ thống khách sạn Pearl Sea</h1>
                             </div>
-                            @include('auth.admin.intro_section')
+                            @include('auth.admin.contact_section')
+                            <div role="tabpanel" class="tab-pane fade" id="introduce">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2 class="mg-sec-left-title">Giới thiệu</h2>
+                                        <input type="button" id="info_vi" class="btn btn-danger"
+                                               value="Tiếng Việt">
+
+                                        <input type="button" id="info_en" class="btn btn-primary"
+                                               value="Tiếng Anh">
+
+                                        <div id="intro-content"></div>
+                                    </div>
+                                </div>
+                            </div>
                             @include('auth.admin.article_section')
                             @include('auth.admin.upload')
                             @include('auth.admin.edit_room_section')
+                            @include('auth.admin.booking')
                         </div>
 
                     </div>

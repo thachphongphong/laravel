@@ -172,18 +172,6 @@ class Booking_RoomController extends Controller
                 $child = $booking->child ;
                 $total_money = $booking->total_money;
 
-//                if ($room_id == null || $room_id == 0 || $room_id == "") return Response::json(['success' => false, 'data' =>
-//                    '$room_id']);
-//                if ($total_room == null || $total_room == 0 || $total_room == "") return Response::json(['success' => false, 'data' =>
-//                    '$total_room']);
-//                if ($email == null || $email == 0 || $email == "") return Response::json(['success' => false, 'data' =>
-//                    '$email']);
-//                if ($check_in == null || $check_in == 0 || $check_in == "") return Response::json(['success' => false, 'data' =>
-//                    '$check_in']);
-//                if ($check_out == null || $check_out == 0 || $check_out == "") return Response::json(['success' => false, 'data' =>
-//                    '$check_out']);
-
-
                 // save booking
                 $booking_room = BookingRoom::create();
                 $booking_room->room_id = $room_id;
@@ -231,8 +219,9 @@ class Booking_RoomController extends Controller
                     $message->from($mail_from, 'Pearl Sea Hotel');
                     $message->to($email)->subject('Đặt phòng tại Pearl sea hotel!');
                 });
+                Session::forget('booking');
             }
-            return Response::json(['success' => true, 'data' => $booking_room]);
+            return Response::json(['success' => true, 'booking' => $booking_room, 'room' => $room]);
         }
     }
 

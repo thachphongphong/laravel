@@ -42,6 +42,10 @@ Route::get('{language}/admin/dashboard/contact/{language_code}', 'Admin\Dashboar
 Route::post('{language}/admin/dashboard/updateContact', 'Admin\DashboardController@updateContact')->middleware('auth');
 Route::post('{language}/admin/dashboard/addNews', 'Admin\DashboardController@addNews')->middleware('auth');
 
-Route::post('{language}/admin/dashboard/upload', 'Admin\UploadImageController@upload')->middleware('auth');
+Route::post('{language}/admin/dashboard/upload', 'Admin\UploadImageController@upload')->middleware('auth');;
+
+Route::get('{language}/admin/dashboard/introduce/{language_code}', 'Admin\AboutController@introduce')->middleware('auth');
+Route::post('{language}/admin/dashboard/saveAbout', 'Admin\AboutController@saveAbout')->middleware('auth');
+Route::post('{language}/admin/dashboard/deleteImageAbout', 'Admin\AboutController@deleteImageAbout')->middleware('auth');Route::post('{language}/admin/dashboard/upload', 'Admin\UploadImageController@upload')->middleware('auth');
 Route::get('{language}/admin/dashboard/room/{id}', 'Admin\EditRoomController@get')->middleware('auth');
 Route::post('{language}/admin/dashboard/upload/replace', 'Admin\UploadImageController@replace')->middleware('auth');

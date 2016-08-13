@@ -9,7 +9,6 @@ use Carbon\Carbon;
 use View;
 use App\ContactDetail;
 use Config;
-use DB;
 use Mail;
 use Response;
 use Request;
@@ -89,4 +88,5 @@ class DashboardController extends Controller
         }
         return Response::json(['success' => false, 'data' => 'Fail']);
     }
+
 }

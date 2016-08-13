@@ -525,25 +525,4 @@ $(document).ready(function () {
         }
 
     });
-
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        var target = $(e.target).attr("href") // activated tab
-        console.log(target.at);
-    });
-
-    $('a[id="step1"]').on('shown.bs.tab', function (e) {
-        var target = $(e.target).attr("href") // activated tab
-        console.log((target));
-        selectRoom($(e.target).attr("rid"));
-    });
-    $('a[id="step3"]').on('shown.bs.tab', function (e) {
-        var target = $(e.target).attr("href") // activated tab
-        console.log((target));
-        makeBooking();
-    });
-
-    $('a[id="step2"]').on('shown.bs.tab', function (e) {
-        var target = $(e.target).attr("href") // activated tab
-        userInfo();
-    });
 });
