@@ -172,7 +172,7 @@ return [
             'checkout' => 'Select a date.'
         ]
     ],
-    'admin' => [
+     'admin' => [
         'reception_email' => 'letanbienngoc@gmail.com',
         'main_email' => 'pearlseahotel@gmail.com',
         'imagePath' => 'public/images'

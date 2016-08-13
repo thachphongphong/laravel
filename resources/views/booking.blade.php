@@ -401,56 +401,54 @@
                                         <h3 class="mg-alert-payment"
                                             style="display: inline;">{{$constants['booking']['thankyou']}}</h3>
                                     </div>
-                                    {{--<div class="mg-cart-container mg-paid">--}}
-                                    {{--<aside class="mg-widget mt50" id="mg-room-cart">--}}
-                                    {{--<h2 class="mg-widget-title">{{$constants['booking']['detail']}}</h2>--}}
+                                    <div class="mg-cart-container mg-paid">
+                                    <aside class="mg-widget mt50" id="mg-room-cart">
+                                        <h2 class="mg-widget-title">{{$constants['booking']['detail']}}</h2>
 
-                                    {{--<div class="mg-widget-cart">--}}
-                                    {{--<div class="row">--}}
-                                    {{--<div class="col-md-6">--}}
-                                    {{--<div class="mg-cart-room">--}}
-                                    {{--<img src="images/room-1.png" alt="Delux Room"--}}
-                                    {{--class="img-responsive">--}}
-                                    {{--<h3>Super Delux</h3>--}}
-                                    {{--</div>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="col-md-6">--}}
-                                    {{--<h3 class="mg-payment-id">{{$constants['booking']['payId']}}:--}}
-                                    {{--#105152396140</h3>--}}
+                                        <div class="mg-widget-cart">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="mg-cart-room">
+                                                        <img id="booking-room-url" src="{{asset('images/room.jpg')}}" alt="pearlsea" class="img-responsive">
 
-                                    {{--<div class="mg-widget-cart-row">--}}
-                                    {{--<strong>Check In:</strong>--}}
-                                    {{--<span>27 Jan, 2015</span>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="mg-widget-cart-row">--}}
-                                    {{--<strong>Check Out:</strong>--}}
-                                    {{--<span>28 Jan, 2015</span>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="mg-widget-cart-row">--}}
-                                    {{--<strong>Adults:</strong>--}}
-                                    {{--<span>2</span>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="mg-widget-cart-row">--}}
-                                    {{--<strong>Child:</strong>--}}
-                                    {{--<span>1</span>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="mg-cart-address">--}}
-                                    {{--<strong>Your Address:</strong>--}}
-                                    {{--<address>--}}
-                                    {{--<strong>John Doe</strong><br>--}}
-                                    {{--Level 13, 2 Elizabeth St, Melbourne<br>--}}
-                                    {{--Victoria 3000 Australia--}}
-                                    {{--</address>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="mg-cart-total">--}}
-                                    {{--<strong>Total:</strong>--}}
-                                    {{--<span>$249.99</span>--}}
-                                    {{--</div>--}}
-                                    {{--</div>--}}
-                                    {{--</div>--}}
-                                    {{--</div>--}}
-                                    {{--</aside>--}}
-                                    {{--</div>--}}
+                                                        <h3 id="booking-room-name"></h3>
+                                                    </div>
+                                                </div>    
+                                                <div class="col-md-6">
+                                                    <h3 class="mg-payment-id">{{$constants['booking']['payId']}}: #<span id="booking-id-txt"></span></h3>   
+                                                    <div class="mg-widget-cart-row">
+                                                        <strong>{{$constants['booknow']['checkin']}}:</strong>
+                                                        <span id="booking-checkin-txt"></span>
+                                                    </div>
+                                                    <div class="mg-widget-cart-row">
+                                                        <strong>{{$constants['booknow']['checkout']}}:</strong>
+                                                        <span id="booking-checkout-txt"></span>
+                                                    </div>
+                                                    <div class="mg-widget-cart-row">
+                                                        <strong>{{$constants['booknow']['adult']}}:</strong>
+                                                        <span id="booking-adult-txt">0</span>
+                                                    </div>
+                                                    <div class="mg-widget-cart-row">
+                                                        <strong>{{$constants['booknow']['child']}}:</strong>
+                                                        <span id="booking-child-txt">0</span>
+                                                    </div>
+                                                    <div class="mg-cart-address">
+                                                            <strong>{{$constants['contact']['full_name']}}:</strong>
+                                                            <address>
+                                                                <strong id="booking-name-txt"></strong><br>
+                                                                <span id="booking-email-txt"></span><br>
+                                                                <span id="booking-phone-txt"></span>
+                                                            </address>
+                                                        </div>
+                                                    <div class="mg-cart-total">
+                                                        <strong>{{$constants['booking']['total']}}:</strong>
+                                                        <span id="booking-total-txt">0</span>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                        </div>
+                                    </aside>
+                                </div>
 
                                 </div>
                             </div>
@@ -478,6 +476,7 @@
          var session_adult = "0";
          var session_child = "0";
          var session_total = 0;
+         var isBooking = false;
            @if(Session::has('booking') && ! empty(Session::get('booking')->check_in))
                 session_checkin = '{{ date('d/m/Y', strtotime(Session::get('booking')->check_in))}}';
             @endif
@@ -548,6 +547,24 @@
                     $('#step2').addClass("disabled");
                 }
             });
+            
+
+                $('a[id="step1"]').on('shown.bs.tab', function (e) {
+                    var target = $(e.target).attr("href") // activated tab
+                    if(!isBooking)
+                        selectRoom($(e.target).attr("rid"));
+                    else
+                        location.reload();
+                });
+                $('a[id="step3"]').on('shown.bs.tab', function (e) {
+                    var target = $(e.target).attr("href") // activated tab
+                    makeBooking();
+                });
+
+                $('a[id="step2"]').on('shown.bs.tab', function (e) {
+                    var target = $(e.target).attr("href") // activated tab
+                    userInfo();
+                });
         });
        
 
@@ -628,18 +645,49 @@
                 data: {},
                 success: function (data) {
                     if (data.success) {
-                        {{--var room = data.data[0];--}}
-                        {{--var assetBaseUrl = "{{ asset('') }}";--}}
-                        {{--$('#booking-room-url').attr('src', assetBaseUrl + room.image_url);--}}
-                        {{--$('#booking-room-url').attr('alt', room.name);--}}
-                        {{--$('#booking-room-name').text(room.name);--}}
+                      
+                        var room = data.room[0];
+                         if(room != ""){
+                            var assetBaseUrl = "{{ asset('') }}";
+                            $('#thank-you #booking-room-url').attr('src', assetBaseUrl + room.image_url);
+                            $('#thank-you #booking-room-url').attr('alt', room.name);
+                            $('#thank-you #booking-room-name').text(room.name);
+                         }
+
+                       var booking = data.booking;
+                        if(booking != ""){
+                            if(typeof booking.booking_id != 'undefined')
+                                $('#thank-you #booking-id-txt').text(booking.booking_id);
+                            if(typeof booking.check_in != 'undefined')
+                                $('#thank-you #booking-checkin-txt').text($.format.date(booking.check_in.date, "dd/MM/yyyy"));
+                            if(typeof booking.check_out != 'undefined')
+                                $('#thank-you #booking-checkout-txt').text($.format.date(booking.check_out.date, "dd/MM/yyyy"));
+                            if(typeof booking.adult != 'undefined')
+                                $('#thank-you #booking-adult-txt').text(booking.adult);
+                            if(typeof booking.child != 'undefined')
+                                $('#thank-you #booking-child-txt').text(booking.child);
+                            if(typeof booking.total_money != 'undefined')
+                            if(typeof booking.full_name != 'undefined')
+                                $('#thank-you #booking-name-txt').text(booking.full_name);
+                            if(typeof booking.email != 'undefined')
+                                $('#thank-you #booking-email-txt').text(booking.email);
+                            if(typeof booking.phone != 'undefined')
+                                $('#thank-you #booking-phone-txt').text(booking.phone);
+                            if(typeof booking.total_money != 'undefined')
+                                $('#thank-you #booking-total-txt').text(booking.total_money);
+                        }
+
+                        $('a[href="#personal-info"]:not("#step1")').addClass("disabled");    
+                        $('a[href="#payment"]:not("#step2")').addClass("disabled");
+                        isBooking = true;
+
                     } else {
-                        {{--window.location.href = '{{URL(Session::get('lang').'/booking')}}';--}}
+                        window.location.href = '{{URL(Session::get('lang').'/booking')}}';
                         console.log(data)
                     }
                 },
                 error: function () {
-                    {{--window.location.href = '{{URL(Session::get('lang').'/booking')}}';--}}
+                    window.location.href = '{{URL(Session::get('lang').'/booking')}}';
                 }
             });
         }
