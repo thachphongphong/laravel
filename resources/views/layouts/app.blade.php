@@ -23,6 +23,7 @@
     <link href="{{ asset('/css/cs-select.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/bootstrap-datepicker3.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/freepik.hotels.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/jquery-ui.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
 
 
@@ -102,7 +103,11 @@
 <script src="{{ asset('/js/jquery.parallax-1.1.3.js') }}"></script>
 <script src="{{ asset('/js/script.js') }}"></script>
 <script src="{{ asset('/js/validate.js') }}"></script>
+
+
 @else
+<script src="{{ asset('/js/jquery.min.js') }}"></script>
+<script src="{{ asset('/js/jquery-ui.js') }}"></script>
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/js/dashboard.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/js/tinymce/tinymce.min.js') }}"></script>

@@ -32,9 +32,9 @@
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a href="#settings4" aria-controls="settings4" role="tab" data-toggle="tab">
+                                <a href="#edit_room" aria-controls="edit_room" role="tab" data-toggle="tab">
                                     <i class="fa fa-cogs"></i>
-                                    Book phòng
+                                    Sửa phòng
                                 </a>
                             </li>
                         </ul>
@@ -46,9 +46,7 @@
                             @include('auth.admin.intro_section')
                             @include('auth.admin.article_section')
                             @include('auth.admin.upload')
-                            <div role="tabpanel" class="tab-pane fade" id="settings4">
-
-                            </div>
+                            @include('auth.admin.edit_room_section')
                         </div>
 
                     </div>
@@ -58,5 +56,6 @@
     </div>
     <script type="text/javascript">
         var DASH_BOARD_URL = '{{URL('vi/admin/dashboard')}}';
+        var assetBaseUrl = "{{ asset('') }}";
     </script>
 @endsection

@@ -56,7 +56,7 @@
 <script src="{{ asset('/js/nivo-lightbox.min.js') }}"></script>
 <script src="{{ asset('/js/jquery.shuffle.min.js') }}"></script>
 {{--<script src="http://maps.google.com/maps/api/js?sensor=true') }}"></script>--}}
-<script src="{{ asset('/js/gmaps.min.js') }}"></script>
+{{--<script src="{{ asset('/js/gmaps.min.js') }}"></script>--}}
 <script src="{{ asset('/js/jquery.parallax-1.1.3.js') }}"></script>
 <script src="{{ asset('/js/script.js') }}"></script>
 <script src="{{ asset('/js/validate.js') }}"></script>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\News;
+use App\Room;
 use Carbon\Carbon;
 use View;
 use App\ContactDetail;
@@ -25,7 +26,8 @@ class DashboardController extends Controller
         }
 
         $contact = ContactDetail::where('language_id', $language_id)->first();
-        return View::make('auth.admin.dashboard', array('contact' => $contact));
+        $rooms = Room::with('roomdetails')->get();
+        return View::make('auth.admin.dashboard', array('contact' => $contact, 'rooms' => $rooms));
     }
 
     public function loadContact($language, $language_code)

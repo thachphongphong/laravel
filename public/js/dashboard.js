@@ -22,7 +22,6 @@ $(document).ready(function () {
     });
     $('#contact_en').click(function () {
         loadContact('en');
-
     });
 
     // news
@@ -36,6 +35,30 @@ $(document).ready(function () {
         upload();
     });
 
+    $("#r_combobox").change(function () {
+        getRoomDetail(this.value);
+    });
+
+    $("#r_combobox_en").change(function () {
+        getRoomDetail(this.value);
+    });
+
+    $('input:radio[name="r_lang_radio"]').change(function () {
+        if ($(this).val() == '1') {
+            $('#f_edit_room').hide(500);
+            $('#room_vi').show();
+            $('#room_en').hide();
+        } else {
+            $('#f_edit_room').hide(500);
+            $('#room_vi').hide();
+            $('#room_en').show();
+        }
+    });
+
+    $("#btn-upload-image").click(function () {
+        $('#filePath').val($('#r_image_url').val());
+        dialogUpload.data('controlId', 'r_image_url').dialog("open");
+    });
 
     function updateContact() {
         var id = $('#contact_id').val();
@@ -158,7 +181,7 @@ $(document).ready(function () {
         $('#news_message_validate').addClass('hidden_alert');
     }
 
-    function upload() {
+    function upload(controlId) {
         var form = document.forms.namedItem("upload_image"); // high importance!, here you need change "yourformname" with the name of your form
         var formdata = new FormData(form); // high importance!
 
@@ -171,11 +194,84 @@ $(document).ready(function () {
             data: formdata, // high importance!
             processData: false, // high importance!
             success: function (data) {
-                alert(data.data)
-                //do thing with data....
-
+                $('#' + controlId).val(data.data);
             },
             timeout: 10000
         });
+    }
+
+    function replace(controlId, oldFile) {
+        var form = document.forms.namedItem("upload_image"); // high importance!, here you need change "yourformname" with the name of your form
+        var formdata = new FormData(form); // high importance!
+
+        $.ajax({
+            async: true,
+            type: "POST",
+            dataType: "json", // or html if you want...
+            contentType: false, // high importance!
+            url: DASH_BOARD_URL + '/upload/replace', // you need change it.
+            data: formdata, // high importance!
+            processData: false, // high importance!
+            success: function (data) {
+                alert(data.data);
+                $('#' + controlId).val(data.data);
+                $('#' + controlId + '_src').attr('src', assetBaseUrl + data.data + "?t=" + new Date().getTime());
+            },
+            timeout: 10000
+        });
+    }
+
+    function getRoomDetail(id) {
+        var url = DASH_BOARD_URL + '/room/' + id;
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (data) {
+                if (data.success) {
+                    $('#f_edit_room').show(1000);
+                    $('#r_name').val(data.data.name);
+                    $('#r_thumbnail').val(data.data.thumbnail);
+                    $('#r_image_url').val(data.data.image_url);
+                    $('#r_thumbnail_src').attr('src', assetBaseUrl + data.data.thumbnail);
+                    $('#r_image_url_src').attr('src', assetBaseUrl + data.data.image_url);
+                    $('#r_description').val(data.data.description);
+                    $('#r_room_type').val(data.data.room_type);
+                    $('#r_total_room').val(data.data.total_room);
+                    $('#r_total_person').val(data.data.total_person);
+                    $('#r_price').val(data.data.price);
+                    $('#r_f_price').val(data.data.f_price);
+                    $('#r_rate').val(data.data.rate);
+                } else {
+                    alert('fail');
+                }
+            },
+            error: function () {
+                alert('fail');
+            }
+        });
+    }
+
+    var dialogUpload, form;
+    dialogUpload = $("#div_upload_image").dialog({
+        autoOpen: false,
+        height: 200,
+        width: 500,
+        modal: true,
+        buttons: {
+            "Upload": uploadImage,
+            Cancel: function () {
+                dialogUpload.dialog("close");
+            }
+        }
+    });
+
+    form = dialogUpload.find("form").on("submit", function (event) {
+        event.preventDefault();
+    });
+
+    function uploadImage() {
+        debugger
+        var controlId = $("#div_upload_image").data('controlId');
+        replace(controlId, $('#filePath').val());
     }
 })
