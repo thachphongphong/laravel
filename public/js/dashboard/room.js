@@ -8,9 +8,9 @@ function getRoomDetail(id) {
                 $('#f_edit_room').show(1000);
                 $('#r_id').val(data.data.id);
                 $('#r_name').val(data.data.name);
-                $('#r_thumbnail').val(data.data.thumbnail);
+                $('#r_image_url_thumbnail').val(data.data.thumbnail);
                 $('#r_image_url').val(data.data.image_url);
-                $('#r_thumbnail_src').attr('src', assetBaseUrl + data.data.thumbnail);
+                //$('#r_thumbnail_src_thumbnail').attr('src', assetBaseUrl + data.data.thumbnail);
                 $('#r_image_url_src').attr('src', assetBaseUrl + data.data.image_url);
                 $('#r_description').val(data.data.description);
                 $('#r_room_type').val(data.data.room_type);
@@ -32,7 +32,7 @@ function getRoomDetail(id) {
 function updateRoom() {
     var id = $('#r_id').val();
     var name = $('#r_name').val();
-    var thumbnail = $('#r_thumbnail').val();
+    var thumbnail = $('#r_image_url_thumbnail').val();
     var image_url = $('#r_image_url').val();
     var description = $('#r_description').val();
     var room_type = $('#r_room_type').val();

@@ -32,8 +32,9 @@ function replace(controlId, oldFile) {
         success: function (data) {
             dialogUpload.dialog("close");
             showMessage("Upload thành công");
-            $('#' + controlId).val(data.data);
-            $('#' + controlId + '_src').attr('src', assetBaseUrl + data.data + "?t=" + new Date().getTime());
+            $('#' + controlId).val(data.data.img_src);
+            $('#' + controlId + '_thumbnail').val(data.data.img_thumb);
+            $('#' + controlId + '_src').attr('src', assetBaseUrl + data.data.img_src + "?t=" + new Date().getTime());
         }, error: function () {
             showMessage("Upload thất bại");
         },

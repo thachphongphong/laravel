@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use Intervention\Image\Facades\Image;
 use Validator;
 use Redirect;
 use Session;
@@ -51,7 +53,7 @@ class UploadImageController extends Controller
         $file = array('image' => Input::file('image'));
         $filePath = $request->input('filePath');
         // setting up rules
-        $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+        $rules = array('image' => 'required'); //mimes:jpeg,bmp,png and for max size max:10000
         // doing the validation, passing post data, rules and the messages
         $validator = Validator::make($file, $rules);
         if ($validator->fails()) {
@@ -64,11 +66,16 @@ class UploadImageController extends Controller
                 $xmlFile = pathinfo($filePath);
                 $dir = $xmlFile['dirname'];
                 $filename = $xmlFile['basename'];
+                $img = Image::make(Input::file('image')->getRealPath());
+                $img->resize(300, 200, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($dir . '/thumb_' . $filename);
 
                 Input::file('image')->move($dir, $filename); // uploading file to given path
                 // sending back with message
                 Session::flash('success', 'Upload successfully');
-                return Response::json(['success' => true, 'data' => $filePath]);
+
+                return Response::json(['success' => true, 'data' => array('img_src' => $filePath, 'img_thumb' => $dir . '/thumb_' . $filename)]);
             } else {
                 // sending back with error message.
                 Session::flash('error', 'uploaded file is not valid');

@@ -41,12 +41,11 @@
                 <label for="r_name">Tên phòng</label>
                 <input id="r_name" required="required" placeholder="Tên phòng" type="text" name="title" class="form-control"/>
             </div>
-            <div class="form-group">
-                <label for="r_thumbnail">Hình ảnh đại diện</label>
-                <input id="r_thumbnail" placeholder="Hình ảnh đại diện" disabled type="text" name="r_thumbnail"
-                       class="form-control"/>
-                <img height="auto" width="auto" id="r_thumbnail_src">
-            </div>
+            {{--<div class="form-group">--}}
+            {{--<label for="r_thumbnail">Hình ảnh đại diện</label>--}}
+            <input id="r_image_url_thumbnail" placeholder="Hình ảnh đại diện" disabled type="hidden" name="r_image_url_thumbnail"/>
+            {{--class="form-control"/>--}}
+            {{--</div>--}}
             <div class="form-group">
                 <label for="r_image_url">Hình ảnh phòng</label>
                 <input id="r_image_url" placeholder="Hình ảnh phòng" hidden disabled type="text" name="r_image_url"/>
