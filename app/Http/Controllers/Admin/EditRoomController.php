@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Room;
-use Illuminate\Http\Request;
+use Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -17,9 +17,37 @@ class EditRoomController extends Controller
         return Response::json(['success' => true, 'data' => $rooms]);
     }
 
-    public function gets($language, $language_id)
+    public function update(\Illuminate\Http\Request $request)
     {
-        $rooms = Room::with('roomdetails')->where('language_id', $language_id)->get();
-        return Response::json(['success' => true, 'data' => $rooms]);
+        if (Request::ajax()) {
+
+            $id = $request->input('id');
+            $name = $request->input('name');
+            $thumbnail = $request->input('thumbnail');
+            $image_url = $request->input('image_url');
+            $description = $request->input('description');
+            $room_type = $request->input('room_type');
+            $total_room = $request->input('total_room');
+            $total_person = $request->input('total_person');
+            $price = $request->input('price');
+            $f_price = $request->input('f_price');
+            $rate = $request->input('rate');
+
+            $room = Room::find($id);
+            $room->name = $name;
+            $room->thumbnail = $thumbnail;
+            $room->image_url = $image_url;
+            $room->description = $description;
+            $room->room_type = $room_type;
+            $room->total_room = $total_room;
+            $room->total_person = $total_person;
+            $room->price = $price;
+            $room->f_price = $f_price;
+            $room->rate = $rate;
+
+            $room->save();
+            return Response::json(['success' => true, 'data' => $room]);
+        }
+        return Response::json(['success' => false, 'data' => 'Fail']);
     }
 }

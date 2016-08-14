@@ -111,7 +111,12 @@
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/js/dashboard/dashboard.js') }}"></script>
 <script src="{{ asset('/js/dashboard/about.js') }}"></script>
-<script src="{{ asset('/js/dashboard/booking.js') }}"></script>
+<script src="{{ asset('/js/dashboard/contact.js') }}"></script>
+<script src="{{ asset('/js/dashboard/uploadImage.js') }}"></script>
+<script src="{{ asset('/js/dashboard/dialog_handel.js') }}"></script>
+<script src="{{ asset('/js/dashboard/news.js') }}"></script>
+<script src="{{ asset('/js/dashboard/room.js') }}"></script>
+
 <script type="text/javascript" src="{{ asset('/js/tinymce/tinymce.min.js') }}"></script>
 @endif
 

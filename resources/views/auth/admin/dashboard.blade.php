@@ -32,18 +32,12 @@
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a href="#upload" aria-controls="upload" role="tab" data-toggle="tab">
-                                    <i class="fa fa-cogs"></i>
-                                    Upload
-                                </a>
-                            </li>
-                            <li role="presentation">
                                 <a href="#edit_room" aria-controls="edit_room" role="tab" data-toggle="tab">
                                     <i class="fa fa-cogs"></i>
                                     Sửa phòng
                                 </a>
                             </li>
-                             <li role="presentation">
+                            <li role="presentation">
                                 <a href="#booking" aria-controls="booking" role="tab" data-toggle="tab">
                                     <i class="fa fa-list-ul"></i>
                                     Booking
@@ -71,7 +65,6 @@
                                 </div>
                             </div>
                             @include('auth.admin.article_section')
-                            @include('auth.admin.upload')
                             @include('auth.admin.edit_room_section')
                             @include('auth.admin.booking')
                         </div>
@@ -80,6 +73,10 @@
                 </div>
             </div>
         </div>
+        <div id="dialog-message" title="Thông báo">
+            <p id="msg_content"></p>
+        </div>
+
     </div>
     <script type="text/javascript">
         var DASH_BOARD_URL = '{{URL('vi/admin/dashboard')}}';

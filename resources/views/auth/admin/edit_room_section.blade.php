@@ -33,7 +33,10 @@
 
         <form action="/new-post" method="post" id="f_edit_room" hidden>
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="r_id" id="r_id">
+
             <h2>Thông tin chi tiết phòng</h2>
+
             <div class="form-group">
                 <label for="r_name">Tên phòng</label>
                 <input id="r_name" required="required" placeholder="Tên phòng" type="text" name="title" class="form-control"/>
@@ -58,28 +61,34 @@
             </div>
             <div class="form-group">
                 <label for="r_total_room">Tổng số phòng</label>
-                <input id="r_total_room" required="required" placeholder="Tổng số phòng" type="number" name="r_total_room"
+                <input id="r_total_room" required="required" placeholder="Tổng số phòng" type="number" min="1" name="r_total_room"
+                       oninput="validity.valid||(value='1');"
                        class="form-control"/>
             </div>
             <div class="form-group">
                 <label for="r_total_person">Số lượng người</label>
-                <input id="r_total_person" required="required" placeholder="Số lượng người" type="number" name="r_total_person"
+                <input id="r_total_person" required="required" placeholder="Số lượng người" type="number" min="1"
+                       name="r_total_person"
+                       oninput="validity.valid||(value='1');"
                        class="form-control"/>
             </div>
             <div class="form-group">
                 <label for="r_price">Giá phòng</label>
-                <input id="r_price" required="required" placeholder="Giá phòng" type="number" name="r_price"
+                <input id="r_price" required="required" placeholder="Giá phòng" type="number" name="r_price" min="1"
+                       oninput="validity.valid||(value='1');"
                        class="form-control"/>
             </div>
             <div class="form-group">
                 <label for="r_f_price">Giá cho người nước ngoài</label>
-                <input id="r_f_price" required="required" placeholder="Giá cho người nước ngoài" type="number" name="r_f_price"
+                <input id="r_f_price" required="required" placeholder="Giá cho người nước ngoài" type="number" min="1"
+                       name="r_f_price"
+                       oninput="validity.valid||(value='1');"
                        class="form-control"/>
             </div>
             <div class="form-group">
                 <label for="r_rate">Đánh giá</label>
-                <input id="r_rate" required="required" placeholder="Đánh giá" type="number" name=
-                "r_rate" class="form-control"/>
+                <input id="r_rate" required="required" placeholder="Đánh giá" type="number" min="1" oninput="validity.valid||
+                (value='1');" name="r_rate" class="form-control"/>
             </div>
 
             <div class="form-group">
@@ -103,7 +112,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="button" id='btn-r-publish' name='btn-r-edit' class="btn btn-success right" value="Sửa phòng"/>
+                <input type="button" id='btn-r-save' name='btn-r-edit' class="btn btn-success right" value="Sửa phòng"/>
                 <input type="button" id='btn-r-cancel' name='btn-r-cancel' class="btn btn-default right" value="Hủy bỏ"/>
             </div>
         </form>
