@@ -31,7 +31,8 @@ class NewsController extends Controller
             ->orderBy('order', 'asc')
             ->get();
         $contact = ContactDetail::where('language_id', $language_id)->first();
-        $new = News::where('language_id', $language_id)->where('hash_tag','tintuc')->take(10)->get();
+        $new = News::where('language_id', $language_id)->where('hash_tag','tintuc')->orderBy('created_date','desc')->take(10)
+            ->get();
         return View::make('news', array('constants' => $constants,'menus' => $menus, 'contact' => $contact,  'news' => $new, 'title' =>$title));
     }
 
@@ -53,7 +54,7 @@ class NewsController extends Controller
             ->orderBy('order', 'asc')
             ->get();
         $contact = ContactDetail::where('language_id', $language_id)->first();
-        $new = News::where('language_id', $language_id)->where('hash_tag','thongtindulich')->take(10)->get();
+        $new = News::where('language_id', $language_id)->where('hash_tag','thongtindulich')->orderBy('created_date','desc')->take(10)->get();
         return View::make('news', array('constants' => $constants,'menus' => $menus, 'contact' => $contact,  'news' => $new, 'title' =>$title));
     }
     public function loadFood($language)
@@ -74,7 +75,7 @@ class NewsController extends Controller
             ->orderBy('order', 'asc')
             ->get();
         $contact = ContactDetail::where('language_id', $language_id)->first();
-        $new = News::where('language_id', $language_id)->where('hash_tag','amthuc')->take(10)->get();
+        $new = News::where('language_id', $language_id)->where('hash_tag','amthuc')->orderBy('created_date','desc')->take(10)->get();
         return View::make('news', array('constants' => $constants,'menus' => $menus, 'contact' => $contact,  'news' => $new, 'title' =>$title));
     }
 }
