@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="list_article">
-                                <h2 class="mg-sec-left-title">Danh sách tin tức</h2>
+                                <h2 class="mg-sec-left-title">Danh sách tin</h2>
                                <div id="list_news">@include('auth.admin.list_article_section')</div>
                             </div>
 

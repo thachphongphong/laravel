@@ -26,7 +26,7 @@ class DashboardController extends Controller
 
         $contact = ContactDetail::where('language_id', $language_id)->first();
         $rooms = Room::all();
-        $news = News::paginate(6);
+        $news = News::orderBy('created_date','desc')->paginate(6);
         return View::make('auth.admin.dashboard', array('contact' => $contact, 'rooms' => $rooms, 'news' => $news));
     }
 
