@@ -32,6 +32,12 @@
                                 </a>
                             </li>
                             <li role="presentation">
+                                <a href="#list_article" aria-controls="list_article" role="tab" data-toggle="tab">
+                                    <i class="fa fa-pencil"></i>
+                                    Danh sách tin tức
+                                </a>
+                            </li>
+                            <li role="presentation">
                                 <a href="#edit_room" aria-controls="edit_room" role="tab" data-toggle="tab">
                                     <i class="fa fa-cogs"></i>
                                     Sửa phòng
@@ -64,6 +70,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <div role="tabpanel" class="tab-pane fade" id="list_article">
+                                <h2 class="mg-sec-left-title">Danh sách tin tức</h2>
+                               <div id="list_news">@include('auth.admin.list_article_section')</div>
+                            </div>
+
                             @include('auth.admin.article_section')
                             @include('auth.admin.edit_room_section')
                             @include('auth.admin.booking')
@@ -76,7 +87,10 @@
         <div id="dialog-message" title="Thông báo">
             <p id="msg_content"></p>
         </div>
-
+        <div id="dialog-confirm" title="Xóa">
+            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Xóa tin tức này khỏi
+                trang web?</p>
+        </div>
     </div>
     <script type="text/javascript">
         var DASH_BOARD_URL = '{{URL('vi/admin/dashboard')}}';
