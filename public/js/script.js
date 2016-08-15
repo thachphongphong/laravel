@@ -144,7 +144,7 @@ var adultSelect, childSelect;
         var lbox = $(this).next();
 
         // $(this).toggleClass('mg-sb-active');
-        $(this).find('i').toggleClass('fa-times').toggleClass('fa-globe');
+        $(this).find('i').toggleClass('fa-times').toggleClass('fa-lang');
         lbox.toggleClass('mg-sb-active');
 
         return false;

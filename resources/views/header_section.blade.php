@@ -38,7 +38,7 @@
 
                     </ul>
                 </div>
-                <!-- /.navbar-collapse 
+                <!-- /.navbar-collapse   
                 <div class="mg-search-box-cont pull-right">
                     <a href="#" class="mg-search-box-trigger"><i class="fa fa-search"></i></a>                    
                     <div class="mg-search-box">
@@ -47,12 +47,11 @@
                             <button type="submit" class="btn btn-main"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
-                   
-              
                 </div>
-                -->
+               -->
+               
                 <div class="mg-search-box-cont pull-right">
-                     <a href="#" class="mg-lang-box-trigger"><i class="fa fa-globe"></i></a>
+                     <a href="#" class="mg-lang-box-trigger"><i class="fa fa-lang"></i></a>
                     <div class="mg-lang-box">
                         <a href="{{ url('/vi/home') }}"><img src="{{asset('images/flag-vi.jpg')}}" alt="VI"></a>
                         <a href="{{ url('/en/home') }}"><img src="{{asset('images/flag-en.jpg')}}" alt="EN"></a>

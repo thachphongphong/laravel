@@ -1066,6 +1066,15 @@ ul.styled-list.list-star li:before {
     transform: scaleY(1);
 }
 
+.mg-lang-box-trigger.mg-sb-active {
+    color: #e7b315;
+}
+
+.mg-lang-box-trigger:hover,
+.mg-lang-box-trigger:active,
+.mg-lang-box-trigger:focus {
+    color: #fff;
+}
 
 .mg-page-title {
     padding-top: 70px;
@@ -5233,4 +5242,11 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
 .hidden_alert {
     display: none;
+}
+
+.fa-lang {
+    background-image: url(../images/lang.png);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 9px;
 }
