@@ -67,13 +67,18 @@ $(document).ready(function () {
         if (target == '#introduce') {
             loadIntroduce('vi');
         }
-        if (target == '#introduce') {
-        //    loadIntroduce('vi');
-        }
     });
 
     $('#btn-r-save').click(function () {
         updateRoom();
+    });
+
+    $('input:radio[name="a_lang_radio"]').change(function () {
+        if ($(this).val() == '1') {
+            loadIntroduce('vi');
+        } else {
+           loadIntroduce('en');
+        }
     });
 
 })

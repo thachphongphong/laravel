@@ -15,10 +15,9 @@ use Session;
 class AboutController extends Controller
 {
 
-     public function introduce($language_code)
+     public function introduce($language, $language_code)
     {
-        $language = $language_code;
-        if ($language == 'vi') {
+        if ($language_code == 'vi') {
             $language_id = 1;
         } else {
             $language_id = 2;

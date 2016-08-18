@@ -60,12 +60,11 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h2 class="mg-sec-left-title">Giới thiệu</h2>
-                                        <input type="button" id="info_vi" class="btn btn-danger"
-                                               value="Tiếng Việt">
-
-                                        <input type="button" id="info_en" class="btn btn-primary"
-                                               value="Tiếng Anh">
-
+                                        <div class="form-group">
+                                            <label for="language">Ngôn ngữ hiện thị</label>
+                                            <label><input type="radio" name="a_lang_radio" value="1" checked="">Tiếng Việt</label>
+                                            <label><input type="radio" name="a_lang_radio" value="2">Tiếng Anh</label>
+                                        </div>
                                         <div id="intro-content"></div>
                                     </div>
                                 </div>
