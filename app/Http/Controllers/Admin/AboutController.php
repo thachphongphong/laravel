@@ -48,4 +48,20 @@ class AboutController extends Controller
         }
         return Response::json(['success' => false, 'data' => 'Fail']);
     }
+
+     public function addImageAbout (\Illuminate\Http\Request $request){
+        if (Request::ajax()) {
+            $id = $request->input('id');
+            $langCode = $request->input('langCode');
+            $imageUrl = $request->input('imageUrl');
+
+            $about = Introduce::find($id);
+            $about->image_url  = $about->image_url . ',' . $imageUrl;
+            $about->save();
+
+            return Response::json(['success' => true]);
+        }
+        return Response::json(['success' => false]);
+    }
+
 }

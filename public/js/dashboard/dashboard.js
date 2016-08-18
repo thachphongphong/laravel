@@ -68,7 +68,7 @@ $(document).ready(function () {
             loadIntroduce('vi');
         }
         if (target == '#introduce') {
-            loadIntroduce('vi');
+        //    loadIntroduce('vi');
         }
     });
 

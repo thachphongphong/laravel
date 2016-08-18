@@ -1,3 +1,4 @@
+var about = {};
 function loadIntroduce(lang){
     var url = DASH_BOARD_URL + '/introduce/' + lang;
     $.ajax({
@@ -72,9 +73,41 @@ function deleteImageAbout(tmp){
     });
 }
 
-function addImageAbout(tmp){
+function openUploadImageAbout(tmp){
     var id = $(tmp).attr('content-id');
-    $('#typeId').val(id);
+    var lang = $(tmp).attr('lang-id');
+    //set temp about to store
+    about.id = id;
+    about.lang = lang;
+
     $('#typeName').val('ABOUT');
     dialogUpload.dialog("open");
+}
+
+function addImageAbout(imgPath){
+    if(imgPath != '' && !$.isEmptyObject(about) ){
+        $.ajax({
+            type: "POST",
+            url: DASH_BOARD_URL + '/addImageAbout',
+            data: {
+                id: about.id,
+                langCode: about.lang,
+                imageUrl: imgPath
+            },
+            success: function (res) {
+                if(res.success){
+                    if(about.lang == '1'){
+                        loadIntroduce('vi');
+                    }else{
+                         loadIntroduce('en');
+                    }
+                    about = {};
+                }
+            },
+            error: function () {
+                alert('Lỗi');
+            }
+        });
+    }
+     
 }

@@ -45,7 +45,7 @@
                     </div>
                     </div>
                 @endif
-                 <input type="button" onclick="addImageAbout(this);" content-id="{{$ab ->id}}" class="btn btn-xs  btn-primary" value="Add"> 
+                 <input type="button" onclick="openUploadImageAbout(this);" content-id="{{$ab ->id}}" lang-id="{{$ab ->language_id}}" class="btn btn-xs  btn-primary" value="Add"> 
             @endif
         </div>
         <hr/>

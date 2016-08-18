@@ -104,7 +104,6 @@
                 <input type="file" name="image" class="btn btn-primary ui-widget-content ui-corner-all">
                 <input type="text" id="filePath" name="filePath" class="text ui-widget-content ui-corner-all" value=""
                        hidden>
-                <input type="hidden" id="typeId" name="typeId" value="">
                 <input type="hidden" id="typeName" name="typeName" value="">
                 <!-- Allow form submission with keyboard without duplicating the dialog button -->
                 <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">

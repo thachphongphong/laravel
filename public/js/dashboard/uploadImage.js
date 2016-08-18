@@ -9,8 +9,16 @@ function upload(controlId) {
         url: DASH_BOARD_URL + '/upload', // you need change it.
         data: formdata, // high importance!
         processData: false, // high importance!
-        success: function (data) {
-            $('#' + controlId).val(data.data);
+        success: function (res) {
+            if(res.success){
+                if(res.type == 'ABOUT'){
+                      addImageAbout(res.data);
+                }
+            }
+            dialogUpload.dialog("close");
+        },
+        error:function () {
+            showMessage('Upload thất bại');
         },
         timeout: 10000
     });

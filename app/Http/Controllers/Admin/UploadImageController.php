@@ -22,8 +22,8 @@ class UploadImageController extends Controller
         // getting all of the post data
         $file = array('image' => Input::file('image'));
 
-        $type = $request->input('typeName');
-        var_dump($type);
+        $typeName = $request->input('typeName');
+
         // setting up rules
         $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
         // doing the validation, passing post data, rules and the messages
@@ -37,10 +37,15 @@ class UploadImageController extends Controller
                 $destinationPath = Config::get('constants.admin.imagePath'); // upload path
                 $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
                 $fileName = uniqid() . '.' . $extension; // renameing image
+
+                if($typeName == 'ABOUT'){
+                    $destinationPath = $destinationPath  . '/about';
+                }
+               
                 Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
                 // sending back with message
                 Session::flash('success', 'Upload successfully');
-                return Response::json(['success' => true, 'data' => $destinationPath . '/' . $fileName]);
+                return Response::json(['success' => true, 'type' =>  $typeName,'data' => $destinationPath . '/' . $fileName]);
 
             } else {
                 // sending back with error message.
