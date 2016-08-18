@@ -19,6 +19,8 @@ Route::get('{language}/room/{id}', 'RoomDetailController@load');
 Route::get('{language}/tour_guide', 'Tour_GuideController@load');
 Route::get('{language}/local_food', 'Local_FoodController@load');
 Route::get('{language}/news', 'NewsController@load');
+Route::get('{language}/news/travel', 'NewsController@loadTravel');
+Route::get('{language}/news/food', 'NewsController@loadFood');
 Route::get('{language}/reservation', 'ReservationController@load');
 Route::get('{language}/location', 'LocationController@load');
 
@@ -51,3 +53,5 @@ Route::post('{language}/admin/dashboard/upload', 'Admin\UploadImageController@up
 Route::get('{language}/admin/dashboard/room/{id}', 'Admin\EditRoomController@get')->middleware('auth');
 Route::post('{language}/admin/dashboard/room/update', 'Admin\EditRoomController@update')->middleware('auth');
 Route::post('{language}/admin/dashboard/upload/replace', 'Admin\UploadImageController@replace')->middleware('auth');
+Route::get('{language}/admin/dashboard/news/load', 'Admin\NewsController@load')->middleware('auth');
+Route::post('{language}/admin/dashboard/news/delete/{id}', 'Admin\NewsController@delete')->middleware('auth');

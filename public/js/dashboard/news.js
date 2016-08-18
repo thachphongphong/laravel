@@ -64,3 +64,72 @@ function resetNews() {
     $('#news_message_fail').addClass('hidden_alert');
     $('#news_message_validate').addClass('hidden_alert');
 }
+
+$(window).on('hashchange', function () {
+    if (window.location.hash) {
+        var page = window.location.hash.replace('#', '');
+        if (page == Number.NaN || page <= 0) {
+            return false;
+        } else {
+            getNews(page);
+        }
+    }
+});
+$(document).ready(function () {
+    $(document).on('click', '.pagination a', function (e) {
+        getNews($(this).attr('href').split('page=')[1]);
+        e.preventDefault();
+    });
+});
+function getNews(page) {
+    $.ajax({
+        url: DASH_BOARD_URL + '/news/load?page=' + page,
+        dataType: 'json',
+    }).done(function (data) {
+        $('#list_news').html(data);
+        location.hash = page;
+    }).fail(function () {
+        showMessage('Không thể tải tin tức');
+    });
+}
+var confirmDelete = $("#dialog-confirm").dialog({
+    autoOpen: false,
+    resizable: false,
+    height: "auto",
+    width: 400,
+    modal: true
+});
+function delete_news(id) {
+    confirmDelete.dialog({
+        //resizable: false,
+        //height: "auto",
+        //width: 400,
+        //modal: true,
+        buttons: {
+            "Có": function () {
+                $(this).dialog("close");
+                $.ajax({
+                    type: "POST",
+                    url: DASH_BOARD_URL + '/news/delete/' + id,
+                    data: {},
+                    success: function (data) {
+                        if (data != null) {
+                            $('#list_news').html(data);
+                        } else {
+                            showMessage("Không xóa tin này được");
+                        }
+                    },
+                    error: function () {
+                        showMessage("Không xóa tin này được");
+                    }
+                });
+            },
+            "Không": function () {
+                $(this).dialog("close");
+                return false;
+            }
+        }
+    });
+    confirmDelete.dialog("open");
+
+}

@@ -23,8 +23,17 @@
                 <label><input type="radio" name="lang_radio" class="lang_check" value="2">Tiếng Anh</label>
             </div>
             <div class="form-group">
-                <input id="news_hash_tag" required="required" value="{{ old('tag') }}" placeholder="Hashtag" type="text" name=
-                "hashtag" class="form-control"/>
+                {{--<input id="news_hash_tag" required="required" value="{{ old('tag') }}" placeholder="Hashtag" type="text" name=--}}
+                {{--"hashtag" class="form-control"/>--}}
+
+                <select class="cs-select cs-skin-elastic form-control"
+                        id="news_hash_tag" name="news_hash_tag">
+                    <option value="tintuc" disabled selected>Chọn danh mục tin</option>
+                    <option value="tintuc">Tin tức</option>
+                    <option value="thongtindulich">Thông tin du lịch</option>
+                    <option value="amthuc">Ẩm thực</option>
+                </select>
+
             </div>
             <div class="form-group">
                 <label for="article_body">Nội dung tin tức</label>
