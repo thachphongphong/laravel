@@ -9,6 +9,8 @@ use Config;
 use DB;
 use Response;
 use Request;
+use File;
+use Session;
 
 class AboutController extends Controller
 {
@@ -42,11 +44,32 @@ class AboutController extends Controller
     }
 
     public function deleteImageAbout (\Illuminate\Http\Request $request){
-        if (Request::ajax()) {
-            
-            return Response::json(['success' => true, 'data' => '']);
+        $filePath = $request->input('iurl');
+        $id = $request->input('id');
+        $langCode = $request->input('langCode');
+
+        // checking file is valid.
+        if ($filePath !=  '') {
+            File::delete($filePath);
+
+            $about = Introduce::find($id);
+
+            $urls = explode(',',  $about->image_url  );
+            while(($i = array_search($filePath, $urls)) !== false) {
+                unset($urls[$i]);
+            }
+
+            $about->image_url = implode(',', $urls);
+            $about->save();
+
+            Session::flash('success', 'Delete successfully');
+            return Response::json(['success' => true]);
+        } else {
+            // sending back with error message.
+            Session::flash('error', 'uploaded file is not valid');
+            return Response::json(['success' => false, 'data' => "fail"]);
         }
-        return Response::json(['success' => false, 'data' => 'Fail']);
+
     }
 
      public function addImageAbout (\Illuminate\Http\Request $request){

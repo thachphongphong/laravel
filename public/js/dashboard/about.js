@@ -50,21 +50,23 @@ function saveAbout(tmp){
 
 }
 
-function deleteImageAbout(tmp){
-    var id = $(tmp).attr('content-id');
-    var iurl = $(tmp).attr('img-url');
+function deleteImageAbout(id, iurl, lang){
     $.ajax({
         type: "POST",
         url: DASH_BOARD_URL + '/deleteImageAbout',
         data: {
             id: id,
+            langCode: lang,
             iurl: iurl
         },
-        success: function (data) {
-            if (data.success) {
-                alert('Xóa thành công');
-            } else {
-                 alert('Xóa thất bại');
+        success: function (res) {
+            if(res.success){
+                if(lang == '1'){
+                    loadIntroduce('vi');
+                }else{
+                     loadIntroduce('en');
+                }
+                about = {};
             }
         },
         error: function () {
@@ -110,4 +112,35 @@ function addImageAbout(imgPath){
         });
     }
      
+}
+
+function openConfirm(tmp){
+    var id = $(tmp).attr('content-id');
+    var lang = $(tmp).attr('lang-id');
+    var iurl = $(tmp).attr('img-url');
+    if(id != ''){    
+        $('<div></div>').appendTo('body')
+            .html('<div><h6>Bạn muốn xóa ảnh này?</h6></div>')
+            .dialog({
+            modal: true,
+            title: 'message',
+            zIndex: 10000,
+            autoOpen: true,
+            width: 'auto',
+            resizable: false,
+            buttons: {
+                Yes: function () {
+                    deleteImageAbout(id, iurl, lang);
+                    $(this).dialog("close");
+                },
+                No: function () {
+                    $(this).dialog("close");
+                }
+            },
+            close: function (event, ui) {
+                $(this).remove();
+            }
+        });   
+    }
+
 }
