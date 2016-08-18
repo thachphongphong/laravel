@@ -82,4 +82,19 @@
         var DASH_BOARD_URL = '{{URL('vi/admin/dashboard')}}';
         var assetBaseUrl = "{{ asset('') }}";
     </script>
+    <div id="div_upload_image" title="Upload hình ảnh">
+        <form name="upload_image" enctype="multipart/form-data">
+            <input type="hidden" name="_token" value="{{ csrf_token()}}">
+            <fieldset>
+                <label for="image">Chọn hình ảnh cần upload</label>
+                <input type="file" name="image" class="btn btn-primary ui-widget-content ui-corner-all">
+                <input type="text" id="filePath" name="filePath" class="text ui-widget-content ui-corner-all" value=""
+                       hidden>
+                <input type="hidden" id="typeId" name="typeId" value="">
+                <input type="hidden" id="typeName" name="typeName" value="">
+                <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </fieldset>
+        </form>
+    </div>
 @endsection

@@ -1,7 +1,6 @@
 function upload(controlId) {
     var form = document.forms.namedItem("upload_image"); // high importance!, here you need change "yourformname" with the name of your form
     var formdata = new FormData(form); // high importance!
-
     $.ajax({
         async: true,
         type: "POST",
@@ -42,6 +41,12 @@ function replace(controlId, oldFile) {
     });
 }
 function uploadImage() {
-    var controlId = $("#div_upload_image").data('controlId');
-    replace(controlId, $('#filePath').val());
+    var type =  $("#typeName").val();
+    if(type == "ROOM"){
+         var controlId = $("#div_upload_image").data('controlId');
+         replace(controlId, $('#filePath').val());
+    }else if(type == "ABOUT"){
+        upload('');
+    }
+ 
 }

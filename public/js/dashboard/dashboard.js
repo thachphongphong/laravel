@@ -57,6 +57,7 @@ $(document).ready(function () {
     });
 
     $("#btn-upload-image").click(function () {
+         $('#typeName').val('ROOM');
         $('#filePath').val($('#r_image_url').val());
         dialogUpload.data('controlId', 'r_image_url').dialog("open");
     });

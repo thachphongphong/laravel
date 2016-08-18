@@ -74,5 +74,7 @@ function deleteImageAbout(tmp){
 
 function addImageAbout(tmp){
     var id = $(tmp).attr('content-id');
-  
+    $('#typeId').val(id);
+    $('#typeName').val('ABOUT');
+    dialogUpload.dialog("open");
 }

@@ -115,18 +115,5 @@
                 <input type="button" id='btn-r-cancel' name='btn-r-cancel' class="btn btn-default right" value="Hủy bỏ"/>
             </div>
         </form>
-        <div id="div_upload_image" title="Upload hình ảnh">
-            <form name="upload_image" enctype="multipart/form-data">
-                <input type="hidden" name="_token" value="{{ csrf_token()}}">
-                <fieldset>
-                    <label for="image">Chọn hình ảnh cần upload</label>
-                    <input type="file" name="image" class="btn btn-primary ui-widget-content ui-corner-all">
-                    <input type="text" id="filePath" name="filePath" class="text ui-widget-content ui-corner-all" value=""
-                           hidden>
-                    <!-- Allow form submission with keyboard without duplicating the dialog button -->
-                    <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-                </fieldset>
-            </form>
-        </div>
     </div>
 @show
