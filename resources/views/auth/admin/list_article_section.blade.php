@@ -30,5 +30,5 @@
     </tbody>
 </table>
 <div>
-    <div style="text-align:center;">{{ $news->links() }}</div>
+    <div style="text-align:center;" class="news">{{ $news->links() }}</div>
 </div>

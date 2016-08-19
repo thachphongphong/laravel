@@ -1,55 +1,40 @@
-<div role="tabpanel" class="tab-pane fade" id="booking">
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="mg-sec-left-title">Giới thiệu</h2>
-            <input type="button" id="info_vi" class="btn btn-danger"
-                   value="Tiếng Việt">
+<table class="table table-hover table-bordered table-condensed">
+    <thead>
+    <tr class="success">
+        <th>Booking id</th>
+        <th>Phòng</th>
+        <th>Người đặt</th>
+        <th>Email</th>
+        <th>Điện thoại</th>
+        <th>Check in</th>
+        <th>Check out</th>
+        <th>Chỉnh sửa</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php $i = 0; ?>
 
-            <input type="button" id="info_en" class="btn btn-primary"
-                   value="Tiếng Anh">
+    @foreach ($booking_rooms as $booking_room)
+        <?php $i++;?>
+        @if($i%2==1)
+            <tr class="info">
+        @else
+            <tr>
+                @endif
+                <td><b>{{$booking_room->booking_id}}</b></td>
+                <td>{{$booking_room->room->name}}</td>
+                <td>{{$booking_room->full_name}}</td>
+                <td>{{$booking_room->email}}</td>
+                <td>{{$booking_room->phone}}</td>
+                <td>{{date('d-m-Y', strtotime($booking_room->check_in))}}</td>
+                <td>{{date('d-m-Y', strtotime($booking_room->check_out))}}</td>
 
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Heading 1</th>
-                        <th>Heading 2</th>
-                        <th>Heading 3</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>1.</th>
-                        <td>Example Text</td>
-                        <td>Example Text</td>
-                        <td>Example Text</td>
-                    </tr>
-                    <tr>
-                        <th>2.</th>
-                        <td>Example Text</td>
-                        <td>Example Text</td>
-                        <td>Example Text</td>
-                    </tr>
-                    <tr>
-                        <th>3.</th>
-                        <td>Example Text</td>
-                        <td>Example Text</td>
-                        <td>Example Text</td>
-                    </tr>
-                    <tr>
-                        <th>4.</th>
-                        <td>Example Text</td>
-                        <td>Example Text</td>
-                        <td>Example Text</td>
-                    </tr>
-                    <tr>
-                        <th>5.</th>
-                        <td>Example Text</td>
-                        <td>Example Text</td>
-                        <td>Example Text</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+                <td><input type="button" class="btn btn-danger" value="Xóa" onclick="delete_bookings({{$booking_room->id}});"/></td>
+            </tr>
+            @endforeach
+
+    </tbody>
+</table>
+<div>
+    <div style="text-align:center;" class="booking">{{ $booking_rooms->links() }}</div>
 </div>

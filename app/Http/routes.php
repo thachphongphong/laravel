@@ -57,3 +57,6 @@ Route::post('{language}/admin/dashboard/room/update', 'Admin\EditRoomController@
 
 Route::get('{language}/admin/dashboard/news/load', 'Admin\NewsController@load')->middleware('auth');
 Route::post('{language}/admin/dashboard/news/delete/{id}', 'Admin\NewsController@delete')->middleware('auth');
+
+Route::get('{language}/admin/dashboard/booking/load', 'Admin\BookingController@load')->middleware('auth');
+Route::post('{language}/admin/dashboard/booking/delete/{id}', 'Admin\BookingController@delete')->middleware('auth');

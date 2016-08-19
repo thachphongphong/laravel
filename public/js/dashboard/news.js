@@ -76,13 +76,12 @@ function resetNews() {
 //    }
 //});
 $(document).ready(function () {
-    $(document).on('click', '.pagination a', function (e) {
+    $(document).on('click', '.news .pagination a', function (e) {
         getNews($(this).attr('href').split('page=')[1]);
         e.preventDefault();
     });
 });
 function getNews(page) {
-    debugger
     waitingDialog.show("Đang tải tin tức....");
     $.ajax({
         url: DASH_BOARD_URL + '/news/load?page=' + page,

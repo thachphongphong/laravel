@@ -13,4 +13,9 @@ class Room extends Model
     {
         return $this->belongsToMany('App\RoomDetail', 'room_detail_link');
     }
+
+    public function bookings()
+    {
+        return $this->hasMany('App\BookingRoom');
+    }
 }

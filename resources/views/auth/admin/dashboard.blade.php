@@ -44,7 +44,7 @@
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a href="#booking" aria-controls="booking" role="tab" data-toggle="tab">
+                                <a href="#list_bookings" aria-controls="booking" role="tab" data-toggle="tab">
                                     <i class="fa fa-list-ul"></i>
                                     Booking
                                 </a>
@@ -76,7 +76,11 @@
 
                             @include('auth.admin.article_section')
                             @include('auth.admin.edit_room_section')
-                            @include('auth.admin.booking')
+                            {{--@include('auth.admin.booking')--}}
+                            <div role="tabpanel" class="tab-pane fade" id="list_bookings">
+                                <h2 class="mg-sec-left-title">Danh sách tin</h2>
+                                <div id="list_bookings"></div>
+                            </div>
                         </div>
 
                     </div>
@@ -87,8 +91,8 @@
             <p id="msg_content"></p>
         </div>
         <div id="dialog-confirm" title="Xóa">
-            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Xóa tin tức này khỏi
-                trang web?</p>
+            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Bạn có muốn xóa hay
+                không?</p>
         </div>
     </div>
     <script type="text/javascript">

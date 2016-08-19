@@ -68,7 +68,10 @@ $(document).ready(function () {
             loadIntroduce('vi');
         }
         if (target == '#list_article') {
-            getNews(0);
+            getNews(1);
+        }
+        if (target == '#list_bookings') {
+            getBookings(1);
         }
     });
 
