@@ -13,7 +13,7 @@ class NewsController extends Controller
 {
     function load()
     {
-        $news = News::paginate(5);
+        $news = News::paginate(10);
         if (Request::ajax()) {
             return Response::json(View::make('auth.admin.list_article_section', array('news' => $news))->render());
         }
@@ -23,7 +23,7 @@ class NewsController extends Controller
     {
         $news = News::find($id);
         $news->delete();
-        $news = News::paginate(5);
+        $news = News::orderBy('created_date','desc')->paginate(10);
         if (Request::ajax()) {
             return Response::json(View::make('auth.admin.list_article_section', array('success' => false,'news' => $news))->render());
         }

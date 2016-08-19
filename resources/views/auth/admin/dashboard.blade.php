@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="mg-page">
+    <div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -28,13 +28,13 @@
                             <li role="presentation">
                                 <a href="#article" aria-controls="article" role="tab" data-toggle="tab">
                                     <i class="fa fa-pencil"></i>
-                                    Tin tức
+                                    Thêm tin tức
                                 </a>
                             </li>
                             <li role="presentation">
                                 <a href="#list_article" aria-controls="list_article" role="tab" data-toggle="tab">
                                     <i class="fa fa-pencil"></i>
-                                    Danh sách tin tức
+                                    Quản lí tin
                                 </a>
                             </li>
                             <li role="presentation">
@@ -71,7 +71,7 @@
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="list_article">
                                 <h2 class="mg-sec-left-title">Danh sách tin</h2>
-                               <div id="list_news">@include('auth.admin.list_article_section')</div>
+                               <div id="list_news"></div>
                             </div>
 
                             @include('auth.admin.article_section')

@@ -67,6 +67,9 @@ $(document).ready(function () {
         if (target == '#introduce') {
             loadIntroduce('vi');
         }
+        if (target == '#list_article') {
+            getNews(0);
+        }
     });
 
     $('#btn-r-save').click(function () {

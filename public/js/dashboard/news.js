@@ -65,16 +65,16 @@ function resetNews() {
     $('#news_message_validate').addClass('hidden_alert');
 }
 
-$(window).on('hashchange', function () {
-    if (window.location.hash) {
-        var page = window.location.hash.replace('#', '');
-        if (page == Number.NaN || page <= 0) {
-            return false;
-        } else {
-            getNews(page);
-        }
-    }
-});
+//$(window).on('hashchange', function () {
+//    if (window.location.hash) {
+//        var page = window.location.hash.replace('#', '');
+//        if (page == Number.NaN || page <= 0) {
+//            return false;
+//        } else {
+//            getNews(page);
+//        }
+//    }
+//});
 $(document).ready(function () {
     $(document).on('click', '.pagination a', function (e) {
         getNews($(this).attr('href').split('page=')[1]);
@@ -82,15 +82,20 @@ $(document).ready(function () {
     });
 });
 function getNews(page) {
+    debugger
+    waitingDialog.show("Đang tải tin tức....");
     $.ajax({
         url: DASH_BOARD_URL + '/news/load?page=' + page,
         dataType: 'json',
     }).done(function (data) {
         $('#list_news').html(data);
         location.hash = page;
+        waitingDialog.hide();
     }).fail(function () {
+        waitingDialog.hide();
         showMessage('Không thể tải tin tức');
     });
+    waitingDialog.hide();
 }
 var confirmDelete = $("#dialog-confirm").dialog({
     autoOpen: false,

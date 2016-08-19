@@ -116,7 +116,7 @@
 <script src="{{ asset('/js/dashboard/dialog_handel.js') }}"></script>
 <script src="{{ asset('/js/dashboard/news.js') }}"></script>
 <script src="{{ asset('/js/dashboard/room.js') }}"></script>
-
+<script src="{{ asset('/js/waitingForDialog.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/js/tinymce/tinymce.min.js') }}"></script>
 @endif
 
