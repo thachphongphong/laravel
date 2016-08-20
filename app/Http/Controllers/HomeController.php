@@ -10,6 +10,7 @@ use App\News;
 use App\Room;
 use App\RoomService;
 use App\Slider;
+use App\Tour;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -55,7 +56,9 @@ class HomeController extends Controller
 
         $image = Gallery::all();
 
+        $tours = Tour::where('language_id', $language_id)->orderBy('created_date', 'desc')->take(3)->get();
+
         return View::make('home', array('constants' => $constants, 'menus' => $menus, 'sliders' => $slider, 'abouts' => $about,
-            'rooms' => $room, 'contact' => $contact, 'room_services' => $room_service,'news'=>$new, 'images' => $image));
+            'rooms' => $room, 'contact' => $contact, 'room_services' => $room_service,'news'=>$new, 'images' => $image, 'tours' =>$tours));
     }
 }

@@ -60,3 +60,7 @@ Route::post('{language}/admin/dashboard/news/delete/{id}', 'Admin\NewsController
 
 Route::get('{language}/admin/dashboard/booking/load', 'Admin\BookingController@load')->middleware('auth');
 Route::post('{language}/admin/dashboard/booking/delete/{id}', 'Admin\BookingController@delete')->middleware('auth');
+
+Route::get('{language}/admin/dashboard/tour/load', 'Admin\TourController@load')->middleware('auth');
+Route::post('{language}/admin/dashboard/tour/add', 'Admin\TourController@add')->middleware('auth');
+Route::post('{language}/admin/dashboard/tour/delete', 'Admin\TourController@delete')->middleware('auth');

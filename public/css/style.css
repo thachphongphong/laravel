@@ -5250,3 +5250,49 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
     width: 24px;
     height: 9px;
 }
+
+.offers-box {
+    background: rgba(0, 71, 104, 0.8) none repeat scroll 0 0;
+    border-radius: 8px;
+    z-index: 110;
+}
+
+.offers-box > h2 {
+     font-family: "Open Sans";
+    color: #fff;
+    font-size: 50px;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 15px;
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.offers-box > h2:after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 3px;
+    background-color: #e7b315;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -60px;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+    -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}

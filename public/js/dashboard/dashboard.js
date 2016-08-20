@@ -73,6 +73,9 @@ $(document).ready(function () {
         if (target == '#list_bookings') {
             getBookings(1);
         }
+         if (target == '#tour') {
+            getTours(1, 'vi');
+        }
     });
 
     $('#btn-r-save').click(function () {
@@ -80,6 +83,14 @@ $(document).ready(function () {
     });
 
     $('input:radio[name="a_lang_radio"]').change(function () {
+        if ($(this).val() == '1') {
+            loadIntroduce('vi');
+        } else {
+           loadIntroduce('en');
+        }
+    });
+
+    $('input:radio[name="t_lang_radio"]').change(function () {
         if ($(this).val() == '1') {
             loadIntroduce('vi');
         } else {

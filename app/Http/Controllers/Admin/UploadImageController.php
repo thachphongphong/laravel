@@ -41,6 +41,10 @@ class UploadImageController extends Controller
                 if($typeName == 'ABOUT'){
                     $destinationPath = $destinationPath  . '/about';
                 }
+
+                 if($typeName == 'TOUR'){
+                    $destinationPath = $destinationPath  . '/tours';
+                }
                
                 Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
                 // sending back with message

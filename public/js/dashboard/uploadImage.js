@@ -14,6 +14,9 @@ function upload(controlId) {
                 if(res.type == 'ABOUT'){
                       addImageAbout(res.data);
                 }
+                if(res.type == 'TOUR'){
+                  addImageTour(res.data);
+                }
             }
             dialogUpload.dialog("close");
         },
@@ -53,7 +56,7 @@ function uploadImage() {
     if(type == "ROOM"){
          var controlId = $("#div_upload_image").data('controlId');
          replace(controlId, $('#filePath').val());
-    }else if(type == "ABOUT"){
+    }else if(type == "ABOUT" || type == "TOUR"){
         upload('');
     }
  

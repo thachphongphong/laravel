@@ -1,7 +1,7 @@
 //news
 
 $(document).ready(function () {
-    $(document).on('click', '.pagination a', function (e) {
+    $(document).on('click', '.booking .pagination a', function (e) {
         getBookings($(this).attr('href').split('page=')[1]);
         e.preventDefault();
     });

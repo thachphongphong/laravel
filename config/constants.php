@@ -85,6 +85,12 @@ return [
             'lastname' => 'Bạn phải nhập tên.',
             'checkin' => 'Bạn phải chọn ngày.',
             'checkout' => 'Bạn phải chọn ngày.'
+        ],
+        'testimonial' => [
+            'preview' => 'Nhận xét của khách.',
+            'tour' => 'Tours du lịch',
+            'departure' => 'Điểm khởi hành',
+            'price' => 'Giá'
         ]
     ],
     'en' => [
@@ -170,6 +176,12 @@ return [
             'lastname' => 'Last Name is not empty.',
             'checkin' => 'Select a date.',
             'checkout' => 'Select a date.'
+        ],
+        'testimonial' => [
+            'preview' => 'Cusomter Preview',
+            'tour' => 'Tours',
+            'departure' => 'Departure',
+            'price' => 'Price'
         ]
     ],
      'admin' => [

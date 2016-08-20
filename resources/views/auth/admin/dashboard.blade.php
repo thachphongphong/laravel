@@ -49,6 +49,12 @@
                                     Booking
                                 </a>
                             </li>
+                            <li role="presentation">
+                                <a href="#tour" aria-controls="tour" role="tab" data-toggle="tab">
+                                    <i class="fa fa-list-ul"></i>
+                                    Tour
+                                </a>
+                            </li>
                         </ul>
 
                         <div class="tab-content">
@@ -80,6 +86,15 @@
                             <div role="tabpanel" class="tab-pane fade" id="list_bookings">
                                 <h2 class="mg-sec-left-title">Danh sách tin</h2>
                                 <div id="list_bookings"></div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tour">
+                                <h2 class="mg-sec-left-title">Tours</h2>
+                                <div class="form-group">
+                                    <label for="language">Ngôn ngữ hiện thị</label>
+                                    <label><input type="radio" name="t_lang_radio"  value="1" checked="">Tiếng Việt</label>
+                                    <label><input type="radio" name="t_lang_radio"  value="2">Tiếng Anh</label>
+                                </div>
+                                <div id="list-tours"></div>
                             </div>
                         </div>
 

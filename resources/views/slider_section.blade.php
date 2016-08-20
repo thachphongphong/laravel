@@ -15,10 +15,11 @@
 
                     <div class="carousel-caption">
                         <img src="{{asset('images/stars.png')}}" alt="Biển Ngọc Đà Nẵng">
+                        <div class="offers-box">
+                            <h2>{{$sliders[$i]->h_info}}</h2>
 
-                        <h2>{{$sliders[$i]->h_info}}</h2>
-
-                        <p>{{$sliders[$i]->p_info}}</p>
+                            <p>{{$sliders[$i]->p_info}}</p>
+                        </div>
                     </div>
                 </div>
             @endfor
