@@ -517,7 +517,7 @@ $(document).ready(function () {
         var checkin = $('#checkin').val();
         var checkout = $('#checkout').val();
         var adult = $('#adult').val();
-        if(checkin == '' || checkout == '' || adult == '' || adult == null){
+        if(checkin == '' || checkout == ''){
             return false;
         }else{
             $( "#bookingSearch" ).submit();

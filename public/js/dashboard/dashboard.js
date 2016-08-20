@@ -92,9 +92,9 @@ $(document).ready(function () {
 
     $('input:radio[name="t_lang_radio"]').change(function () {
         if ($(this).val() == '1') {
-            loadIntroduce('vi');
+            getTours(1,'vi');
         } else {
-           loadIntroduce('en');
+           getTours(1,'en');
         }
     });
 

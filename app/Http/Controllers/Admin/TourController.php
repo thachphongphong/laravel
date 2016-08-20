@@ -13,8 +13,9 @@ use App\Tour;
 
 class TourController extends Controller
 {
-	function load($language_code)
+	function load($language, \Illuminate\Http\Request $request)
     {
+    	$language_code = $request->input('lang');
     	if ($language_code == 'vi') {
             $language_id = 1;
         } else {
