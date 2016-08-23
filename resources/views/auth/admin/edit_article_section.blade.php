@@ -23,7 +23,7 @@
     <div class="form-group">
         <select class="cs-select cs-skin-elastic form-control"
                 id="e_news_hash_tag" name="e_news_hash_tag">
-            <option value="tintuc" disabled selected>Chọn danh mục tin</option>
+            <option value="" disabled selected>Chọn danh mục tin</option>
             <option value="tintuc">Tin tức</option>
             <option value="thongtindulich">Thông tin du lịch</option>
             <option value="amthuc">Ẩm thực</option>

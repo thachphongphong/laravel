@@ -22,6 +22,11 @@ function addNews() {
         $("#validate_mess").text("Hãy nhập tóm tắt nội dung tin tức");
         return;
     }
+    if (hash_tag == "" || hash_tag == undefined || hash_tag == null) {
+        $('#e_news_message_validate').removeClass('hidden_alert');
+        $("#e_validate_mess").text("Hãy chọn loại tin tức");
+        return;
+    }
     if (full_text == "" || full_text == undefined || full_text == null || full_text.length < 8) {
         $('#news_message_validate').removeClass('hidden_alert');
         $("#validate_mess").text("Hãy nhập nội dung tin tức");
@@ -194,6 +199,12 @@ function update_news(id) {
         if (introtext == "" || introtext == undefined || introtext == null) {
             $('#e_news_message_validate').removeClass('hidden_alert');
             $("#e_validate_mess").text("Hãy nhập tóm tắt nội dung tin tức");
+            return;
+        }
+
+        if (hash_tag == "" || hash_tag == undefined || hash_tag == null) {
+            $('#e_news_message_validate').removeClass('hidden_alert');
+            $("#e_validate_mess").text("Hãy chọn loại tin tức");
             return;
         }
         if (full_text == "" || full_text == undefined || full_text == null || full_text.length < 8) {
