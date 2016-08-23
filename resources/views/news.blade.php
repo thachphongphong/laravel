@@ -9,7 +9,10 @@
                         @foreach($news as $new)
                             <article class="mg-post">
                                 <header>
-                                    <h2 class="mg-post-title"><a href="#" rel="bookmark">{{$new->title}}</a></h2>
+                                    @if($new->image_url)
+                                        <a href="./news/{{$new->id}}"><img src="{{$new->image_url}}" alt="" class="img-responsive"></a>
+                                    @endif
+                                    <h2 class="mg-post-title"><a href="./news/{{$new->id}}" rel="bookmark">{{$new->title}}</a></h2>
 
                                     <div class="mg-post-meta">
                                         <span><a href="#">{{ date('F d, Y', strtotime($new->created_date)) }}</a></span>
@@ -20,7 +23,8 @@
                                     {!!html_entity_decode($new->introtext)!!}
                                 </div>
                                 <footer class="clearfix">
-                                    <a href="./news/{{$new->id}}" class="mg-read-more">Continue Reading <i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="./news/{{$new->id}}" class="mg-read-more">Continue Reading <i
+                                                class="fa fa-long-arrow-right"></i></a>
                                 </footer>
                             </article>
                         @endforeach

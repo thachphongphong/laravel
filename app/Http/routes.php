@@ -56,6 +56,8 @@ Route::get('{language}/admin/dashboard/room/{id}', 'Admin\EditRoomController@get
 Route::post('{language}/admin/dashboard/room/update', 'Admin\EditRoomController@update')->middleware('auth');
 
 Route::get('{language}/admin/dashboard/news/load', 'Admin\NewsController@load')->middleware('auth');
+Route::get('{language}/admin/dashboard/news/get/{id}', 'Admin\NewsController@get')->middleware('auth');
+Route::post('{language}/admin/dashboard/news/update', 'Admin\NewsController@update')->middleware('auth');
 Route::post('{language}/admin/dashboard/news/delete/{id}', 'Admin\NewsController@delete')->middleware('auth');
 
 Route::get('{language}/admin/dashboard/booking/load', 'Admin\BookingController@load')->middleware('auth');

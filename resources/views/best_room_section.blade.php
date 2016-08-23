@@ -18,7 +18,7 @@
                                         <h2>{{$room->name}}</h2>
 
                                         <div class="mg-room-rating"><i class="fa fa-star"></i> 5.00</div>
-                                        <div class="mg-room-price">{{$room->price}}</div>
+                                        <div class="mg-room-price">{{$room->price}} {{$constants['bestroom']['currency']}}</div>
                                         <p>{{$room->description}}</p>
                                         <a href="{{ action("RoomDetailController@load", [(!Session::has('lang'))? Session::get('lang'): 'vi', $room->id]) }}" class="btn btn-link">{{$constants['bestroom']['view']}} <i class="fa fa-angle-double-right"></i></a>
                                         <a href="{{ URL::to( '/'.Session::get('lang').'/booking', [$room->id]) }}" class="btn btn-main">{{$constants['bestroom']['book']}}</a>

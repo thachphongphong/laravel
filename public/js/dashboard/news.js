@@ -12,6 +12,11 @@ function addNews() {
         $("#validate_mess").text("Hãy nhập tiêu đề tin tức");
         return;
     }
+    if (image_url == "" || image_url == undefined || image_url == null) {
+        $('#news_message_validate').removeClass('hidden_alert');
+        $("#validate_mess").text("Hãy nhập ảnh đại diện của tin tức");
+        return;
+    }
     if (introtext == "" || introtext == undefined || introtext == null) {
         $('#news_message_validate').removeClass('hidden_alert');
         $("#validate_mess").text("Hãy nhập tóm tắt nội dung tin tức");
@@ -80,6 +85,7 @@ $(document).ready(function () {
         getNews($(this).attr('href').split('page=')[1]);
         e.preventDefault();
     });
+
 });
 function getNews(page) {
     waitingDialog.show("Đang tải tin tức....");
@@ -135,5 +141,89 @@ function delete_news(id) {
         }
     });
     confirmDelete.dialog("open");
+}
+function update_news(id) {
+    $.ajax({
+        type: "GET",
+        url: DASH_BOARD_URL + '/news/get/' + id,
+        data: {},
+        success: function (data) {
+            if (data != null) {
+                $('#e_news_id').val(data.news.id);
+                $('#e_news_title').val(data.news.title);
+                $('#e_news_image_url').val(data.news.image_url);
+                $('#e_news_introtext').val(data.news.introtext);
+                $('#e_news_hash_tag').val(data.news.hash_tag);
+                if(data.news.language_id==1){
+                  //  $('.e_lang_check')[0].prop('checked', true).checkboxradio('refresh');
+                    $("[name = 'e_lang_radio'][value='1']").prop('checked', true);
+                }else{
+                    $("[name = 'e_lang_radio'][value='2']").prop('checked', true);
+                }
 
+                tinymce.get('e_news_article_body').setContent(data.news.fulltext);
+                $('#editNewsModal').modal('show');
+            } else {
+                showMessage("Không xóa tin này được");
+            }
+        },
+        error: function () {
+            showMessage("Không xóa tin này được");
+        }
+    });
+
+    $('#btn-update-news').click(function () {
+        var id = $('#e_news_id').val();
+        var title = $('#e_news_title').val();
+        var image_url = $('#e_news_image_url').val();
+        var introtext = $('#e_news_introtext').val();
+        var hash_tag = $('#e_news_hash_tag').val();
+        var language = $('.e_lang_check:checked').val();
+        var full_text = tinymce.get('e_news_article_body').getContent();
+
+        if (title == "" || title == undefined || title == null) {
+            $('#e_news_message_validate').removeClass('hidden_alert');
+            $("#e_validate_mess").text("Hãy nhập tiêu đề tin tức");
+            return;
+        }
+        if (image_url == "" || image_url == undefined || image_url == null) {
+            $('#e_news_message_validate').removeClass('hidden_alert');
+            $("#e_validate_mess").text("Hãy nhập ảnh đại diện của tin tức");
+            return;
+        }
+        if (introtext == "" || introtext == undefined || introtext == null) {
+            $('#e_news_message_validate').removeClass('hidden_alert');
+            $("#e_validate_mess").text("Hãy nhập tóm tắt nội dung tin tức");
+            return;
+        }
+        if (full_text == "" || full_text == undefined || full_text == null || full_text.length < 8) {
+            $('#e_news_message_validate').removeClass('hidden_alert');
+            $("#e_validate_mess").text("Hãy nhập nội dung tin tức");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: DASH_BOARD_URL + '/news/update',
+            data: {
+                id:id,
+                title: title,
+                image_url: image_url,
+                introtext: introtext,
+                hash_tag: hash_tag,
+                language: language,
+                full_text: full_text
+            },
+            success: function (data) {
+                if (data.success) {
+                    getNews(1);
+                } else {
+                    $('#e_news_message_fail').removeClass('hidden_alert');
+                }
+            },
+            error: function () {
+                $('#e_news_message_fail').removeClass('hidden_alert');
+            }
+        });
+
+    });
 }

@@ -16,7 +16,7 @@
                     <main>
                         <article class="mg-post">
                             <header>
-                                {{--<a href="#"><img src="{{asset('images/page-title.jpg')}}" alt="" class="img-responsive"></a>--}}
+                                <a href="#"><img src="{{$news->image_url}}" alt="" class="img-responsive"></a>
                                 <h2 class="mg-post-title">{{$news->title}}</h2>
 
                                 <div class="mg-post-meta">

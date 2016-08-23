@@ -109,6 +109,7 @@
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
 <script src="{{ asset('/js/jquery-ui.js') }}"></script>
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/js/tinymce/tinymce.min.js') }}"></script>
 <script src="{{ asset('/js/dashboard/dashboard.js') }}"></script>
 <script src="{{ asset('/js/dashboard/about.js') }}"></script>
 <script src="{{ asset('/js/dashboard/contact.js') }}"></script>
@@ -119,7 +120,7 @@
 <script src="{{ asset('/js/waitingForDialog.js') }}"></script>
 <script src="{{ asset('/js/dashboard/booking.js') }}"></script>
 <script src="{{ asset('/js/dashboard/tour.js') }}"></script>
-<script type="text/javascript" src="{{ asset('/js/tinymce/tinymce.min.js') }}"></script>
+
 @endif
 
 </body>

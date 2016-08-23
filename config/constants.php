@@ -4,8 +4,9 @@ return [
         'bestroom' => [
             'title' => 'NHỮNG PHÒNG TỐT NHẤT',
             'desc' => 'Được chọn bởi khách hàng',
-            'view' => 'Xem chi tiết',
-            'book' => 'Book'
+            'view' => 'Xem',
+            'book' => 'Đặt phòng',
+            'currency'=>'VND'
         ],
         'footer' => [
             'contact' => 'LIÊN HỆ',
@@ -45,14 +46,15 @@ return [
             'send' => 'Gởi'
         ],
         'room' => [
-            'detail' => 'Xem Chi Tiết',
-            'book' => 'Book',
+            'detail' => 'Xem',
+            'book' => 'Đặt phòng',
             'facilities' => 'Tiện Nghi Phòng',
             'desc' => 'Mô Tả Phòng',
             'person' => 'người',
             'promotion_app' => 'Áp dụng',
             'promotion_from' => 'từ ',
-            'promotion_to' => 'đến '
+            'promotion_to' => 'đến ',
+            'currency'=>'VND'
         ],
         'booking' => [
             'available' => 'Phòng Trống',
@@ -97,8 +99,9 @@ return [
         'bestroom' => [
             'title' => 'OUT BEST ROOM',
             'desc' => 'Choosen by customer',
-            'view' => 'View Detail',
-            'book' => 'Book'
+            'view' => 'View',
+            'book' => 'Book',
+            'currency'=>'VND'
         ],
         'footer' => [
             'contact' => 'CONTACT US',
@@ -136,14 +139,15 @@ return [
             'send' => 'Send'
         ],
         'room' => [
-            'detail' => 'View Details',
+            'detail' => 'View',
             'book' => 'Book',
             'facilities' => 'Room Fecilities',
             'desc' => 'Room Description',
             'person' => 'person',
             'promotion_app' => 'Apply',
             'promotion_from' => 'from ',
-            'promotion_to' => 'to '
+            'promotion_to' => 'to ',
+            'currency'=>'VND'
         ],
         'booking' => [
             'available' => 'Room Available',
