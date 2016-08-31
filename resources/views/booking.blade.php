@@ -56,7 +56,7 @@
                                                     </div>
                                                     <div class="col-sm-7">
                                                         <h3 class="mg-avl-room-title"><a href="#">{{$room->name}}</a>
-                                                            <span id ="room-price">{{$room->price}}</span></h3>
+                                                            <span id ="room-price">{{number_format($room->price, 0)}}</span></h3>
 
                                                         <p><span>{{$room->description}}</span> -
                                                             <span>{{$room->total_person}} {{$constants['room']['person']}}</span>

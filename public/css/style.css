@@ -32,7 +32,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     color: #16262e;
 }
 
@@ -75,7 +75,7 @@ hr {
 }
 
 blockquote {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-style: italic;
     background-image: url(../images/blockquote.png);
     background-color: #f7f7f7;
@@ -172,7 +172,7 @@ input[type=radio]:checked:before {
 .mg-404-error-txt .mg-404-badg {
     background-color: #16262e;
     color: #fff;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     text-transform: uppercase;
     text-align: center;
     padding: 30px 28px;
@@ -211,7 +211,7 @@ input[type=radio]:checked:before {
 }
 
 .mg-404-error-txt .mg-404-txt-search strong {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-size: 23px;
     line-height: 33px;
     margin-bottom: 10px;
@@ -220,7 +220,7 @@ input[type=radio]:checked:before {
 }
 
 .mg-404-error-txt .mg-404-txt-search p {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-size: 16px;
 }
 
@@ -566,7 +566,7 @@ ul.styled-list.list-star li:before {
 }
 
 .btn {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     border-radius: 1px;
     font-weight: 600;
     border-width: 0;
@@ -802,7 +802,7 @@ ul.styled-list.list-star li:before {
 }
 
 .navbar {
-    /*font-family: "Playfair Display", serif;*/
+    /*font-family: "Raleway", serif;*/
     margin-bottom: 0;
 }
 
@@ -1089,7 +1089,7 @@ ul.styled-list.list-star li:before {
 }
 
 .mg-page-title h2 {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     color: #fff;
     text-transform: uppercase;
     position: relative;
@@ -1155,7 +1155,27 @@ ul.styled-list.list-star li:before {
 }
 
 .carousel-caption > h2 {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 15px;
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.carousel-caption > h2 {
+    font-family: "Raleway", serif;
     color: #fff;
     font-size: 60px;
     font-weight: 400;
@@ -1175,6 +1195,46 @@ ul.styled-list.list-star li:before {
 }
 
 .carousel-caption > h2:after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 3px;
+    background-color: #e7b315;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -60px;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+    -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.offers-box > h2 {
+     font-family: "Open Sans";
+    color: #fff;
+    font-size: 50px;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 15px;
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.offers-box > h2:after {
     content: '';
     display: block;
     width: 120px;
@@ -1309,7 +1369,7 @@ ul.styled-list.list-star li:before {
 }
 
 .mg-book-now .mg-bn-title {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     color: #e7b315;
     font-size: 25px;
     line-height: 43px;
@@ -1665,7 +1725,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .mg-c2a strong {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-size: 30px;
     font-weight: 300;
     display: block;
@@ -1680,7 +1740,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
 .mg-c2a .mg-c2a-offer-badg {
     text-align: center;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-size: 20px;
     line-height: 30px;
     text-transform: uppercase;
@@ -1728,7 +1788,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
 .mg-sec-title {
     text-align: center;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     position: relative;
     padding-bottom: 10px;
     margin-bottom: 40px;
@@ -1768,7 +1828,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
 .mg-sec-left-title,
 .mg-widget-title {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     color: #16262e;
     font-size: 25px;
     text-transform: uppercase;
@@ -1811,7 +1871,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .mg-room figcaption h2 {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     color: #fff;
     margin: 0;
     font-size: 20px;
@@ -2146,7 +2206,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
 .mg-feature .mg-feature-icon-title h3 {
     display: block;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-size: 20px;
     color: #16262e;
     font-weight: 400;
@@ -2195,7 +2255,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
 .mg-light-testimonial .mg-testimonial-slider blockquote footer {
     color: #e7b315;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-style: italic;
 }
 
@@ -2216,7 +2276,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
 .mg-testimonial-slider blockquote footer {
     color: #e7b315;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-style: italic;
 }
 
@@ -2310,7 +2370,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
 .mg-recnt-post .mg-rp-date {
     width: 70px;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-size: 27px;
     font-weight: 700;
     text-transform: uppercase;
@@ -2340,7 +2400,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .mg-recnt-post > h3 {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-size: 22px;
     font-weight: 400;
     margin-top: 0;
@@ -2450,7 +2510,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .mg-contact-form-input label {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-size: 16px;
     line-height: 26px;
     font-weight: 300;
@@ -2503,7 +2563,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
 .mg-room-fecilities ul li {
     color: #16262e;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 30px;
     padding-bottom: 20px;
     font-weight: 300;
@@ -2518,7 +2578,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .mg-single-room-price .mg-srp-inner {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     width: 100px;
     padding: 21px 0px 17px;
     text-align: center;
@@ -2609,7 +2669,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .mg-reviews .media .media-body .media-heading {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     color: #16262e;
     font-style: italic;
     font-size: 22px;
@@ -2711,7 +2771,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 .mg-star-rating-title {
     display: inline-block;
     font-size: 16px;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     color: #16262e;
     min-width: 65px;
 }
@@ -2844,7 +2904,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .mg-post .mg-post-title {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     margin-bottom: 15px;
 }
 
@@ -2860,7 +2920,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
     border-bottom: 1px solid #f2f2f2;
     padding-bottom: 15px;
     margin-bottom: 20px;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     color: #96a3a9;
 }
 
@@ -2888,7 +2948,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .mg-post .mg-read-more {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-style: italic;
     font-size: 15px;
 }
@@ -2938,7 +2998,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .mg-widget ul li {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     padding: 10px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -2981,7 +3041,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
     margin-bottom: 70px;
     border-bottom: 1px solid #F2F2F2;
     border-top: 1px solid #F2F2F2;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-size: 16px;
     line-height: 30px;
     color: #16262e;
@@ -3070,7 +3130,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
 .nav-tabs > li,
 .nav-tabs.nav-justified > li {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-size: 18px;
 }
 
@@ -3490,7 +3550,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
 .mg-booking-form .nav-tabs > li > a span.mg-bs-tab-num {
     display: block;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-weight: 600;
     color: #16262e;
     vertical-align: middle;
@@ -3569,7 +3629,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .mg-book-form-input label {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     font-weight: 400;
     color: #16262e;
     font-size: 16px;
@@ -3614,7 +3674,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
     padding: 50px 0 10px;
     font-size: 25px;
     line-height: 35px;
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     color: #fff;
     font-weight: 400;
 }
@@ -3882,7 +3942,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .progress .progress-bar .mg-progress-bar-popup {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     color: #16262e;
     font-size: 16px;
     line-height: 30px;
@@ -3893,7 +3953,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 }
 
 .progress .progress-bar .mg-progress-bar-left {
-    font-family: "Playfair Display", serif;
+    font-family: "Raleway", serif;
     color: #16262e;
     font-size: 16px;
     line-height: 30px;
@@ -4235,6 +4295,14 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
         font-size: 20px;
     }
 
+    .offers-box > h2 {
+        font-size: 55px;
+    }
+
+    .offers-box > p {
+        font-size: 20px;
+    }
+
     .mg-room figcaption h2 {
         -webkit-transform: translate(0, 90px);
         -ms-transform: translate(0, 90px);
@@ -4441,6 +4509,14 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
     }
 
     .carousel-caption > p {
+        font-size: 20px;
+    }
+
+    .offers-box > h2 {
+        font-size: 45px;
+    }
+
+    .offers-box > p {
         font-size: 20px;
     }
 
@@ -4716,6 +4792,14 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
     }
 
     .carousel-caption > p {
+        font-size: 16px;
+    }
+
+    .offers-box > h2 {
+        font-size: 35px;
+    }
+
+    .offers-box > p {
         font-size: 16px;
     }
 
@@ -5048,6 +5132,15 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
         line-height: 23px;
     }
 
+    .offers-box > h2 {
+        font-size: 25px;
+    }
+
+    .offers-box > p {
+        font-size: 14px;
+        line-height: 23px;
+    }
+
     .carousel-caption > img {
         width: 100px;
     }
@@ -5079,6 +5172,15 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 @media (max-width: 480px) {
     .container {
         width: 100%;
+    }
+
+    .offers-box > h2 {
+        font-size: 16px;
+    }
+
+    .offers-box > p {
+        font-size: 12px;
+        line-height: 18px;
     }
 
     .navbar-brand>#logo1{
@@ -5122,6 +5224,15 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
         font-size: 18px;
         line-height: 28px;
     }
+
+    .offers-box > h2 {
+        font-size: 50px;
+    }
+
+    .offers-box > p {
+        font-size: 18px;
+        line-height: 28px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -5145,6 +5256,15 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
     .mg-boxed .carousel-caption > img {
         width: 120px;
     }
+
+    .offers-box > h2 {
+       font-size: 35px;
+    }
+
+    .offers-box > p {
+        font-size: 15px;
+        line-height: 25px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -5162,6 +5282,15 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
     .mg-boxed .carousel-caption > p {
         font-size: 13px;
+        line-height: 23px;
+    }
+
+    .offers-box > h2 {
+        font-size: 20px;
+    }
+
+    .offers-box > p {
+        font-size: 12px;
         line-height: 23px;
     }
 
@@ -5194,6 +5323,15 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 
     .mg-boxed .header.transp + .mg-page-title {
         padding-top: 70px;
+    }
+
+    #social-sidebar a:hover span {
+        right: 0%;
+        opacity: 0;
+    }
+    .hover span {
+        right: 100%!important;
+        opacity: 1!important;
     }
 }
 
@@ -5257,42 +5395,123 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
     z-index: 110;
 }
 
-.offers-box > h2 {
-     font-family: "Open Sans";
-    color: #fff;
-    font-size: 50px;
-    font-weight: 400;
-    text-transform: uppercase;
-    position: relative;
-    padding-bottom: 15px;
-    -webkit-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    transform: scale(0.8);
-    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-    transition: transform 0.5s, opacity 0.5s;
-    -webkit-transition-delay: 0.5s;
-    transition-delay: 0.5s;
-    -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+.header-phone{
+    color: white;
+    text-align: center;
 }
 
-.offers-box > h2:after {
-    content: '';
+.hotline {
+    position: fixed;
+    right: 0;
+    top: 35%;
+    z-index: 999;
+    margin-bottom:0px;
+}
+
+
+/* ---------- Social Sidebar ---------- */
+
+#social-sidebar {
+    right: 0;
+    margin-top: -75px; /* (li * a:width) / -2 */
+    position: fixed;
+    top: 50%;
+}
+
+
+
+ #social-sidebar .facebook a{
+    color: #333333;
     display: block;
-    width: 120px;
-    height: 3px;
-    background-color: #e7b315;
+    font-size: 18px;
+    position: relative;
+    text-align: center;
+    width: 40px;
+    height: 72px;
+}
+#social-sidebar .facebook a
+{
+    background-color:#d8df20;
+}
+
+  #social-sidebar .fa {
+    line-height: 40px;
+margin-top: 15px;
+}
+
+
+#social-sidebar a:hover span {
+    right: 100%;
+    opacity: 1;
+}
+
+#social-sidebar a span {
+    background-color:#d8df20;
+    line-height: 32px;
+    right: -100%;
+    margin-top: -36px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    padding: 4px 8px;
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -60px;
-    -webkit-transform: scaleX(0);
-    -ms-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: -webkit-transform 0.5s;
-    transition: transform 0.5s;
-    -webkit-transition-delay: 1s;
-    transition-delay: 1s;
-    -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-transition: opacity .3s, right .4s;
+    -moz-transition: opacity .3s, right .4s;
+    -ms-transition: opacity .3s, right .4s;
+    -o-transition: opacity .3s, right .4s;
+    transition: opacity .3s, right .4s;
+    top: 50%;
+    white-space: nowrap;
+    z-index: -1;
+    font-family: 'Raleway', sans-serif;
+}
+
+#social-sidebar a span:before {
+    content: "";
+    display: block;
+    height: 8px;
+    left: -4px;
+    margin-top: -4px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 8px;
+    z-index: -2;
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#social-sidebar a[class*="dribbble"]:hover,
+#social-sidebar a[class*="dribbble"] span,
+#social-sidebar a[class*="dribbble"] span:before { background: #ea4c89; }
+.wpcf7-form-control {
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+input:focus{
+    outline: none!important;
+    border: none;
+}
+
+
+input.wpcf7-form-control.wpcf7-submit.btn.btn-warning.btn-block {
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 12px;
+}
+.frm-order-ticket p{
+margin-bottom:0px;
+}
+.box-activity .item{
+    margin-bottom: 40px;
 }

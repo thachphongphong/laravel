@@ -120,6 +120,7 @@
 <script src="{{ asset('/js/waitingForDialog.js') }}"></script>
 <script src="{{ asset('/js/dashboard/booking.js') }}"></script>
 <script src="{{ asset('/js/dashboard/tour.js') }}"></script>
+<script src="{{ asset('/js/dashboard/promotion.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/js/tinymce/tinymce.min.js') }}"></script>
 @endif
 

@@ -1,6 +1,7 @@
 @extends('master')
 @section('content_section')
     @include('slider_section')
+    @include('promotion_section')
     @include('book_now_section')
     @include('best_room_section')
     @include('about_section')

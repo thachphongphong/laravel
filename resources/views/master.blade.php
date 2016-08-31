@@ -39,7 +39,7 @@
 <body>
 <div class="preloader"></div>
 @include('header_section')
-{{--@include('slider_section')--}}
+@include('hotline_section')
 @yield('content_section')
 @include('footer_section')
 

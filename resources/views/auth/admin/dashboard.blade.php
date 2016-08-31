@@ -55,6 +55,12 @@
                                     Tour
                                 </a>
                             </li>
+                            <li role="presentation">
+                                <a href="#promotion" aria-controls="promotion" role="tab" data-toggle="tab">
+                                    <i class="fa fa-star"></i>
+                                    Khuyến mãi
+                                </a>
+                            </li>
                         </ul>
 
                         <div class="tab-content">
@@ -95,6 +101,15 @@
                                     <label><input type="radio" name="t_lang_radio"  value="2">Tiếng Anh</label>
                                 </div>
                                 <div id="list-tours"></div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="promotion">
+                                <h2 class="mg-sec-left-title">Khuyến mãi</h2>
+                                <div class="form-group">
+                                    <label for="language">Ngôn ngữ hiện thị</label>
+                                    <label><input type="radio" name="p_lang_radio"  value="1" checked="">Tiếng Việt</label>
+                                    <label><input type="radio" name="p_lang_radio"  value="2">Tiếng Anh</label>
+                                </div>
+                                <div id="list-promotion"></div>
                             </div>
                         </div>
 

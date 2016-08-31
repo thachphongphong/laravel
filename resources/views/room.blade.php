@@ -15,7 +15,7 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <h3 class="mg-avl-room-title"><a href="#">{{$room->name}}</a>
-                                        <span>{{$room->price}} {{$constants['room']['currency']}}</span></h3>
+                                        <span>{{number_format($room->price, 0)}} {{$constants['room']['currency']}}</span></h3>
 
                                     <p><span>{{$room->description}}</span> - <span>{{$room->total_person}} {{$constants['room']['person']}}</span></p>
 
@@ -87,16 +87,6 @@
                         </div>
                     @endforeach
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="btn-main mg-promotion">
-        <div class="container">
-            <div class="row">
-                @foreach ($promotions as $pro)
-                    <h2 class="mg-sec-left-title">{{$pro->description}} : {{$pro->sale_off}}</h2>
-                    <p>{{$constants['room']['promotion_app']}} {{$constants['room']['promotion_from']}} :  {{ date('d-M-Y', strtotime($pro->apply_time_from)) }} {{$constants['room']['promotion_to']}} :  {{ date('d-M-Y', strtotime($pro->apply_time_to)) }}</p>
-                @endforeach
             </div>
         </div>
     </div>

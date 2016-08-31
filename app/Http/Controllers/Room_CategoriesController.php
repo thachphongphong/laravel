@@ -6,7 +6,6 @@ use App\ContactDetail;
 use App\Http\Requests;
 use App\Menu;
 use App\PageTitle;
-use App\Promotion;
 use App\Room;
 use Config;
 use DB;
@@ -34,9 +33,7 @@ class Room_CategoriesController extends Controller
         $title = PageTitle::where('language_id', $language_id)->where('page_id', 2)
             ->orderByRaw("RAND()")->first();
 
-        $promotion = Promotion::where('language_id', $language_id)->get();
-
         return View::make('room', array('constants' => $constants, 'menus' => $menus, 'contact' => $contact,
-            'rooms' => $room, 'title' => $title, 'promotions' => $promotion));
+            'rooms' => $room, 'title' => $title));
     }
 }

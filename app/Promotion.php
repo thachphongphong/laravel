@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Promotion extends Model
 {
     protected $table = 'promotion';
+    public $timestamps = false;
+    protected $guarded = array('id');
 }

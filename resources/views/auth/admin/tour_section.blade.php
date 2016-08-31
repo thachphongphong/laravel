@@ -1,4 +1,4 @@
-<button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#tourModal">Thêm</button>
+<button class="btn btn-xs btn-primary" onclick="openAddtTour()">Thêm</button>
 <table class="table table-hover table-bordered table-condensed">
     <thead>
         <tr class="success">
@@ -9,6 +9,7 @@
             <th>Giá</th>
             <th>Thông tin</th>
             <th>Ảnh</th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -29,8 +30,9 @@
                 <td>{{$tour->price}}</td>
                 <td>{{$tour->note}}</td>
                 <td>@if(! empty($tour->imageUrl))
-                  <img width ="50" src="{{asset($tour->imageUrl)}}" alt="pearl sea hotel">
-                @endif</td>     
+                  <img width ="50" t-url="{{$tour->imageUrl}}" src="{{asset($tour->imageUrl)}}" alt="pearl sea hotel">
+                @endif</td>
+                <td><input type="button" class="btn btn-xs btn-danger" value="Sửa"  t-id="{{$tour->id}}" onclick="openEditTour(this)"/></td>     
                 <td><input type="button" class="btn btn-xs btn-danger" value="Xóa" onclick="deleteTour({{$tour->id}})"/></td>
             </tr>
             @endforeach
@@ -48,12 +50,13 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title" id="tourModalLabel">Thêm tour</h4>
+          <h4 class="modal-title" id="tourModalLabel">Thêm/Sửa tour</h4>
         </div>
         <div class="modal-body">
           <form>
             <div class="form-group">
                 <div class="input-group">
+                    <input type = "hidden" id="tourId"> 
                     <input type = "number"  min="0"  oninput="validity.valid||(value='1');" id="duration" class = "form-control" placeholder = "Thời gian"> 
                     <div class = "input-group-addon" id="durationType">
                      <label class="radio-inline">
@@ -92,7 +95,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" onclick="addTours()">Thêm</button>
+          <button type="button" class="btn btn-primary" id="add-tour" onclick="addTours()">Thêm</button>
+          <button type="button" class="btn btn-primary" id="edit-tour" style="display:none;" onclick="editTour()">Sửa</button>
         </div>
       </div>
     </div>

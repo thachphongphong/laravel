@@ -68,3 +68,9 @@ Route::post('{language}/admin/dashboard/booking/delete/{id}', 'Admin\BookingCont
 Route::get('{language}/admin/dashboard/tour/load', 'Admin\TourController@load')->middleware('auth');
 Route::post('{language}/admin/dashboard/tour/add', 'Admin\TourController@add')->middleware('auth');
 Route::post('{language}/admin/dashboard/tour/delete', 'Admin\TourController@delete')->middleware('auth');
+Route::post('{language}/admin/dashboard/tour/edit', 'Admin\TourController@edit')->middleware('auth');
+
+Route::get('{language}/admin/dashboard/pro/load', 'Admin\ProController@load')->middleware('auth');
+Route::post('{language}/admin/dashboard/pro/add', 'Admin\ProController@add')->middleware('auth');
+Route::post('{language}/admin/dashboard/pro/delete', 'Admin\ProController@delete')->middleware('auth');
+Route::post('{language}/admin/dashboard/pro/edit', 'Admin\ProController@edit')->middleware('auth');

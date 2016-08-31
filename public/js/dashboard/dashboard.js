@@ -78,6 +78,9 @@ $(document).ready(function () {
          if (target == '#tour') {
             getTours(1, 'vi');
         }
+        if (target == '#promotion') {
+            getPro(1, 'vi');
+        }
     });
 
     $('#btn-r-save').click(function () {
@@ -97,6 +100,14 @@ $(document).ready(function () {
             getTours(1,'vi');
         } else {
            getTours(1,'en');
+        }
+    });
+
+    $('input:radio[name="p_lang_radio"]').change(function () {
+        if ($(this).val() == '1') {
+            getPro(1,'vi');
+        } else {
+           getPro(1,'en');
         }
     });
 

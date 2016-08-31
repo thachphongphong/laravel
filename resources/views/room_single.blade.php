@@ -2,7 +2,7 @@
 @section('content_section')
     @include('title_section')
     <div class="mg-single-room-price">
-        <div class="mg-srp-inner">{{$room->price}}<span>đêm</span></div>
+        <div class="mg-srp-inner">{{number_format($room->price, 0)}}<span>đêm</span></div>
     </div>
     <div class="mg-single-room">
         <div class="container">
